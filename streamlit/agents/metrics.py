@@ -5,6 +5,8 @@ from typing import Optional
 def _parse_dt(date_str: Optional[str], time_str: Optional[str]) -> Optional[datetime]:
     if not time_str or time_str in ("null", "NA", None):
         return None
+    # Normaliza "15h55" → "15:55"
+    time_str = time_str.replace("h", ":").strip()
     try:
         if date_str and date_str not in ("null", None):
             return datetime.strptime(f"{date_str} {time_str}", "%d/%m/%Y %H:%M")
