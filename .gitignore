@@ -205,3 +205,23 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+
+
+# ── Projecto AVC Extraction ─────────────────────────────────────────────────
+
+# Cartas clínicas (sintéticas ou reais — nunca versionar)
+data/
+!data/exemplo_demo.txt
+
+# Resultados gerados pelo pipeline
+outputs/
+
+# Variáveis de ambiente (URLs, configs locais)
+.env
+
+# Docker
+ollama_data/
+
+# Streamlit
+.streamlit/secrets.toml
