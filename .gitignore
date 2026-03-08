@@ -217,7 +217,7 @@ data/
 # Resultados gerados pelo pipeline
 outputs/
 
-# Variáveis de ambiente (URLs, configs locais)
+# Variáveis de ambiente
 .env
 
 # Docker
