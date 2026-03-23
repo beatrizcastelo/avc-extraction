@@ -1,0 +1,5843 @@
+[
+  {
+    "caso": 3,
+    "tipo": "fibrinolise_pre_hospitalar",
+    "sexo": "feminino",
+    "idade": 82,
+    "proveniencia": "Gois",
+    "territorio": "ACM direita",
+    "etiologia_toast": "Cardioembólica",
+    "tratamento": "fibrinolise endovenosa (rt-PA ou tenecteplase)",
+    "nihss_admissao": 1,
+    "nihss_alta": 0,
+    "mrs_previo": 0,
+    "mrs_alta": 1,
+    "complicacoes": "Nao ocorreram",
+    "timestamps": {
+      "sintomas": "09h45",
+      "admissao_coimbra": "10h10",
+      "tc_ce": "10h10",
+      "aspects": "9"
+    },
+    "metricas_temporais": {
+      "onset_to_door": "00h25",
+      "door_to_imaging": "00h00"
+    },
+    "qualidade_eso": {
+      "door_to_imaging": "verde"
+    },
+    "seguimento": {
+      "vivo_30_dias": true,
+      "dias_obito": null,
+      "causa_obito": null,
+      "mrs_3_meses": 0
+    }
+  },
+  {
+    "caso": 4,
+    "tipo": "fibrinolise_pre_hospitalar",
+    "sexo": "masculino",
+    "idade": 79,
+    "proveniencia": "Mealhada",
+    "territorio": "ACM direita",
+    "etiologia_toast": "Cardioembólica",
+    "tratamento": "fibrinolise endovenosa (rt-PA ou tenecteplase)",
+    "nihss_admissao": 19,
+    "nihss_alta": 10,
+    "mrs_previo": 0,
+    "mrs_alta": 0,
+    "complicacoes": "Nao ocorreram",
+    "timestamps": {
+      "sintomas": "10h15",
+      "admissao_coimbra": "10h40",
+      "tc_ce": "10h55",
+      "aspects": "8"
+    },
+    "metricas_temporais": {
+      "onset_to_door": "00h25",
+      "door_to_imaging": "00h15"
+    },
+    "qualidade_eso": {
+      "door_to_imaging": "verde"
+    },
+    "seguimento": {
+      "vivo_30_dias": true,
+      "dias_obito": null,
+      "causa_obito": null,
+      "mrs_3_meses": 0
+    }
+  },
+  {
+    "caso": 5,
+    "tipo": "fibrinolise_pre_hospitalar",
+    "sexo": "feminino",
+    "idade": 62,
+    "proveniencia": "Condeixa-a-Nova",
+    "territorio": "ACM esquerda",
+    "etiologia_toast": "Cardioembólica",
+    "tratamento": "fibrinolise endovenosa (rt-PA ou tenecteplase)",
+    "nihss_admissao": 23,
+    "nihss_alta": 9,
+    "mrs_previo": 0,
+    "mrs_alta": 2,
+    "complicacoes": "Nao ocorreram",
+    "timestamps": {
+      "sintomas": "09h45",
+      "admissao_coimbra": "10h15",
+      "tc_ce": "10h30"
+    },
+    "metricas_temporais": {
+      "onset_to_door": "00h30",
+      "door_to_imaging": "00h15"
+    },
+    "qualidade_eso": {
+      "door_to_imaging": "verde"
+    },
+    "seguimento": {
+      "vivo_30_dias": true,
+      "dias_obito": null,
+      "causa_obito": null,
+      "mrs_3_meses": 2
+    }
+  },
+  {
+    "caso": 6,
+    "tipo": "fibrinolise_pre_hospitalar",
+    "sexo": "masculino",
+    "idade": 62,
+    "proveniencia": "Pampilhosa da Serra",
+    "territorio": "ACM esquerda",
+    "etiologia_toast": "Cardioembólica",
+    "tratamento": "fibrinolise endovenosa (rt-PA ou tenecteplase)",
+    "nihss_admissao": 23,
+    "nihss_alta": 13,
+    "mrs_previo": 0,
+    "mrs_alta": 1,
+    "complicacoes": "Nao ocorreram",
+    "timestamps": {
+      "sintomas": "09h45",
+      "admissao_coimbra": "10h10",
+      "tc_ce": "10h25"
+    },
+    "metricas_temporais": {
+      "onset_to_door": "00h25",
+      "door_to_imaging": "00h15"
+    },
+    "qualidade_eso": {
+      "door_to_imaging": "verde"
+    },
+    "seguimento": {
+      "vivo_30_dias": true,
+      "dias_obito": null,
+      "causa_obito": null,
+      "mrs_3_meses": 0
+    }
+  },
+  {
+    "caso": 7,
+    "tipo": "fibrinolise_pre_hospitalar",
+    "sexo": "feminino",
+    "idade": 64,
+    "proveniencia": "Pampilhosa da Serra",
+    "territorio": "ACM esquerda",
+    "etiologia_toast": "Indeterminado",
+    "tratamento": "fibrinolise endovenosa (rt-PA ou tenecteplase)",
+    "nihss_admissao": 4,
+    "nihss_alta": 2,
+    "mrs_previo": 0,
+    "mrs_alta": 1,
+    "complicacoes": "Transformacao hemorragica assintomatica",
+    "timestamps": {
+      "sintomas": "15h30",
+      "admissao_coimbra": "15h55",
+      "tc_ce": "16h10"
+    },
+    "metricas_temporais": {
+      "onset_to_door": "00h25",
+      "door_to_imaging": "00h15"
+    },
+    "qualidade_eso": {
+      "door_to_imaging": "verde"
+    },
+    "seguimento": {
+      "vivo_30_dias": true,
+      "dias_obito": null,
+      "causa_obito": null,
+      "mrs_3_meses": 0
+    }
+  },
+  {
+    "caso": 8,
+    "tipo": "fibrinolise_pre_hospitalar",
+    "sexo": "masculino",
+    "idade": 76,
+    "proveniencia": "Miranda do Corvo",
+    "territorio": "ACM direita",
+    "etiologia_toast": "Cardioembólica",
+    "tratamento": "fibrinolise endovenosa (rt-PA ou tenecteplase)",
+    "nihss_admissao": 13,
+    "nihss_alta": 10,
+    "mrs_previo": 0,
+    "mrs_alta": 1,
+    "complicacoes": "Transformacao hemorragica assintomatica",
+    "timestamps": {
+      "sintomas": "15h10",
+      "admissao_coimbra": "15h35",
+      "tc_ce": "15h50",
+      "aspects": "8"
+    },
+    "metricas_temporais": {
+      "onset_to_door": "00h25",
+      "door_to_imaging": "00h15"
+    },
+    "qualidade_eso": {
+      "door_to_imaging": "verde"
+    },
+    "seguimento": {
+      "vivo_30_dias": true,
+      "dias_obito": null,
+      "causa_obito": null,
+      "mrs_3_meses": 1
+    }
+  },
+  {
+    "caso": 9,
+    "tipo": "fibrinolise_pre_hospitalar",
+    "sexo": "feminino",
+    "idade": 64,
+    "proveniencia": "Soure",
+    "territorio": "ACM direita",
+    "etiologia_toast": "Cardioembólica",
+    "tratamento": "fibrinolise endovenosa (rt-PA ou tenecteplase)",
+    "nihss_admissao": 22,
+    "nihss_alta": 15,
+    "mrs_previo": 0,
+    "mrs_alta": 1,
+    "complicacoes": "Nao ocorreram",
+    "timestamps": {
+      "sintomas": "09h45",
+      "admissao_coimbra": "10h10",
+      "tc_ce": "10h25"
+    },
+    "metricas_temporais": {
+      "onset_to_door": "00h25",
+      "door_to_imaging": "00h15"
+    },
+    "qualidade_eso": {
+      "door_to_imaging": "verde"
+    },
+    "seguimento": {
+      "vivo_30_dias": true,
+      "dias_obito": null,
+      "causa_obito": null,
+      "mrs_3_meses": 1
+    }
+  },
+  {
+    "caso": 10,
+    "tipo": "fibrinolise_pre_hospitalar",
+    "sexo": "masculino",
+    "idade": 82,
+    "proveniencia": "Miranda do Corvo",
+    "territorio": "ACM direita",
+    "etiologia_toast": "Indeterminado",
+    "tratamento": "fibrinolise endovenosa (rt-PA ou tenecteplase)",
+    "nihss_admissao": 6,
+    "nihss_alta": 3,
+    "mrs_previo": 0,
+    "mrs_alta": 1,
+    "complicacoes": "Nao ocorreram",
+    "timestamps": {
+      "sintomas": "09h45",
+      "admissao_coimbra": "10h10",
+      "tc_ce": "10h25",
+      "aspects": "8"
+    },
+    "metricas_temporais": {
+      "onset_to_door": "00h25",
+      "door_to_imaging": "00h15"
+    },
+    "qualidade_eso": {
+      "door_to_imaging": "verde"
+    },
+    "seguimento": {
+      "vivo_30_dias": true,
+      "dias_obito": null,
+      "causa_obito": null,
+      "mrs_3_meses": 0
+    }
+  },
+  {
+    "caso": 1,
+    "tipo": "fibrinolise_pre_hospitalar",
+    "sexo": "feminino",
+    "idade": 82,
+    "proveniencia": "Gois",
+    "territorio": "ACM direita",
+    "etiologia_toast": "Cardioembólica",
+    "tratamento": "fibrinolise endovenosa (rt-PA ou tenecteplase)",
+    "nihss_admissao": 1,
+    "nihss_alta": 0,
+    "mrs_previo": 0,
+    "mrs_alta": 1,
+    "complicacoes": "Nao ocorreram",
+    "timestamps": {
+      "sintomas": "10h15",
+      "admissao_coimbra": "10h40",
+      "tc_ce": "10h55"
+    },
+    "metricas_temporais": {
+      "onset_to_door": "00h25",
+      "door_to_imaging": "00h15"
+    },
+    "qualidade_eso": {
+      "door_to_imaging": "verde"
+    },
+    "seguimento": {
+      "vivo_30_dias": true,
+      "dias_obito": null,
+      "causa_obito": null,
+      "mrs_3_meses": 1
+    }
+  },
+  {
+    "caso": 2,
+    "tipo": "fibrinolise_pre_hospitalar",
+    "sexo": "masculino",
+    "idade": 79,
+    "proveniencia": "Mealhada",
+    "territorio": "ACM direita",
+    "etiologia_toast": "Cardioembólica",
+    "tratamento": "fibrinolise endovenosa (rt-PA ou tenecteplase)",
+    "nihss_admissao": 19,
+    "nihss_alta": 10,
+    "mrs_previo": 0,
+    "mrs_alta": 0,
+    "complicacoes": "Nao ocorreram",
+    "timestamps": {
+      "sintomas": "09h45",
+      "admissao_coimbra": "10h10",
+      "tc_ce": "10h25",
+      "tici": "3",
+      "aspects": "8"
+    },
+    "metricas_temporais": {
+      "onset_to_door": "00h25",
+      "door_to_imaging": "00h15"
+    },
+    "qualidade_eso": {
+      "door_to_imaging": "verde"
+    },
+    "seguimento": {
+      "vivo_30_dias": true,
+      "dias_obito": null,
+      "causa_obito": null,
+      "mrs_3_meses": 0
+    }
+  },
+  {
+    "caso": 11,
+    "tipo": "fibrinolise_pre_hospitalar",
+    "sexo": "feminino",
+    "idade": 82,
+    "proveniencia": "Gois",
+    "territorio": "ACM direita",
+    "etiologia_toast": "Cardioembólica",
+    "tratamento": "fibrinolise endovenosa (rt-PA ou tenecteplase)",
+    "nihss_admissao": 1,
+    "nihss_alta": 0,
+    "mrs_previo": 0,
+    "mrs_alta": 1,
+    "complicacoes": "Nao ocorreram",
+    "timestamps": {
+      "sintomas": "10h15",
+      "admissao_coimbra": "10h40",
+      "tc_ce": "10h55"
+    },
+    "metricas_temporais": {
+      "onset_to_door": "00h25",
+      "door_to_imaging": "00h15"
+    },
+    "qualidade_eso": {
+      "door_to_imaging": "verde"
+    },
+    "seguimento": {
+      "vivo_30_dias": true,
+      "dias_obito": null,
+      "causa_obito": null,
+      "mrs_3_meses": 0
+    }
+  },
+  {
+    "caso": 12,
+    "tipo": "fibrinolise_pre_hospitalar",
+    "sexo": "masculino",
+    "idade": 79,
+    "proveniencia": "Mealhada",
+    "territorio": "ACM direita",
+    "etiologia_toast": "Cardioembólica",
+    "tratamento": "fibrinolise endovenosa (rt-PA ou tenecteplase)",
+    "nihss_admissao": 19,
+    "nihss_alta": 10,
+    "mrs_previo": 0,
+    "mrs_alta": 0,
+    "complicacoes": "Nao ocorreram",
+    "timestamps": {
+      "sintomas": "09h45",
+      "admissao_coimbra": "10h05",
+      "tc_ce": "10h10",
+      "tici": "2b",
+      "aspects": "8"
+    },
+    "metricas_temporais": {
+      "onset_to_door": "00h20",
+      "door_to_imaging": "00h05"
+    },
+    "qualidade_eso": {
+      "door_to_imaging": "verde"
+    },
+    "seguimento": {
+      "vivo_30_dias": true,
+      "dias_obito": null,
+      "causa_obito": null,
+      "mrs_3_meses": 0
+    }
+  },
+  {
+    "caso": 13,
+    "tipo": "fibrinolise_pre_hospitalar",
+    "sexo": "feminino",
+    "idade": 82,
+    "proveniencia": "Gois",
+    "territorio": "ACM direita",
+    "etiologia_toast": "Cardioembólica",
+    "tratamento": "fibrinolise endovenosa (rt-PA ou tenecteplase)",
+    "nihss_admissao": 1,
+    "nihss_alta": 0,
+    "mrs_previo": 0,
+    "mrs_alta": 1,
+    "complicacoes": "Nao ocorreram",
+    "timestamps": {
+      "sintomas": "09h45",
+      "admissao_coimbra": "10h10",
+      "tc_ce": "10h25",
+      "aspects": "9"
+    },
+    "metricas_temporais": {
+      "onset_to_door": "00h25",
+      "door_to_imaging": "00h15"
+    },
+    "qualidade_eso": {
+      "door_to_imaging": "verde"
+    },
+    "seguimento": {
+      "vivo_30_dias": true,
+      "dias_obito": null,
+      "causa_obito": null,
+      "mrs_3_meses": 1
+    }
+  },
+  {
+    "caso": 14,
+    "tipo": "fibrinolise_pre_hospitalar",
+    "sexo": "masculino",
+    "idade": 79,
+    "proveniencia": "Mealhada",
+    "territorio": "ACM direita",
+    "etiologia_toast": "Cardioembólica",
+    "tratamento": "fibrinolise endovenosa (rt-PA ou tenecteplase)",
+    "nihss_admissao": 19,
+    "nihss_alta": 10,
+    "mrs_previo": 0,
+    "mrs_alta": 0,
+    "complicacoes": "Nao ocorreram",
+    "timestamps": {
+      "sintomas": "09h45",
+      "admissao_coimbra": "10h10",
+      "tc_ce": "10h25",
+      "aspects": "8"
+    },
+    "metricas_temporais": {
+      "onset_to_door": "00h25",
+      "door_to_imaging": "00h15"
+    },
+    "qualidade_eso": {
+      "door_to_imaging": "verde"
+    },
+    "seguimento": {
+      "vivo_30_dias": true,
+      "dias_obito": null,
+      "causa_obito": null,
+      "mrs_3_meses": 0
+    }
+  },
+  {
+    "caso": 15,
+    "tipo": "fibrinolise_pre_hospitalar",
+    "sexo": "feminino",
+    "idade": 62,
+    "proveniencia": "Condeixa-a-Nova",
+    "territorio": "ACM esquerda",
+    "etiologia_toast": "Cardioembólica",
+    "tratamento": "fibrinolise endovenosa (rt-PA ou tenecteplase)",
+    "nihss_admissao": 23,
+    "nihss_alta": 9,
+    "mrs_previo": 0,
+    "mrs_alta": 2,
+    "complicacoes": "Nao ocorreram",
+    "timestamps": {
+      "sintomas": "09h45",
+      "admissao_coimbra": "10h05",
+      "tc_ce": "10h10",
+      "aspects": "8"
+    },
+    "metricas_temporais": {
+      "onset_to_door": "00h20",
+      "door_to_imaging": "00h05"
+    },
+    "qualidade_eso": {
+      "door_to_imaging": "verde"
+    },
+    "seguimento": {
+      "vivo_30_dias": true,
+      "dias_obito": null,
+      "causa_obito": null,
+      "mrs_3_meses": 2
+    }
+  },
+  {
+    "caso": 16,
+    "tipo": "fibrinolise_pre_hospitalar_ace",
+    "sexo": "masculino",
+    "idade": 52,
+    "proveniencia": "Pampilhosa da Serra",
+    "territorio": "ACM direita",
+    "etiologia_toast": "Aterosclerose grandes vasos",
+    "tratamento": "fibrinolise endovenosa (rt-PA ou tenecteplase)",
+    "nihss_admissao": 23,
+    "nihss_alta": 14,
+    "mrs_previo": 0,
+    "mrs_alta": 1,
+    "complicacoes": "Nao ocorreram",
+    "timestamps": {
+      "sintomas": "15h40",
+      "admissao_coimbra": "16h05",
+      "tc_ce": "16h20"
+    },
+    "metricas_temporais": {
+      "onset_to_door": "00h25",
+      "door_to_imaging": "00h15"
+    },
+    "qualidade_eso": {
+      "door_to_imaging": "verde"
+    },
+    "seguimento": {
+      "vivo_30_dias": true,
+      "dias_obito": null,
+      "causa_obito": null,
+      "mrs_3_meses": 0
+    }
+  },
+  {
+    "caso": 17,
+    "tipo": "fibrinolise_pre_hospitalar_ace",
+    "sexo": "feminino",
+    "idade": 54,
+    "proveniencia": "Pampilhosa da Serra",
+    "territorio": "ACI + ACM direita",
+    "etiologia_toast": "Aterosclerose grandes vasos",
+    "tratamento": "fibrinolise endovenosa (rt-PA ou tenecteplase)",
+    "nihss_admissao": 4,
+    "nihss_alta": 3,
+    "mrs_previo": 0,
+    "mrs_alta": 1,
+    "complicacoes": "Angioedema minor autolimitado",
+    "timestamps": {
+      "sintomas": "09h45",
+      "admissao_coimbra": "10h10",
+      "tc_ce": "10h25"
+    },
+    "metricas_temporais": {
+      "onset_to_door": "00h25",
+      "door_to_imaging": "00h15"
+    },
+    "qualidade_eso": {
+      "door_to_imaging": "verde"
+    },
+    "seguimento": {
+      "vivo_30_dias": true,
+      "dias_obito": null,
+      "causa_obito": null,
+      "mrs_3_meses": 1
+    }
+  },
+  {
+    "caso": 18,
+    "tipo": "fibrinolise_pre_hospitalar_ace",
+    "sexo": "masculino",
+    "idade": 55,
+    "proveniencia": "Vila Nova de Poiares",
+    "territorio": "ACM esquerda",
+    "etiologia_toast": "Aterosclerose grandes vasos",
+    "tratamento": "fibrinolise endovenosa (rt-PA ou tenecteplase)",
+    "nihss_admissao": 24,
+    "nihss_alta": 16,
+    "mrs_previo": 0,
+    "mrs_alta": 1,
+    "complicacoes": "Nao ocorreram",
+    "timestamps": {
+      "sintomas": "15h10",
+      "admissao_coimbra": "15h35",
+      "tc_ce": "15h50"
+    },
+    "metricas_temporais": {
+      "onset_to_door": "00h25",
+      "door_to_imaging": "00h15"
+    },
+    "qualidade_eso": {
+      "door_to_imaging": "verde"
+    },
+    "seguimento": {
+      "vivo_30_dias": true,
+      "dias_obito": null,
+      "causa_obito": null,
+      "mrs_3_meses": 0
+    }
+  },
+  {
+    "caso": 19,
+    "tipo": "fibrinolise_pre_hospitalar_ace",
+    "sexo": "feminino",
+    "idade": 70,
+    "proveniencia": "Penela",
+    "territorio": "ACI + ACM direita",
+    "etiologia_toast": "Aterosclerose grandes vasos",
+    "tratamento": "fibrinolise endovenosa (rt-PA ou tenecteplase)",
+    "nihss_admissao": 2,
+    "nihss_alta": 2,
+    "mrs_previo": 0,
+    "mrs_alta": 1,
+    "complicacoes": "Nao ocorreram",
+    "timestamps": {
+      "sintomas": "15h45",
+      "admissao_coimbra": "16h10",
+      "tc_ce": "16h25"
+    },
+    "metricas_temporais": {
+      "onset_to_door": "00h25",
+      "door_to_imaging": "00h15"
+    },
+    "qualidade_eso": {
+      "door_to_imaging": "verde"
+    },
+    "seguimento": {
+      "vivo_30_dias": true,
+      "dias_obito": null,
+      "causa_obito": null,
+      "mrs_3_meses": 1
+    }
+  },
+  {
+    "caso": 20,
+    "tipo": "fibrinolise_pre_hospitalar_ace",
+    "sexo": "masculino",
+    "idade": 69,
+    "proveniencia": "Gois",
+    "territorio": "ACI + ACM direita",
+    "etiologia_toast": "Aterosclerose grandes vasos",
+    "tratamento": "fibrinolise endovenosa (rt-PA ou tenecteplase)",
+    "nihss_admissao": 8,
+    "nihss_alta": 5,
+    "mrs_previo": 0,
+    "mrs_alta": 1,
+    "complicacoes": "Nao ocorreram",
+    "timestamps": {
+      "sintomas": "15h30",
+      "admissao_coimbra": "15h55",
+      "tc_ce": "16h10",
+      "aspects": "9"
+    },
+    "metricas_temporais": {
+      "onset_to_door": "00h25",
+      "door_to_imaging": "00h15"
+    },
+    "qualidade_eso": {
+      "door_to_imaging": "verde"
+    },
+    "seguimento": {
+      "vivo_30_dias": true,
+      "dias_obito": null,
+      "causa_obito": null,
+      "mrs_3_meses": 0
+    }
+  },
+  {
+    "caso": 21,
+    "tipo": "fibrinolise_pre_hospitalar_ace",
+    "sexo": "feminino",
+    "idade": 55,
+    "proveniencia": "Vila Nova de Poiares",
+    "territorio": "ACM esquerda",
+    "etiologia_toast": "Aterosclerose grandes vasos",
+    "tratamento": "fibrinolise endovenosa (rt-PA ou tenecteplase)",
+    "nihss_admissao": 24,
+    "nihss_alta": 16,
+    "mrs_previo": 0,
+    "mrs_alta": 1,
+    "complicacoes": "Nao ocorreram",
+    "timestamps": {
+      "sintomas": "15h20",
+      "admissao_coimbra": "15h40",
+      "tc_ce": "15h45",
+      "aspects": "8"
+    },
+    "metricas_temporais": {
+      "onset_to_door": "00h20",
+      "door_to_imaging": "00h05"
+    },
+    "qualidade_eso": {
+      "door_to_imaging": "verde"
+    },
+    "seguimento": {
+      "vivo_30_dias": true,
+      "dias_obito": null,
+      "causa_obito": null,
+      "mrs_3_meses": 0
+    }
+  },
+  {
+    "caso": 22,
+    "tipo": "fibrinolise_pre_hospitalar_ace",
+    "sexo": "masculino",
+    "idade": 70,
+    "proveniencia": "Penela",
+    "territorio": "ACI + ACM direita",
+    "etiologia_toast": "Aterosclerose grandes vasos",
+    "tratamento": "fibrinolise endovenosa (rt-PA ou tenecteplase)",
+    "nihss_admissao": 2,
+    "nihss_alta": 2,
+    "mrs_previo": 0,
+    "mrs_alta": 1,
+    "complicacoes": "Nao ocorreram",
+    "timestamps": {
+      "sintomas": "15h20",
+      "admissao_coimbra": "15h45",
+      "tc_ce": "16h00"
+    },
+    "metricas_temporais": {
+      "onset_to_door": "00h25",
+      "door_to_imaging": "00h15"
+    },
+    "qualidade_eso": {
+      "door_to_imaging": "verde"
+    },
+    "seguimento": {
+      "vivo_30_dias": true,
+      "dias_obito": null,
+      "causa_obito": null,
+      "mrs_3_meses": 0
+    }
+  },
+  {
+    "caso": 23,
+    "tipo": "fibrinolise_pre_hospitalar_ace",
+    "sexo": "feminino",
+    "idade": 55,
+    "proveniencia": "Vila Nova de Poiares",
+    "territorio": "ACM esquerda",
+    "etiologia_toast": "Aterosclerose grandes vasos",
+    "tratamento": "fibrinolise endovenosa (rt-PA ou tenecteplase)",
+    "nihss_admissao": 24,
+    "nihss_alta": 16,
+    "mrs_previo": 0,
+    "mrs_alta": 1,
+    "complicacoes": "Nao ocorreram",
+    "timestamps": {
+      "sintomas": "15h45",
+      "admissao_coimbra": "16h10",
+      "tc_ce": "16h25"
+    },
+    "metricas_temporais": {
+      "onset_to_door": "00h25",
+      "door_to_imaging": "00h15"
+    },
+    "qualidade_eso": {
+      "door_to_imaging": "verde"
+    },
+    "seguimento": {
+      "vivo_30_dias": true,
+      "dias_obito": null,
+      "causa_obito": null,
+      "mrs_3_meses": 1
+    }
+  },
+  {
+    "caso": 24,
+    "tipo": "fibrinolise_pre_hospitalar_ace",
+    "sexo": "masculino",
+    "idade": 70,
+    "proveniencia": "Penela",
+    "territorio": "ACI + ACM direita",
+    "etiologia_toast": "Aterosclerose grandes vasos",
+    "tratamento": "fibrinolise endovenosa (rt-PA ou tenecteplase)",
+    "nihss_admissao": 2,
+    "nihss_alta": 2,
+    "mrs_previo": 0,
+    "mrs_alta": 1,
+    "complicacoes": "Nao ocorreram",
+    "timestamps": {
+      "sintomas": "15h40",
+      "admissao_coimbra": "16h05",
+      "tc_ce": "16h20",
+      "aspects": "8"
+    },
+    "metricas_temporais": {
+      "onset_to_door": "00h25",
+      "door_to_imaging": "00h15"
+    },
+    "qualidade_eso": {
+      "door_to_imaging": "verde"
+    },
+    "seguimento": {
+      "vivo_30_dias": true,
+      "dias_obito": null,
+      "causa_obito": null,
+      "mrs_3_meses": 0
+    }
+  },
+  {
+    "caso": 25,
+    "tipo": "fibrinolise_pre_hospitalar_ace",
+    "sexo": "feminino",
+    "idade": 69,
+    "proveniencia": "Gois",
+    "territorio": "ACI + ACM direita",
+    "etiologia_toast": "Aterosclerose grandes vasos",
+    "tratamento": "fibrinolise endovenosa (rt-PA ou tenecteplase)",
+    "nihss_admissao": 8,
+    "nihss_alta": 5,
+    "mrs_previo": 0,
+    "mrs_alta": 1,
+    "complicacoes": "Nao ocorreram",
+    "timestamps": {
+      "sintomas": "15h20",
+      "admissao_coimbra": "15h45",
+      "tc_ce": "16h00",
+      "aspects": "9"
+    },
+    "metricas_temporais": {
+      "onset_to_door": "00h25",
+      "door_to_imaging": "00h15"
+    },
+    "qualidade_eso": {
+      "door_to_imaging": "verde"
+    },
+    "seguimento": {
+      "vivo_30_dias": true,
+      "dias_obito": null,
+      "causa_obito": null,
+      "mrs_3_meses": 1
+    }
+  },
+  {
+    "caso": 26,
+    "tipo": "fibrinolise_pre_hospitalar_ace",
+    "sexo": "masculino",
+    "idade": 55,
+    "proveniencia": "Vila Nova de Poiares",
+    "territorio": "ACM esquerda",
+    "etiologia_toast": "Aterosclerose grandes vasos",
+    "tratamento": "fibrinolise endovenosa (rt-PA ou tenecteplase)",
+    "nihss_admissao": 24,
+    "nihss_alta": 16,
+    "mrs_previo": 0,
+    "mrs_alta": 1,
+    "complicacoes": "Nao ocorreram",
+    "timestamps": {
+      "sintomas": "15h30",
+      "admissao_coimbra": "16h10",
+      "tc_ce": "16h25",
+      "aspects": "8"
+    },
+    "metricas_temporais": {
+      "onset_to_door": "00h40",
+      "door_to_imaging": "00h15"
+    },
+    "qualidade_eso": {
+      "door_to_imaging": "verde"
+    },
+    "seguimento": {
+      "vivo_30_dias": true,
+      "dias_obito": null,
+      "causa_obito": null,
+      "mrs_3_meses": 0
+    }
+  },
+  {
+    "caso": 27,
+    "tipo": "fibrinolise_pre_hospitalar_ace",
+    "sexo": "feminino",
+    "idade": 55,
+    "proveniencia": "Vila Nova de Poiares",
+    "territorio": "ACM esquerda",
+    "etiologia_toast": "Aterosclerose grandes vasos",
+    "tratamento": "fibrinolise endovenosa (rt-PA ou tenecteplase)",
+    "nihss_admissao": 24,
+    "nihss_alta": 16,
+    "mrs_previo": 0,
+    "mrs_alta": 1,
+    "complicacoes": "Nao ocorreram",
+    "timestamps": {
+      "sintomas": "15h40",
+      "admissao_coimbra": "16h05",
+      "tc_ce": "16h20"
+    },
+    "metricas_temporais": {
+      "onset_to_door": "00h25",
+      "door_to_imaging": "00h15"
+    },
+    "qualidade_eso": {
+      "door_to_imaging": "verde"
+    },
+    "seguimento": {
+      "vivo_30_dias": true,
+      "dias_obito": null,
+      "causa_obito": null,
+      "mrs_3_meses": 1
+    }
+  },
+  {
+    "caso": 28,
+    "tipo": "fibrinolise_pre_hospitalar_ace",
+    "sexo": "masculino",
+    "idade": 54,
+    "proveniencia": "Gois",
+    "territorio": "ACM direita",
+    "etiologia_toast": "Aterosclerose grandes vasos",
+    "tratamento": "fibrinolise endovenosa (rt-PA ou tenecteplase)",
+    "nihss_admissao": 8,
+    "nihss_alta": 4,
+    "mrs_previo": 0,
+    "mrs_alta": 0,
+    "complicacoes": "Angioedema minor autolimitado",
+    "timestamps": {
+      "sintomas": "15h30",
+      "admissao_coimbra": "15h55",
+      "tc_ce": "16h10",
+      "aspects": "9"
+    },
+    "metricas_temporais": {
+      "onset_to_door": "00h25",
+      "door_to_imaging": "00h15"
+    },
+    "qualidade_eso": {
+      "door_to_imaging": "verde"
+    },
+    "seguimento": {
+      "vivo_30_dias": true,
+      "dias_obito": null,
+      "causa_obito": null,
+      "mrs_3_meses": 0
+    }
+  },
+  {
+    "caso": 29,
+    "tipo": "fibrinolise_pre_hospitalar_ace",
+    "sexo": "feminino",
+    "idade": 59,
+    "proveniencia": "Oliveira do Bairro",
+    "territorio": "ACI + ACM direita",
+    "etiologia_toast": "Aterosclerose grandes vasos",
+    "tratamento": "fibrinolise endovenosa (rt-PA ou tenecteplase)",
+    "nihss_admissao": 19,
+    "nihss_alta": 13,
+    "mrs_previo": 0,
+    "mrs_alta": 0,
+    "complicacoes": "Nao ocorreram",
+    "timestamps": {
+      "sintomas": "12h45",
+      "admissao_coimbra": "13h10",
+      "tc_ce": "13h10",
+      "aspects": "8"
+    },
+    "metricas_temporais": {
+      "onset_to_door": "00h25",
+      "door_to_imaging": "00h00"
+    },
+    "qualidade_eso": {
+      "door_to_imaging": "verde"
+    },
+    "seguimento": {
+      "vivo_30_dias": true,
+      "dias_obito": null,
+      "causa_obito": null,
+      "mrs_3_meses": 0
+    }
+  },
+  {
+    "caso": 30,
+    "tipo": "fibrinolise_pre_hospitalar_ace",
+    "sexo": "masculino",
+    "idade": 58,
+    "proveniencia": "Miranda do Corvo",
+    "territorio": "ACI + ACM esquerda",
+    "etiologia_toast": "Aterosclerose grandes vasos",
+    "tratamento": "fibrinolise endovenosa (rt-PA ou tenecteplase)",
+    "nihss_admissao": 4,
+    "nihss_alta": 3,
+    "mrs_previo": 0,
+    "mrs_alta": 0,
+    "complicacoes": "Nao ocorreram",
+    "timestamps": {
+      "sintomas": "09h45",
+      "admissao_coimbra": "10h20",
+      "tc_ce": "10h40"
+    },
+    "metricas_temporais": {
+      "onset_to_door": "00h35",
+      "door_to_imaging": "00h20"
+    },
+    "qualidade_eso": {
+      "door_to_imaging": "verde"
+    },
+    "seguimento": {
+      "vivo_30_dias": true,
+      "dias_obito": null,
+      "causa_obito": null,
+      "mrs_3_meses": 0
+    }
+  },
+  {
+    "caso": 31,
+    "tipo": "fibrinolise_intra_hospitalar",
+    "sexo": "feminino",
+    "idade": 90,
+    "proveniencia": "Coimbra",
+    "territorio": "ACI + ACM direita",
+    "etiologia_toast": "Indeterminado",
+    "tratamento": "fibrinolise endovenosa (rt-PA ou tenecteplase)",
+    "nihss_admissao": 1,
+    "nihss_alta": 0,
+    "mrs_previo": 0,
+    "mrs_alta": 2,
+    "complicacoes": "Nao ocorreram",
+    "timestamps": {
+      "sintomas": "07h15",
+      "tc_ce": "07h30",
+      "aspects": "9"
+    },
+    "metricas_temporais": {},
+    "qualidade_eso": {},
+    "seguimento": {
+      "vivo_30_dias": true,
+      "dias_obito": null,
+      "causa_obito": null,
+      "mrs_3_meses": 2
+    }
+  },
+  {
+    "caso": 32,
+    "tipo": "fibrinolise_intra_hospitalar",
+    "sexo": "masculino",
+    "idade": 87,
+    "proveniencia": "Coimbra",
+    "territorio": "ACI + ACM direita",
+    "etiologia_toast": "Indeterminado",
+    "tratamento": "fibrinolise endovenosa (rt-PA ou tenecteplase)",
+    "nihss_admissao": 19,
+    "nihss_alta": 12,
+    "mrs_previo": 0,
+    "mrs_alta": 1,
+    "complicacoes": "Nao ocorreram",
+    "timestamps": {
+      "sintomas": "07h15",
+      "tc_ce": "07h30"
+    },
+    "metricas_temporais": {},
+    "qualidade_eso": {},
+    "seguimento": {
+      "vivo_30_dias": true,
+      "dias_obito": null,
+      "causa_obito": null,
+      "mrs_3_meses": 0
+    }
+  },
+  {
+    "caso": 33,
+    "tipo": "fibrinolise_intra_hospitalar",
+    "sexo": "feminino",
+    "idade": 89,
+    "proveniencia": "Coimbra",
+    "territorio": "ACI + ACM direita",
+    "etiologia_toast": "Indeterminado",
+    "tratamento": "fibrinolise endovenosa (rt-PA ou tenecteplase)",
+    "nihss_admissao": 18,
+    "nihss_alta": 14,
+    "mrs_previo": 0,
+    "mrs_alta": 4,
+    "complicacoes": "Cefaleia autolimitada",
+    "timestamps": {
+      "sintomas": "07h15",
+      "tc_ce": "07h30"
+    },
+    "metricas_temporais": {},
+    "qualidade_eso": {},
+    "seguimento": {
+      "vivo_30_dias": false,
+      "dias_obito": 2,
+      "causa_obito": "pneumonia de aspiracao com sepsis",
+      "mrs_3_meses": null
+    }
+  },
+  {
+    "caso": 34,
+    "tipo": "fibrinolise_intra_hospitalar",
+    "sexo": "masculino",
+    "idade": 88,
+    "proveniencia": "Coimbra",
+    "territorio": "ACM direita",
+    "etiologia_toast": "Cardioembólica",
+    "tratamento": "fibrinolise endovenosa (rt-PA ou tenecteplase)",
+    "nihss_admissao": 1,
+    "nihss_alta": 0,
+    "mrs_previo": 0,
+    "mrs_alta": 2,
+    "complicacoes": "Hematuria autolimitada",
+    "timestamps": {
+      "sintomas": "07h30",
+      "tc_ce": "07h50"
+    },
+    "metricas_temporais": {},
+    "qualidade_eso": {},
+    "seguimento": {
+      "vivo_30_dias": true,
+      "dias_obito": null,
+      "causa_obito": null,
+      "mrs_3_meses": 2
+    }
+  },
+  {
+    "caso": 35,
+    "tipo": "fibrinolise_intra_hospitalar",
+    "sexo": "feminino",
+    "idade": 76,
+    "proveniencia": "Coimbra",
+    "territorio": "ACM direita",
+    "etiologia_toast": "Cardioembólica",
+    "tratamento": "fibrinolise endovenosa (rt-PA ou tenecteplase)",
+    "nihss_admissao": 4,
+    "nihss_alta": 3,
+    "mrs_previo": 0,
+    "mrs_alta": 1,
+    "complicacoes": "Nao ocorreram",
+    "timestamps": {
+      "sintomas": "07h15",
+      "tc_ce": "07h30"
+    },
+    "metricas_temporais": {},
+    "qualidade_eso": {},
+    "seguimento": {
+      "vivo_30_dias": true,
+      "dias_obito": null,
+      "causa_obito": null,
+      "mrs_3_meses": 1
+    }
+  },
+  {
+    "caso": 36,
+    "tipo": "fibrinolise_intra_hospitalar",
+    "sexo": "masculino",
+    "idade": 90,
+    "proveniencia": "Coimbra",
+    "territorio": "ACI + ACM direita",
+    "etiologia_toast": "Indeterminado",
+    "tratamento": "fibrinolise endovenosa (rt-PA ou tenecteplase)",
+    "nihss_admissao": 1,
+    "nihss_alta": 0,
+    "mrs_previo": 0,
+    "mrs_alta": 2,
+    "complicacoes": "Nao ocorreram",
+    "timestamps": {
+      "sintomas": "07h15",
+      "tc_ce": "07h35",
+      "aspects": "9"
+    },
+    "metricas_temporais": {},
+    "qualidade_eso": {},
+    "seguimento": {
+      "vivo_30_dias": true,
+      "dias_obito": null,
+      "causa_obito": null,
+      "mrs_3_meses": 2
+    }
+  },
+  {
+    "caso": 37,
+    "tipo": "fibrinolise_intra_hospitalar",
+    "sexo": "feminino",
+    "idade": 87,
+    "proveniencia": "Coimbra",
+    "territorio": "ACI + ACM direita",
+    "etiologia_toast": "Indeterminado",
+    "tratamento": "fibrinolise endovenosa (rt-PA ou tenecteplase)",
+    "nihss_admissao": 19,
+    "nihss_alta": 12,
+    "mrs_previo": 0,
+    "mrs_alta": 1,
+    "complicacoes": "Nao ocorreram",
+    "timestamps": {
+      "sintomas": "07h20",
+      "tc_ce": "07h35"
+    },
+    "metricas_temporais": {},
+    "qualidade_eso": {},
+    "seguimento": {
+      "vivo_30_dias": true,
+      "dias_obito": null,
+      "causa_obito": null,
+      "mrs_3_meses": 0
+    }
+  },
+  {
+    "caso": 38,
+    "tipo": "fibrinolise_intra_hospitalar",
+    "sexo": "masculino",
+    "idade": 90,
+    "proveniencia": "Coimbra",
+    "territorio": "ACI + ACM direita",
+    "etiologia_toast": "Indeterminado",
+    "tratamento": "fibrinolise endovenosa (rt-PA ou tenecteplase)",
+    "nihss_admissao": 1,
+    "nihss_alta": 0,
+    "mrs_previo": 0,
+    "mrs_alta": 2,
+    "complicacoes": "Nao ocorreram",
+    "timestamps": {
+      "sintomas": "07h30",
+      "tc_ce": "07h50"
+    },
+    "metricas_temporais": {},
+    "qualidade_eso": {},
+    "seguimento": {
+      "vivo_30_dias": true,
+      "dias_obito": null,
+      "causa_obito": null,
+      "mrs_3_meses": 2
+    }
+  },
+  {
+    "caso": 39,
+    "tipo": "fibrinolise_intra_hospitalar",
+    "sexo": "feminino",
+    "idade": 87,
+    "proveniencia": "Coimbra",
+    "territorio": "ACI + ACM direita",
+    "etiologia_toast": "Indeterminado",
+    "tratamento": "fibrinolise endovenosa (rt-PA ou tenecteplase)",
+    "nihss_admissao": 19,
+    "nihss_alta": 12,
+    "mrs_previo": 0,
+    "mrs_alta": 1,
+    "complicacoes": "Nao ocorreram",
+    "timestamps": {
+      "sintomas": "07h15",
+      "tc_ce": "07h30"
+    },
+    "metricas_temporais": {},
+    "qualidade_eso": {},
+    "seguimento": {
+      "vivo_30_dias": true,
+      "dias_obito": null,
+      "causa_obito": null,
+      "mrs_3_meses": 0
+    }
+  },
+  {
+    "caso": 40,
+    "tipo": "fibrinolise_intra_hospitalar",
+    "sexo": "masculino",
+    "idade": 89,
+    "proveniencia": "Coimbra",
+    "territorio": "ACI + ACM direita",
+    "etiologia_toast": "Indeterminado",
+    "tratamento": "fibrinolise endovenosa (rt-PA ou tenecteplase)",
+    "nihss_admissao": 18,
+    "nihss_alta": 14,
+    "mrs_previo": 0,
+    "mrs_alta": 4,
+    "complicacoes": "Cefaleia autolimitada",
+    "timestamps": {
+      "sintomas": "07h15",
+      "tc_ce": "07h30"
+    },
+    "metricas_temporais": {},
+    "qualidade_eso": {},
+    "seguimento": {
+      "vivo_30_dias": false,
+      "dias_obito": 23,
+      "causa_obito": "deterioracao neurologica",
+      "mrs_3_meses": null
+    }
+  },
+  {
+    "caso": 41,
+    "tipo": "fibrinolise_intra_hospitalar",
+    "sexo": "feminino",
+    "idade": 90,
+    "proveniencia": "Coimbra",
+    "territorio": "ACI + ACM direita",
+    "etiologia_toast": "Indeterminado",
+    "tratamento": "fibrinolise endovenosa (rt-PA ou tenecteplase)",
+    "nihss_admissao": 1,
+    "nihss_alta": 0,
+    "mrs_previo": 0,
+    "mrs_alta": 2,
+    "complicacoes": "Nao ocorreram",
+    "timestamps": {
+      "sintomas": "07h15",
+      "tc_ce": "07h30"
+    },
+    "metricas_temporais": {},
+    "qualidade_eso": {},
+    "seguimento": {
+      "vivo_30_dias": true,
+      "dias_obito": null,
+      "causa_obito": null,
+      "mrs_3_meses": 2
+    }
+  },
+  {
+    "caso": 42,
+    "tipo": "fibrinolise_intra_hospitalar",
+    "sexo": "masculino",
+    "idade": 87,
+    "proveniencia": "Coimbra",
+    "territorio": "ACI + ACM direita",
+    "etiologia_toast": "Indeterminado",
+    "tratamento": "fibrinolise endovenosa (rt-PA ou tenecteplase)",
+    "nihss_admissao": 19,
+    "nihss_alta": 12,
+    "mrs_previo": 0,
+    "mrs_alta": 1,
+    "complicacoes": "Nao ocorreram",
+    "timestamps": {
+      "sintomas": "07h30",
+      "tc_ce": "07h50"
+    },
+    "metricas_temporais": {},
+    "qualidade_eso": {},
+    "seguimento": {
+      "vivo_30_dias": true,
+      "dias_obito": null,
+      "causa_obito": null,
+      "mrs_3_meses": 1
+    }
+  },
+  {
+    "caso": 43,
+    "tipo": "fibrinolise_intra_hospitalar",
+    "sexo": "feminino",
+    "idade": 89,
+    "proveniencia": "Coimbra",
+    "territorio": "ACI + ACM direita",
+    "etiologia_toast": "Indeterminado",
+    "tratamento": "fibrinolise endovenosa (rt-PA ou tenecteplase)",
+    "nihss_admissao": 18,
+    "nihss_alta": 14,
+    "mrs_previo": 0,
+    "mrs_alta": 4,
+    "complicacoes": "Cefaleia autolimitada",
+    "timestamps": {
+      "sintomas": "07h30",
+      "tc_ce": "07h50",
+      "aspects": "8"
+    },
+    "metricas_temporais": {},
+    "qualidade_eso": {},
+    "seguimento": {
+      "vivo_30_dias": false,
+      "dias_obito": 15,
+      "causa_obito": "deterioracao neurologica",
+      "mrs_3_meses": null
+    }
+  },
+  {
+    "caso": 44,
+    "tipo": "fibrinolise_intra_hospitalar",
+    "sexo": "masculino",
+    "idade": 88,
+    "proveniencia": "Coimbra",
+    "territorio": "ACM direita",
+    "etiologia_toast": "Cardioembólica",
+    "tratamento": "fibrinolise endovenosa (rt-PA ou tenecteplase)",
+    "nihss_admissao": 1,
+    "nihss_alta": 0,
+    "mrs_previo": 0,
+    "mrs_alta": 2,
+    "complicacoes": "Hematuria autolimitada",
+    "timestamps": {
+      "sintomas": "07h15",
+      "tc_ce": "07h30"
+    },
+    "metricas_temporais": {},
+    "qualidade_eso": {},
+    "seguimento": {
+      "vivo_30_dias": true,
+      "dias_obito": null,
+      "causa_obito": null,
+      "mrs_3_meses": 1
+    }
+  },
+  {
+    "caso": 45,
+    "tipo": "fibrinolise_intra_hospitalar",
+    "sexo": "feminino",
+    "idade": 76,
+    "proveniencia": "Coimbra",
+    "territorio": "ACM direita",
+    "etiologia_toast": "Cardioembólica",
+    "tratamento": "fibrinolise endovenosa (rt-PA ou tenecteplase)",
+    "nihss_admissao": 4,
+    "nihss_alta": 3,
+    "mrs_previo": 0,
+    "mrs_alta": 1,
+    "complicacoes": "Nao ocorreram",
+    "timestamps": {
+      "sintomas": "07h15",
+      "tc_ce": "07h30",
+      "aspects": "8"
+    },
+    "metricas_temporais": {},
+    "qualidade_eso": {},
+    "seguimento": {
+      "vivo_30_dias": true,
+      "dias_obito": null,
+      "causa_obito": null,
+      "mrs_3_meses": 1
+    }
+  },
+  {
+    "caso": 46,
+    "tipo": "bridging",
+    "sexo": "masculino",
+    "idade": 75,
+    "proveniencia": "Leiria",
+    "territorio": "ACI + ACM esquerda",
+    "etiologia_toast": "Aterosclerose grandes vasos",
+    "tratamento": "fibrinolise em Leiria + trombectomia mecanica em Coimbra",
+    "nihss_admissao": 5,
+    "nihss_alta": 2,
+    "mrs_previo": 0,
+    "mrs_alta": 2,
+    "complicacoes": "Nao ocorreram",
+    "timestamps": {
+      "sintomas": "10h15",
+      "admissao_origem": "10h50",
+      "admissao_coimbra": "13h20",
+      "tc_ce": "11h10",
+      "transferencia": "11h50",
+      "puncao_femoral": "14h20",
+      "recanalizacao": "14h50",
+      "tici": "3",
+      "aspects": "8"
+    },
+    "metricas_temporais": {
+      "onset_to_door": "03h05",
+      "door_to_imaging": "21h50",
+      "door_to_puncture": "01h00",
+      "onset_to_recan": "04h35",
+      "door_in_door_out": "01h00",
+      "door1_to_door2": "02h30"
+    },
+    "qualidade_eso": {
+      "door_to_imaging": "vermelho",
+      "door_to_puncture": "verde",
+      "onset_to_recan": "verde",
+      "door_in_door_out": "verde",
+      "door1_to_door2": "amarelo"
+    },
+    "seguimento": {
+      "vivo_30_dias": false,
+      "dias_obito": 17,
+      "causa_obito": "transformacao hemorragica sintomatica",
+      "mrs_3_meses": null
+    }
+  },
+  {
+    "caso": 47,
+    "tipo": "bridging",
+    "sexo": "feminino",
+    "idade": 58,
+    "proveniencia": "Viseu",
+    "territorio": "ACI esquerda",
+    "etiologia_toast": "Aterosclerose grandes vasos",
+    "tratamento": "fibrinolise em Viseu + trombectomia mecanica em Coimbra",
+    "nihss_admissao": 28,
+    "nihss_alta": 9,
+    "mrs_previo": 0,
+    "mrs_alta": 1,
+    "complicacoes": "Nao ocorreram",
+    "timestamps": {
+      "sintomas": "07h15",
+      "admissao_origem": "07h50",
+      "admissao_coimbra": "10h20",
+      "tc_ce": "08h10",
+      "transferencia": "09h00",
+      "puncao_femoral": "10h50",
+      "recanalizacao": "11h20",
+      "tici": "2b",
+      "aspects": "8"
+    },
+    "metricas_temporais": {
+      "onset_to_door": "03h05",
+      "door_to_imaging": "21h50",
+      "door_to_puncture": "00h30",
+      "onset_to_recan": "04h05",
+      "door_in_door_out": "01h10",
+      "door1_to_door2": "02h30"
+    },
+    "qualidade_eso": {
+      "door_to_imaging": "vermelho",
+      "door_to_puncture": "verde",
+      "onset_to_recan": "verde",
+      "door_in_door_out": "amarelo",
+      "door1_to_door2": "amarelo"
+    },
+    "seguimento": {
+      "vivo_30_dias": true,
+      "dias_obito": null,
+      "causa_obito": null,
+      "mrs_3_meses": 0
+    }
+  },
+  {
+    "caso": 48,
+    "tipo": "bridging",
+    "sexo": "masculino",
+    "idade": 55,
+    "proveniencia": "Aveiro",
+    "territorio": "ACI + ACM esquerda",
+    "etiologia_toast": "Aterosclerose grandes vasos",
+    "tratamento": "fibrinolise em Aveiro + trombectomia mecanica em Coimbra",
+    "nihss_admissao": 11,
+    "nihss_alta": 7,
+    "mrs_previo": 0,
+    "mrs_alta": 0,
+    "complicacoes": "Nao ocorreram",
+    "timestamps": {
+      "sintomas": "10h15",
+      "admissao_origem": "10h50",
+      "admissao_coimbra": "13h20",
+      "tc_ce": "11h10",
+      "transferencia": "12h00",
+      "puncao_femoral": "14h00",
+      "recanalizacao": "14h30",
+      "tici": "3",
+      "aspects": "8"
+    },
+    "metricas_temporais": {
+      "onset_to_door": "03h05",
+      "door_to_imaging": "21h50",
+      "door_to_puncture": "00h40",
+      "onset_to_recan": "04h15",
+      "door_in_door_out": "01h10",
+      "door1_to_door2": "02h30"
+    },
+    "qualidade_eso": {
+      "door_to_imaging": "vermelho",
+      "door_to_puncture": "verde",
+      "onset_to_recan": "verde",
+      "door_in_door_out": "amarelo",
+      "door1_to_door2": "amarelo"
+    },
+    "seguimento": {
+      "vivo_30_dias": true,
+      "dias_obito": null,
+      "causa_obito": null,
+      "mrs_3_meses": 0
+    }
+  },
+  {
+    "caso": 49,
+    "tipo": "bridging",
+    "sexo": "feminino",
+    "idade": 75,
+    "proveniencia": "Castelo Branco",
+    "territorio": "ACI + ACM esquerda",
+    "etiologia_toast": "Aterosclerose grandes vasos",
+    "tratamento": "fibrinolise em Castelo Branco + trombectomia mecanica em Coimbra",
+    "nihss_admissao": 5,
+    "nihss_alta": 2,
+    "mrs_previo": 0,
+    "mrs_alta": 2,
+    "complicacoes": "Nao ocorreram",
+    "timestamps": {
+      "sintomas": "10h15",
+      "admissao_origem": "11h00",
+      "admissao_coimbra": "13h30",
+      "tc_ce": "11h20",
+      "transferencia": "12h10",
+      "puncao_femoral": "14h00",
+      "recanalizacao": "14h30",
+      "tici": "3",
+      "aspects": "8"
+    },
+    "metricas_temporais": {
+      "onset_to_door": "03h15",
+      "door_to_imaging": "21h50",
+      "door_to_puncture": "00h30",
+      "onset_to_recan": "04h15",
+      "door_in_door_out": "01h10",
+      "door1_to_door2": "02h30"
+    },
+    "qualidade_eso": {
+      "door_to_imaging": "vermelho",
+      "door_to_puncture": "verde",
+      "onset_to_recan": "verde",
+      "door_in_door_out": "amarelo",
+      "door1_to_door2": "amarelo"
+    },
+    "seguimento": {
+      "vivo_30_dias": true,
+      "dias_obito": null,
+      "causa_obito": null,
+      "mrs_3_meses": 2
+    }
+  },
+  {
+    "caso": 50,
+    "tipo": "bridging",
+    "sexo": "masculino",
+    "idade": 58,
+    "proveniencia": "Figueira da Foz",
+    "territorio": "ACI esquerda",
+    "etiologia_toast": "Aterosclerose grandes vasos",
+    "tratamento": "fibrinolise em Figueira da Foz + trombectomia mecanica em Coimbra",
+    "nihss_admissao": 28,
+    "nihss_alta": 9,
+    "mrs_previo": 0,
+    "mrs_alta": 1,
+    "complicacoes": "Nao ocorreram",
+    "timestamps": {
+      "sintomas": "07h00",
+      "admissao_origem": "07h45",
+      "admissao_coimbra": "10h15",
+      "tc_ce": "08h10",
+      "transferencia": "09h10",
+      "puncao_femoral": "10h45",
+      "recanalizacao": "11h15",
+      "tici": "2b"
+    },
+    "metricas_temporais": {
+      "onset_to_door": "03h15",
+      "door_to_imaging": "21h55",
+      "door_to_puncture": "00h30",
+      "onset_to_recan": "04h15",
+      "door_in_door_out": "01h25",
+      "door1_to_door2": "02h30"
+    },
+    "qualidade_eso": {
+      "door_to_imaging": "vermelho",
+      "door_to_puncture": "verde",
+      "onset_to_recan": "verde",
+      "door_in_door_out": "amarelo",
+      "door1_to_door2": "amarelo"
+    },
+    "seguimento": {
+      "vivo_30_dias": true,
+      "dias_obito": null,
+      "causa_obito": null,
+      "mrs_3_meses": 1
+    }
+  },
+  {
+    "caso": 51,
+    "tipo": "bridging",
+    "sexo": "feminino",
+    "idade": 75,
+    "proveniencia": "Guarda",
+    "territorio": "ACI + ACM esquerda",
+    "etiologia_toast": "Aterosclerose grandes vasos",
+    "tratamento": "fibrinolise em Guarda + trombectomia mecanica em Coimbra",
+    "nihss_admissao": 5,
+    "nihss_alta": 2,
+    "mrs_previo": 0,
+    "mrs_alta": 2,
+    "complicacoes": "Nao ocorreram",
+    "timestamps": {
+      "sintomas": "09h30",
+      "admissao_origem": "10h15",
+      "admissao_coimbra": "12h45",
+      "tc_ce": "10h35",
+      "transferencia": "11h10",
+      "puncao_femoral": "13h15",
+      "recanalizacao": "13h40",
+      "tici": "3",
+      "aspects": "8"
+    },
+    "metricas_temporais": {
+      "onset_to_door": "03h15",
+      "door_to_imaging": "21h50",
+      "door_to_puncture": "00h30",
+      "onset_to_recan": "04h10",
+      "door_in_door_out": "00h55",
+      "door1_to_door2": "02h30"
+    },
+    "qualidade_eso": {
+      "door_to_imaging": "vermelho",
+      "door_to_puncture": "verde",
+      "onset_to_recan": "verde",
+      "door_in_door_out": "verde",
+      "door1_to_door2": "amarelo"
+    },
+    "seguimento": {
+      "vivo_30_dias": true,
+      "dias_obito": null,
+      "causa_obito": null,
+      "mrs_3_meses": 2
+    }
+  },
+  {
+    "caso": 52,
+    "tipo": "bridging",
+    "sexo": "masculino",
+    "idade": 75,
+    "proveniencia": "Covilha",
+    "territorio": "ACI + ACM esquerda",
+    "etiologia_toast": "Aterosclerose grandes vasos",
+    "tratamento": "fibrinolise em Covilha + trombectomia mecanica em Coimbra",
+    "nihss_admissao": 5,
+    "nihss_alta": 2,
+    "mrs_previo": 0,
+    "mrs_alta": 2,
+    "complicacoes": "Nao ocorreram",
+    "timestamps": {
+      "sintomas": "10h15",
+      "admissao_origem": "11h00",
+      "admissao_coimbra": "13h30",
+      "tc_ce": "11h20",
+      "transferencia": "12h10",
+      "puncao_femoral": "14h00",
+      "recanalizacao": "14h30",
+      "tici": "3",
+      "aspects": "8"
+    },
+    "metricas_temporais": {
+      "onset_to_door": "03h15",
+      "door_to_imaging": "21h50",
+      "door_to_puncture": "00h30",
+      "onset_to_recan": "04h15",
+      "door_in_door_out": "01h10",
+      "door1_to_door2": "02h30"
+    },
+    "qualidade_eso": {
+      "door_to_imaging": "vermelho",
+      "door_to_puncture": "verde",
+      "onset_to_recan": "verde",
+      "door_in_door_out": "amarelo",
+      "door1_to_door2": "amarelo"
+    },
+    "seguimento": {
+      "vivo_30_dias": true,
+      "dias_obito": null,
+      "causa_obito": null,
+      "mrs_3_meses": 2
+    }
+  },
+  {
+    "caso": 53,
+    "tipo": "bridging",
+    "sexo": "feminino",
+    "idade": 75,
+    "proveniencia": "Tomar",
+    "territorio": "ACI + ACM esquerda",
+    "etiologia_toast": "Aterosclerose grandes vasos",
+    "tratamento": "fibrinolise em Tomar + trombectomia mecanica em Coimbra",
+    "nihss_admissao": 5,
+    "nihss_alta": 2,
+    "mrs_previo": 0,
+    "mrs_alta": 2,
+    "complicacoes": "Nao ocorreram",
+    "timestamps": {
+      "admissao_origem": "10h45",
+      "admissao_coimbra": "13h15",
+      "tc_ce": "11h10",
+      "transferencia": "11h45",
+      "puncao_femoral": "14h15",
+      "recanalizacao": "14h40",
+      "tici": "3",
+      "aspects": "8"
+    },
+    "metricas_temporais": {
+      "door_to_imaging": "21h55",
+      "door_to_puncture": "01h00",
+      "door_in_door_out": "01h00",
+      "door1_to_door2": "02h30"
+    },
+    "qualidade_eso": {
+      "door_to_imaging": "vermelho",
+      "door_to_puncture": "verde",
+      "door_in_door_out": "verde",
+      "door1_to_door2": "amarelo"
+    },
+    "seguimento": {
+      "vivo_30_dias": true,
+      "dias_obito": null,
+      "causa_obito": null,
+      "mrs_3_meses": 1
+    }
+  },
+  {
+    "caso": 54,
+    "tipo": "bridging",
+    "sexo": "masculino",
+    "idade": 75,
+    "proveniencia": "Caldas da Rainha",
+    "territorio": "ACI + ACM esquerda",
+    "etiologia_toast": "Aterosclerose grandes vasos",
+    "tratamento": "fibrinolise em Caldas da Rainha + trombectomia mecanica em Coimbra",
+    "nihss_admissao": 5,
+    "nihss_alta": 2,
+    "mrs_previo": 0,
+    "mrs_alta": 2,
+    "complicacoes": "Nao ocorreram",
+    "timestamps": {
+      "sintomas": "09h45",
+      "admissao_origem": "10h15",
+      "admissao_coimbra": "12h45",
+      "tc_ce": "10h40",
+      "transferencia": "11h30",
+      "puncao_femoral": "14h00",
+      "recanalizacao": "14h40",
+      "tici": "3"
+    },
+    "metricas_temporais": {
+      "onset_to_door": "03h00",
+      "door_to_imaging": "21h55",
+      "door_to_puncture": "01h15",
+      "onset_to_recan": "04h55",
+      "door_in_door_out": "01h15",
+      "door1_to_door2": "02h30"
+    },
+    "qualidade_eso": {
+      "door_to_imaging": "vermelho",
+      "door_to_puncture": "verde",
+      "onset_to_recan": "verde",
+      "door_in_door_out": "amarelo",
+      "door1_to_door2": "amarelo"
+    },
+    "seguimento": {
+      "vivo_30_dias": true,
+      "dias_obito": null,
+      "causa_obito": null,
+      "mrs_3_meses": 2
+    }
+  },
+  {
+    "caso": 55,
+    "tipo": "bridging",
+    "sexo": "feminino",
+    "idade": 58,
+    "proveniencia": "Torres Novas",
+    "territorio": "ACI esquerda",
+    "etiologia_toast": "Aterosclerose grandes vasos",
+    "tratamento": "fibrinolise em Torres Novas + trombectomia mecanica em Coimbra",
+    "nihss_admissao": 28,
+    "nihss_alta": 9,
+    "mrs_previo": 0,
+    "mrs_alta": 1,
+    "complicacoes": "Nao ocorreram",
+    "timestamps": {
+      "sintomas": "07h30",
+      "admissao_origem": "08h15",
+      "admissao_coimbra": "10h45",
+      "tc_ce": "08h40",
+      "transferencia": "09h40",
+      "puncao_femoral": "11h10",
+      "recanalizacao": "11h40",
+      "tici": "2b",
+      "aspects": "8"
+    },
+    "metricas_temporais": {
+      "onset_to_door": "03h15",
+      "door_to_imaging": "21h55",
+      "door_to_puncture": "00h25",
+      "onset_to_recan": "04h10",
+      "door_in_door_out": "01h25",
+      "door1_to_door2": "02h30"
+    },
+    "qualidade_eso": {
+      "door_to_imaging": "vermelho",
+      "door_to_puncture": "verde",
+      "onset_to_recan": "verde",
+      "door_in_door_out": "amarelo",
+      "door1_to_door2": "amarelo"
+    },
+    "seguimento": {
+      "vivo_30_dias": true,
+      "dias_obito": null,
+      "causa_obito": null,
+      "mrs_3_meses": 0
+    }
+  },
+  {
+    "caso": 56,
+    "tipo": "bridging",
+    "sexo": "masculino",
+    "idade": 55,
+    "proveniencia": "Pombal",
+    "territorio": "ACI + ACM esquerda",
+    "etiologia_toast": "Aterosclerose grandes vasos",
+    "tratamento": "fibrinolise em Pombal + trombectomia mecanica em Coimbra",
+    "nihss_admissao": 11,
+    "nihss_alta": 7,
+    "mrs_previo": 0,
+    "mrs_alta": 0,
+    "complicacoes": "Nao ocorreram",
+    "timestamps": {
+      "sintomas": "10h00",
+      "admissao_origem": "10h45",
+      "admissao_coimbra": "13h15",
+      "tc_ce": "11h10",
+      "transferencia": "12h00",
+      "puncao_femoral": "14h00",
+      "recanalizacao": "14h30",
+      "tici": "3",
+      "aspects": "8"
+    },
+    "metricas_temporais": {
+      "onset_to_door": "03h15",
+      "door_to_imaging": "21h55",
+      "door_to_puncture": "00h45",
+      "onset_to_recan": "04h30",
+      "door_in_door_out": "01h15",
+      "door1_to_door2": "02h30"
+    },
+    "qualidade_eso": {
+      "door_to_imaging": "vermelho",
+      "door_to_puncture": "verde",
+      "onset_to_recan": "verde",
+      "door_in_door_out": "amarelo",
+      "door1_to_door2": "amarelo"
+    },
+    "seguimento": {
+      "vivo_30_dias": true,
+      "dias_obito": null,
+      "causa_obito": null,
+      "mrs_3_meses": 0
+    }
+  },
+  {
+    "caso": 57,
+    "tipo": "bridging",
+    "sexo": "feminino",
+    "idade": 75,
+    "proveniencia": "Agueda",
+    "territorio": "ACI esquerda",
+    "etiologia_toast": "Aterosclerose grandes vasos",
+    "tratamento": "fibrinolise em Agueda + trombectomia mecanica em Coimbra",
+    "nihss_admissao": 22,
+    "nihss_alta": 13,
+    "mrs_previo": 0,
+    "mrs_alta": 5,
+    "complicacoes": "Nao ocorreram",
+    "timestamps": {
+      "sintomas": "15h40",
+      "admissao_origem": "16h15",
+      "admissao_coimbra": "18h45",
+      "tc_ce": "16h40",
+      "transferencia": "17h30",
+      "puncao_femoral": "19h15",
+      "recanalizacao": "19h45",
+      "tici": "2b",
+      "aspects": "8"
+    },
+    "metricas_temporais": {
+      "onset_to_door": "03h05",
+      "door_to_imaging": "21h55",
+      "door_to_puncture": "00h30",
+      "onset_to_recan": "04h05",
+      "door_in_door_out": "01h15",
+      "door1_to_door2": "02h30"
+    },
+    "qualidade_eso": {
+      "door_to_imaging": "vermelho",
+      "door_to_puncture": "verde",
+      "onset_to_recan": "verde",
+      "door_in_door_out": "amarelo",
+      "door1_to_door2": "amarelo"
+    },
+    "seguimento": {
+      "vivo_30_dias": false,
+      "dias_obito": 6,
+      "causa_obito": "transformacao hemorragica sintomatica",
+      "mrs_3_meses": null
+    }
+  },
+  {
+    "caso": 58,
+    "tipo": "bridging",
+    "sexo": "masculino",
+    "idade": 79,
+    "proveniencia": "Oliveira do Hospital",
+    "territorio": "ACM direita",
+    "etiologia_toast": "Cardioembólica",
+    "tratamento": "fibrinolise em Oliveira do Hospital + trombectomia mecanica em Coimbra",
+    "nihss_admissao": 10,
+    "nihss_alta": 4,
+    "mrs_previo": 0,
+    "mrs_alta": 3,
+    "complicacoes": "Nao ocorreram",
+    "timestamps": {
+      "sintomas": "10h15",
+      "admissao_origem": "11h00",
+      "admissao_coimbra": "13h30",
+      "tc_ce": "11h20",
+      "transferencia": "12h10",
+      "puncao_femoral": "14h00",
+      "recanalizacao": "14h30",
+      "tici": "2b",
+      "aspects": "8"
+    },
+    "metricas_temporais": {
+      "onset_to_door": "03h15",
+      "door_to_imaging": "21h50",
+      "door_to_puncture": "00h30",
+      "onset_to_recan": "04h15",
+      "door_in_door_out": "01h10",
+      "door1_to_door2": "02h30"
+    },
+    "qualidade_eso": {
+      "door_to_imaging": "vermelho",
+      "door_to_puncture": "verde",
+      "onset_to_recan": "verde",
+      "door_in_door_out": "amarelo",
+      "door1_to_door2": "amarelo"
+    },
+    "seguimento": {
+      "vivo_30_dias": true,
+      "dias_obito": null,
+      "causa_obito": null,
+      "mrs_3_meses": 2
+    }
+  },
+  {
+    "caso": 59,
+    "tipo": "bridging",
+    "sexo": "feminino",
+    "idade": 79,
+    "proveniencia": "Leiria",
+    "territorio": "ACI direita",
+    "etiologia_toast": "Cardioembólica",
+    "tratamento": "fibrinolise em Leiria + trombectomia mecanica em Coimbra",
+    "nihss_admissao": 8,
+    "nihss_alta": 6,
+    "mrs_previo": 0,
+    "mrs_alta": 1,
+    "complicacoes": "Nao ocorreram",
+    "timestamps": {
+      "sintomas": "15h30",
+      "admissao_origem": "16h15",
+      "admissao_coimbra": "18h45",
+      "tc_ce": "16h35",
+      "transferencia": "17h30",
+      "puncao_femoral": "19h15",
+      "recanalizacao": "19h40",
+      "tici": "2c",
+      "aspects": "8"
+    },
+    "metricas_temporais": {
+      "onset_to_door": "03h15",
+      "door_to_imaging": "21h50",
+      "door_to_puncture": "00h30",
+      "onset_to_recan": "04h10",
+      "door_in_door_out": "01h15",
+      "door1_to_door2": "02h30"
+    },
+    "qualidade_eso": {
+      "door_to_imaging": "vermelho",
+      "door_to_puncture": "verde",
+      "onset_to_recan": "verde",
+      "door_in_door_out": "amarelo",
+      "door1_to_door2": "amarelo"
+    },
+    "seguimento": {
+      "vivo_30_dias": true,
+      "dias_obito": null,
+      "causa_obito": null,
+      "mrs_3_meses": 0
+    }
+  },
+  {
+    "caso": 60,
+    "tipo": "bridging",
+    "sexo": "masculino",
+    "idade": 63,
+    "proveniencia": "Viseu",
+    "territorio": "ACM direita",
+    "etiologia_toast": "Cardioembólica",
+    "tratamento": "fibrinolise em Viseu + trombectomia mecanica em Coimbra",
+    "nihss_admissao": 6,
+    "nihss_alta": 2,
+    "mrs_previo": 0,
+    "mrs_alta": 1,
+    "complicacoes": "Nao ocorreram",
+    "timestamps": {
+      "sintomas": "09h30",
+      "admissao_origem": "10h15",
+      "admissao_coimbra": "12h00",
+      "tc_ce": "10h40",
+      "transferencia": "11h30",
+      "puncao_femoral": "13h00",
+      "recanalizacao": "13h30",
+      "tici": "2c",
+      "aspects": "8"
+    },
+    "metricas_temporais": {
+      "onset_to_door": "02h30",
+      "door_to_imaging": "22h40",
+      "door_to_puncture": "01h00",
+      "onset_to_recan": "04h00",
+      "door_in_door_out": "01h15",
+      "door1_to_door2": "01h45"
+    },
+    "qualidade_eso": {
+      "door_to_imaging": "vermelho",
+      "door_to_puncture": "verde",
+      "onset_to_recan": "verde",
+      "door_in_door_out": "amarelo",
+      "door1_to_door2": "verde"
+    },
+    "seguimento": {
+      "vivo_30_dias": true,
+      "dias_obito": null,
+      "causa_obito": null,
+      "mrs_3_meses": 1
+    }
+  },
+  {
+    "caso": 61,
+    "tipo": "bridging",
+    "sexo": "feminino",
+    "idade": 75,
+    "proveniencia": "Aveiro",
+    "territorio": "ACI + ACM esquerda",
+    "etiologia_toast": "Aterosclerose grandes vasos",
+    "tratamento": "fibrinolise em Aveiro + trombectomia mecanica em Coimbra",
+    "nihss_admissao": 5,
+    "nihss_alta": 2,
+    "mrs_previo": 0,
+    "mrs_alta": 2,
+    "complicacoes": "Nao ocorreram",
+    "timestamps": {
+      "sintomas": "10h15",
+      "admissao_origem": "10h45",
+      "admissao_coimbra": "13h15",
+      "tc_ce": "11h10",
+      "transferencia": "12h00",
+      "puncao_femoral": "14h30",
+      "recanalizacao": "15h00",
+      "tici": "3"
+    },
+    "metricas_temporais": {
+      "onset_to_door": "03h00",
+      "door_to_imaging": "21h55",
+      "door_to_puncture": "01h15",
+      "onset_to_recan": "04h45",
+      "door_in_door_out": "01h15",
+      "door1_to_door2": "02h30"
+    },
+    "qualidade_eso": {
+      "door_to_imaging": "vermelho",
+      "door_to_puncture": "verde",
+      "onset_to_recan": "verde",
+      "door_in_door_out": "amarelo",
+      "door1_to_door2": "amarelo"
+    },
+    "seguimento": {
+      "vivo_30_dias": true,
+      "dias_obito": null,
+      "causa_obito": null,
+      "mrs_3_meses": 1
+    }
+  },
+  {
+    "caso": 62,
+    "tipo": "bridging",
+    "sexo": "masculino",
+    "idade": 75,
+    "proveniencia": "Castelo Branco",
+    "territorio": "ACI + ACM esquerda",
+    "etiologia_toast": "Aterosclerose grandes vasos",
+    "tratamento": "fibrinolise em Castelo Branco + trombectomia mecanica em Coimbra",
+    "nihss_admissao": 5,
+    "nihss_alta": 2,
+    "mrs_previo": 0,
+    "mrs_alta": 2,
+    "complicacoes": "Nao ocorreram",
+    "timestamps": {
+      "sintomas": "09h30",
+      "admissao_origem": "10h15",
+      "admissao_coimbra": "13h00",
+      "tc_ce": "10h40",
+      "fibrinolise": "11h10",
+      "transferencia": "11h30",
+      "puncao_femoral": "14h00",
+      "recanalizacao": "14h40",
+      "tici": "3",
+      "aspects": "8"
+    },
+    "metricas_temporais": {
+      "onset_to_door": "03h30",
+      "door_to_imaging": "21h40",
+      "door_to_puncture": "01h00",
+      "onset_to_recan": "05h10",
+      "door_in_door_out": "01h15",
+      "door1_to_door2": "02h45"
+    },
+    "qualidade_eso": {
+      "door_to_imaging": "vermelho",
+      "door_to_puncture": "verde",
+      "onset_to_recan": "verde",
+      "door_in_door_out": "amarelo",
+      "door1_to_door2": "amarelo"
+    },
+    "seguimento": {
+      "vivo_30_dias": true,
+      "dias_obito": null,
+      "causa_obito": null,
+      "mrs_3_meses": 2
+    }
+  },
+  {
+    "caso": 63,
+    "tipo": "bridging",
+    "sexo": "feminino",
+    "idade": 75,
+    "proveniencia": "Figueira da Foz",
+    "territorio": "ACI + ACM esquerda",
+    "etiologia_toast": "Aterosclerose grandes vasos",
+    "tratamento": "fibrinolise em Figueira da Foz + trombectomia mecanica em Coimbra",
+    "nihss_admissao": 5,
+    "nihss_alta": 2,
+    "mrs_previo": 0,
+    "mrs_alta": 2,
+    "complicacoes": "Nao ocorreram",
+    "timestamps": {
+      "sintomas": "09h45",
+      "admissao_origem": "10h30",
+      "admissao_coimbra": "13h00",
+      "tc_ce": "11h00",
+      "transferencia": "12h10",
+      "puncao_femoral": "14h30",
+      "recanalizacao": "15h00",
+      "tici": "3"
+    },
+    "metricas_temporais": {
+      "onset_to_door": "03h15",
+      "door_to_imaging": "22h00",
+      "door_to_puncture": "01h30",
+      "onset_to_recan": "05h15",
+      "door_in_door_out": "01h40",
+      "door1_to_door2": "02h30"
+    },
+    "qualidade_eso": {
+      "door_to_imaging": "vermelho",
+      "door_to_puncture": "verde",
+      "onset_to_recan": "verde",
+      "door_in_door_out": "vermelho",
+      "door1_to_door2": "amarelo"
+    },
+    "seguimento": {
+      "vivo_30_dias": true,
+      "dias_obito": null,
+      "causa_obito": null,
+      "mrs_3_meses": 1
+    }
+  },
+  {
+    "caso": 64,
+    "tipo": "bridging",
+    "sexo": "masculino",
+    "idade": 58,
+    "proveniencia": "Guarda",
+    "territorio": "ACI esquerda",
+    "etiologia_toast": "Aterosclerose grandes vasos",
+    "tratamento": "fibrinolise em Guarda + trombectomia mecanica em Coimbra",
+    "nihss_admissao": 28,
+    "nihss_alta": 9,
+    "mrs_previo": 0,
+    "mrs_alta": 1,
+    "complicacoes": "Nao ocorreram",
+    "timestamps": {
+      "sintomas": "07h30",
+      "admissao_origem": "08h15",
+      "admissao_coimbra": "10h45",
+      "tc_ce": "08h30",
+      "transferencia": "09h30",
+      "puncao_femoral": "11h00",
+      "recanalizacao": "11h30",
+      "tici": "2b"
+    },
+    "metricas_temporais": {
+      "onset_to_door": "03h15",
+      "door_to_imaging": "21h45",
+      "door_to_puncture": "00h15",
+      "onset_to_recan": "04h00",
+      "door_in_door_out": "01h15",
+      "door1_to_door2": "02h30"
+    },
+    "qualidade_eso": {
+      "door_to_imaging": "vermelho",
+      "door_to_puncture": "verde",
+      "onset_to_recan": "verde",
+      "door_in_door_out": "amarelo",
+      "door1_to_door2": "amarelo"
+    },
+    "seguimento": {
+      "vivo_30_dias": true,
+      "dias_obito": null,
+      "causa_obito": null,
+      "mrs_3_meses": 1
+    }
+  },
+  {
+    "caso": 65,
+    "tipo": "bridging",
+    "sexo": "feminino",
+    "idade": 75,
+    "proveniencia": "Covilha",
+    "territorio": "ACI + ACM esquerda",
+    "etiologia_toast": "Aterosclerose grandes vasos",
+    "tratamento": "fibrinolise em Covilha + trombectomia mecanica em Coimbra",
+    "nihss_admissao": 5,
+    "nihss_alta": 2,
+    "mrs_previo": 0,
+    "mrs_alta": 2,
+    "complicacoes": "Nao ocorreram",
+    "timestamps": {
+      "sintomas": "10h15",
+      "admissao_origem": "10h50",
+      "admissao_coimbra": "13h20",
+      "tc_ce": "11h10",
+      "transferencia": "11h50",
+      "puncao_femoral": "14h10",
+      "recanalizacao": "14h40",
+      "tici": "3"
+    },
+    "metricas_temporais": {
+      "onset_to_door": "03h05",
+      "door_to_imaging": "21h50",
+      "door_to_puncture": "00h50",
+      "onset_to_recan": "04h25",
+      "door_in_door_out": "01h00",
+      "door1_to_door2": "02h30"
+    },
+    "qualidade_eso": {
+      "door_to_imaging": "vermelho",
+      "door_to_puncture": "verde",
+      "onset_to_recan": "verde",
+      "door_in_door_out": "verde",
+      "door1_to_door2": "amarelo"
+    },
+    "seguimento": {
+      "vivo_30_dias": true,
+      "dias_obito": null,
+      "causa_obito": null,
+      "mrs_3_meses": 1
+    }
+  },
+  {
+    "caso": 66,
+    "tipo": "bridging",
+    "sexo": "masculino",
+    "idade": 75,
+    "proveniencia": "Tomar",
+    "territorio": "ACI + ACM esquerda",
+    "etiologia_toast": "Aterosclerose grandes vasos",
+    "tratamento": "fibrinolise em Tomar + trombectomia mecanica em Coimbra",
+    "nihss_admissao": 5,
+    "nihss_alta": 2,
+    "mrs_previo": 0,
+    "mrs_alta": 2,
+    "complicacoes": "Nao ocorreram",
+    "timestamps": {
+      "sintomas": "09h45",
+      "admissao_origem": "10h30",
+      "admissao_coimbra": "12h15",
+      "tc_ce": "10h55",
+      "transferencia": "11h30",
+      "puncao_femoral": "13h00",
+      "recanalizacao": "13h30",
+      "tici": "3",
+      "aspects": "8"
+    },
+    "metricas_temporais": {
+      "onset_to_door": "02h30",
+      "door_to_imaging": "22h40",
+      "door_to_puncture": "00h45",
+      "onset_to_recan": "03h45",
+      "door_in_door_out": "01h00",
+      "door1_to_door2": "01h45"
+    },
+    "qualidade_eso": {
+      "door_to_imaging": "vermelho",
+      "door_to_puncture": "verde",
+      "onset_to_recan": "verde",
+      "door_in_door_out": "verde",
+      "door1_to_door2": "verde"
+    },
+    "seguimento": {
+      "vivo_30_dias": true,
+      "dias_obito": null,
+      "causa_obito": null,
+      "mrs_3_meses": 1
+    }
+  },
+  {
+    "caso": 67,
+    "tipo": "bridging",
+    "sexo": "feminino",
+    "idade": 58,
+    "proveniencia": "Caldas da Rainha",
+    "territorio": "ACI esquerda",
+    "etiologia_toast": "Aterosclerose grandes vasos",
+    "tratamento": "fibrinolise em Caldas da Rainha + trombectomia mecanica em Coimbra",
+    "nihss_admissao": 28,
+    "nihss_alta": 9,
+    "mrs_previo": 0,
+    "mrs_alta": 1,
+    "complicacoes": "Nao ocorreram",
+    "timestamps": {
+      "sintomas": "07h30",
+      "admissao_origem": "08h15",
+      "admissao_coimbra": "10h45",
+      "tc_ce": "08h35",
+      "transferencia": "09h30",
+      "puncao_femoral": "11h15",
+      "recanalizacao": "11h45",
+      "tici": "2b",
+      "aspects": "8"
+    },
+    "metricas_temporais": {
+      "onset_to_door": "03h15",
+      "door_to_imaging": "21h50",
+      "door_to_puncture": "00h30",
+      "onset_to_recan": "04h15",
+      "door_in_door_out": "01h15",
+      "door1_to_door2": "02h30"
+    },
+    "qualidade_eso": {
+      "door_to_imaging": "vermelho",
+      "door_to_puncture": "verde",
+      "onset_to_recan": "verde",
+      "door_in_door_out": "amarelo",
+      "door1_to_door2": "amarelo"
+    },
+    "seguimento": {
+      "vivo_30_dias": true,
+      "dias_obito": null,
+      "causa_obito": null,
+      "mrs_3_meses": 0
+    }
+  },
+  {
+    "caso": 68,
+    "tipo": "bridging",
+    "sexo": "masculino",
+    "idade": 55,
+    "proveniencia": "Torres Novas",
+    "territorio": "ACI + ACM esquerda",
+    "etiologia_toast": "Aterosclerose grandes vasos",
+    "tratamento": "fibrinolise em Torres Novas + trombectomia mecanica em Coimbra",
+    "nihss_admissao": 11,
+    "nihss_alta": 7,
+    "mrs_previo": 0,
+    "mrs_alta": 0,
+    "complicacoes": "Nao ocorreram",
+    "timestamps": {
+      "sintomas": "09h45",
+      "admissao_origem": "10h30",
+      "admissao_coimbra": "13h00",
+      "tc_ce": "10h50",
+      "transferencia": "11h30",
+      "puncao_femoral": "14h00",
+      "recanalizacao": "14h30",
+      "tici": "3",
+      "aspects": "8"
+    },
+    "metricas_temporais": {
+      "onset_to_door": "03h15",
+      "door_to_imaging": "21h50",
+      "door_to_puncture": "01h00",
+      "onset_to_recan": "04h45",
+      "door_in_door_out": "01h00",
+      "door1_to_door2": "02h30"
+    },
+    "qualidade_eso": {
+      "door_to_imaging": "vermelho",
+      "door_to_puncture": "verde",
+      "onset_to_recan": "verde",
+      "door_in_door_out": "verde",
+      "door1_to_door2": "amarelo"
+    },
+    "seguimento": {
+      "vivo_30_dias": true,
+      "dias_obito": null,
+      "causa_obito": null,
+      "mrs_3_meses": 0
+    }
+  },
+  {
+    "caso": 69,
+    "tipo": "bridging",
+    "sexo": "feminino",
+    "idade": 75,
+    "proveniencia": "Pombal",
+    "territorio": "ACI esquerda",
+    "etiologia_toast": "Aterosclerose grandes vasos",
+    "tratamento": "fibrinolise em Pombal + trombectomia mecanica em Coimbra",
+    "nihss_admissao": 22,
+    "nihss_alta": 13,
+    "mrs_previo": 0,
+    "mrs_alta": 5,
+    "complicacoes": "Nao ocorreram",
+    "timestamps": {
+      "sintomas": "15h10",
+      "admissao_origem": "15h45",
+      "admissao_coimbra": "17h15",
+      "tc_ce": "16h10",
+      "transferencia": "16h50",
+      "puncao_femoral": "18h20",
+      "recanalizacao": "18h50",
+      "tici": "2b",
+      "aspects": "8"
+    },
+    "metricas_temporais": {
+      "onset_to_door": "02h05",
+      "door_to_imaging": "22h55",
+      "door_to_puncture": "01h05",
+      "onset_to_recan": "03h40",
+      "door_in_door_out": "01h05",
+      "door1_to_door2": "01h30"
+    },
+    "qualidade_eso": {
+      "door_to_imaging": "vermelho",
+      "door_to_puncture": "verde",
+      "onset_to_recan": "verde",
+      "door_in_door_out": "amarelo",
+      "door1_to_door2": "verde"
+    },
+    "seguimento": {
+      "vivo_30_dias": false,
+      "dias_obito": 15,
+      "causa_obito": "transformacao hemorragica sintomatica",
+      "mrs_3_meses": null
+    }
+  },
+  {
+    "caso": 70,
+    "tipo": "bridging",
+    "sexo": "masculino",
+    "idade": 79,
+    "proveniencia": "Agueda",
+    "territorio": "ACM direita",
+    "etiologia_toast": "Cardioembólica",
+    "tratamento": "fibrinolise em Agueda + trombectomia mecanica em Coimbra",
+    "nihss_admissao": 10,
+    "nihss_alta": 4,
+    "mrs_previo": 0,
+    "mrs_alta": 3,
+    "complicacoes": "Nao ocorreram",
+    "timestamps": {
+      "sintomas": "10h15",
+      "admissao_origem": "10h45",
+      "admissao_coimbra": "13h15",
+      "tc_ce": "11h05",
+      "transferencia": "11h40",
+      "puncao_femoral": "14h10",
+      "recanalizacao": "14h40",
+      "tici": "2b"
+    },
+    "metricas_temporais": {
+      "onset_to_door": "03h00",
+      "door_to_imaging": "21h50",
+      "door_to_puncture": "00h55",
+      "onset_to_recan": "04h25",
+      "door_in_door_out": "00h55",
+      "door1_to_door2": "02h30"
+    },
+    "qualidade_eso": {
+      "door_to_imaging": "vermelho",
+      "door_to_puncture": "verde",
+      "onset_to_recan": "verde",
+      "door_in_door_out": "verde",
+      "door1_to_door2": "amarelo"
+    },
+    "seguimento": {
+      "vivo_30_dias": true,
+      "dias_obito": null,
+      "causa_obito": null,
+      "mrs_3_meses": 2
+    }
+  },
+  {
+    "caso": 71,
+    "tipo": "bridging",
+    "sexo": "feminino",
+    "idade": 75,
+    "proveniencia": "Oliveira do Hospital",
+    "territorio": "ACI + ACM esquerda",
+    "etiologia_toast": "Aterosclerose grandes vasos",
+    "tratamento": "fibrinolise em Oliveira do Hospital + trombectomia mecanica em Coimbra",
+    "nihss_admissao": 5,
+    "nihss_alta": 2,
+    "mrs_previo": 0,
+    "mrs_alta": 2,
+    "complicacoes": "Nao ocorreram",
+    "timestamps": {
+      "sintomas": "09h45",
+      "admissao_origem": "10h30",
+      "admissao_coimbra": "13h00",
+      "tc_ce": "10h50",
+      "transferencia": "11h30",
+      "puncao_femoral": "14h00",
+      "recanalizacao": "14h30",
+      "tici": "3",
+      "aspects": "8"
+    },
+    "metricas_temporais": {
+      "onset_to_door": "03h15",
+      "door_to_imaging": "21h50",
+      "door_to_puncture": "01h00",
+      "onset_to_recan": "04h45",
+      "door_in_door_out": "01h00",
+      "door1_to_door2": "02h30"
+    },
+    "qualidade_eso": {
+      "door_to_imaging": "vermelho",
+      "door_to_puncture": "verde",
+      "onset_to_recan": "verde",
+      "door_in_door_out": "verde",
+      "door1_to_door2": "amarelo"
+    },
+    "seguimento": {
+      "vivo_30_dias": true,
+      "dias_obito": null,
+      "causa_obito": null,
+      "mrs_3_meses": 2
+    }
+  },
+  {
+    "caso": 72,
+    "tipo": "bridging",
+    "sexo": "masculino",
+    "idade": 58,
+    "proveniencia": "Leiria",
+    "territorio": "ACI esquerda",
+    "etiologia_toast": "Aterosclerose grandes vasos",
+    "tratamento": "fibrinolise em Leiria + trombectomia mecanica em Coimbra",
+    "nihss_admissao": 28,
+    "nihss_alta": 9,
+    "mrs_previo": 0,
+    "mrs_alta": 1,
+    "complicacoes": "Nao ocorreram",
+    "timestamps": {
+      "sintomas": "07h30",
+      "admissao_origem": "08h15",
+      "admissao_coimbra": "11h45",
+      "tc_ce": "08h40",
+      "transferencia": "09h30",
+      "puncao_femoral": "12h00",
+      "recanalizacao": "12h30",
+      "tici": "2b",
+      "aspects": "8"
+    },
+    "metricas_temporais": {
+      "onset_to_door": "04h15",
+      "door_to_imaging": "20h55",
+      "door_to_puncture": "00h15",
+      "onset_to_recan": "05h00",
+      "door_in_door_out": "01h15",
+      "door1_to_door2": "03h30"
+    },
+    "qualidade_eso": {
+      "door_to_imaging": "vermelho",
+      "door_to_puncture": "verde",
+      "onset_to_recan": "verde",
+      "door_in_door_out": "amarelo",
+      "door1_to_door2": "vermelho"
+    },
+    "seguimento": {
+      "vivo_30_dias": true,
+      "dias_obito": null,
+      "causa_obito": null,
+      "mrs_3_meses": 0
+    }
+  },
+  {
+    "caso": 73,
+    "tipo": "bridging",
+    "sexo": "feminino",
+    "idade": 55,
+    "proveniencia": "Viseu",
+    "territorio": "ACI + ACM esquerda",
+    "etiologia_toast": "Aterosclerose grandes vasos",
+    "tratamento": "fibrinolise em Viseu + trombectomia mecanica em Coimbra",
+    "nihss_admissao": 11,
+    "nihss_alta": 7,
+    "mrs_previo": 0,
+    "mrs_alta": 0,
+    "complicacoes": "Nao ocorreram",
+    "timestamps": {
+      "sintomas": "09h30",
+      "admissao_origem": "10h15",
+      "admissao_coimbra": "12h45",
+      "tc_ce": "10h35",
+      "transferencia": "11h30",
+      "puncao_femoral": "13h15",
+      "recanalizacao": "13h45",
+      "tici": "3",
+      "aspects": "8"
+    },
+    "metricas_temporais": {
+      "onset_to_door": "03h15",
+      "door_to_imaging": "21h50",
+      "door_to_puncture": "00h30",
+      "onset_to_recan": "04h15",
+      "door_in_door_out": "01h15",
+      "door1_to_door2": "02h30"
+    },
+    "qualidade_eso": {
+      "door_to_imaging": "vermelho",
+      "door_to_puncture": "verde",
+      "onset_to_recan": "verde",
+      "door_in_door_out": "amarelo",
+      "door1_to_door2": "amarelo"
+    },
+    "seguimento": {
+      "vivo_30_dias": true,
+      "dias_obito": null,
+      "causa_obito": null,
+      "mrs_3_meses": 0
+    }
+  },
+  {
+    "caso": 74,
+    "tipo": "bridging",
+    "sexo": "masculino",
+    "idade": 75,
+    "proveniencia": "Aveiro",
+    "territorio": "ACI esquerda",
+    "etiologia_toast": "Aterosclerose grandes vasos",
+    "tratamento": "fibrinolise em Aveiro + trombectomia mecanica em Coimbra",
+    "nihss_admissao": 22,
+    "nihss_alta": 13,
+    "mrs_previo": 0,
+    "mrs_alta": 5,
+    "complicacoes": "Nao ocorreram",
+    "timestamps": {
+      "sintomas": "15h30",
+      "admissao_origem": "16h15",
+      "admissao_coimbra": "18h45",
+      "tc_ce": "16h40",
+      "transferencia": "17h30",
+      "puncao_femoral": "19h00",
+      "recanalizacao": "19h30",
+      "tici": "2b",
+      "aspects": "8"
+    },
+    "metricas_temporais": {
+      "onset_to_door": "03h15",
+      "door_to_imaging": "21h55",
+      "door_to_puncture": "00h15",
+      "onset_to_recan": "04h00",
+      "door_in_door_out": "01h15",
+      "door1_to_door2": "02h30"
+    },
+    "qualidade_eso": {
+      "door_to_imaging": "vermelho",
+      "door_to_puncture": "verde",
+      "onset_to_recan": "verde",
+      "door_in_door_out": "amarelo",
+      "door1_to_door2": "amarelo"
+    },
+    "seguimento": {
+      "vivo_30_dias": true,
+      "dias_obito": null,
+      "causa_obito": null,
+      "mrs_3_meses": 5
+    }
+  },
+  {
+    "caso": 75,
+    "tipo": "bridging",
+    "sexo": "feminino",
+    "idade": 79,
+    "proveniencia": "Castelo Branco",
+    "territorio": "ACM direita",
+    "etiologia_toast": "Cardioembólica",
+    "tratamento": "fibrinolise em Castelo Branco + trombectomia mecanica em Coimbra",
+    "nihss_admissao": 10,
+    "nihss_alta": 4,
+    "mrs_previo": 0,
+    "mrs_alta": 3,
+    "complicacoes": "Nao ocorreram",
+    "timestamps": {
+      "sintomas": "10h15",
+      "admissao_origem": "10h50",
+      "admissao_coimbra": "13h20",
+      "tc_ce": "11h10",
+      "transferencia": "12h00",
+      "puncao_femoral": "13h50",
+      "recanalizacao": "14h20",
+      "tici": "2b",
+      "aspects": "8"
+    },
+    "metricas_temporais": {
+      "onset_to_door": "03h05",
+      "door_to_imaging": "21h50",
+      "door_to_puncture": "00h30",
+      "onset_to_recan": "04h05",
+      "door_in_door_out": "01h10",
+      "door1_to_door2": "02h30"
+    },
+    "qualidade_eso": {
+      "door_to_imaging": "vermelho",
+      "door_to_puncture": "verde",
+      "onset_to_recan": "verde",
+      "door_in_door_out": "amarelo",
+      "door1_to_door2": "amarelo"
+    },
+    "seguimento": {
+      "vivo_30_dias": true,
+      "dias_obito": null,
+      "causa_obito": null,
+      "mrs_3_meses": 3
+    }
+  },
+  {
+    "caso": 76,
+    "tipo": "tev_isolada_fora_janela",
+    "sexo": "masculino",
+    "idade": 82,
+    "proveniencia": "Leiria",
+    "territorio": "ACM esquerda",
+    "etiologia_toast": "Cardioembólica",
+    "tratamento": "TEV isolada (sem rt-PA — fora de janela terapeutica, wake-up stroke)",
+    "nihss_admissao": 5,
+    "nihss_alta": 2,
+    "mrs_previo": 0,
+    "mrs_alta": 2,
+    "complicacoes": "Nao ocorreram",
+    "timestamps": {
+      "ultima_vez_bem": "22h45",
+      "descoberta": "07h50",
+      "admissao_origem": "08h35",
+      "admissao_coimbra": "11h15",
+      "tc_ce": "09h05",
+      "transferencia": "09h35",
+      "puncao_femoral": "11h50",
+      "recanalizacao": "12h20",
+      "tici": "3",
+      "aspects": "8"
+    },
+    "metricas_temporais": {
+      "onset_to_door": "12h30",
+      "door_to_imaging": "21h50",
+      "door_to_puncture": "00h35",
+      "onset_to_recan": "13h35",
+      "door_in_door_out": "01h00",
+      "door1_to_door2": "02h40"
+    },
+    "qualidade_eso": {
+      "door_to_imaging": "vermelho",
+      "door_to_puncture": "verde",
+      "onset_to_recan": "vermelho",
+      "door_in_door_out": "verde",
+      "door1_to_door2": "amarelo"
+    },
+    "seguimento": {
+      "vivo_30_dias": true,
+      "dias_obito": null,
+      "causa_obito": null,
+      "mrs_3_meses": 2
+    }
+  },
+  {
+    "caso": 77,
+    "tipo": "tev_isolada_fora_janela",
+    "sexo": "feminino",
+    "idade": 65,
+    "proveniencia": "Viseu",
+    "territorio": "ACM esquerda",
+    "etiologia_toast": "Cardioembólica",
+    "tratamento": "TEV isolada (sem rt-PA — fora de janela terapeutica, wake-up stroke)",
+    "nihss_admissao": 23,
+    "nihss_alta": 14,
+    "mrs_previo": 0,
+    "mrs_alta": 1,
+    "complicacoes": "Nao ocorreram",
+    "timestamps": {
+      "ultima_vez_bem": "22h45",
+      "descoberta": "07h30",
+      "admissao_origem": "08h15",
+      "admissao_coimbra": "10h45",
+      "tc_ce": "08h40",
+      "transferencia": "09h10",
+      "puncao_femoral": "11h20",
+      "recanalizacao": "11h50",
+      "tici": "2b",
+      "aspects": "7"
+    },
+    "metricas_temporais": {
+      "onset_to_door": "12h00",
+      "door_to_imaging": "21h55",
+      "door_to_puncture": "00h35",
+      "onset_to_recan": "13h05",
+      "door_in_door_out": "00h55",
+      "door1_to_door2": "02h30"
+    },
+    "qualidade_eso": {
+      "door_to_imaging": "vermelho",
+      "door_to_puncture": "verde",
+      "onset_to_recan": "vermelho",
+      "door_in_door_out": "verde",
+      "door1_to_door2": "amarelo"
+    },
+    "seguimento": {
+      "vivo_30_dias": true,
+      "dias_obito": null,
+      "causa_obito": null,
+      "mrs_3_meses": 1
+    }
+  },
+  {
+    "caso": 78,
+    "tipo": "tev_isolada_fora_janela",
+    "sexo": "masculino",
+    "idade": 78,
+    "proveniencia": "Aveiro",
+    "territorio": "ACM esquerda",
+    "etiologia_toast": "Cardioembólica",
+    "tratamento": "TEV isolada (sem rt-PA — fora de janela terapeutica, wake-up stroke)",
+    "nihss_admissao": 22,
+    "nihss_alta": 16,
+    "mrs_previo": 0,
+    "mrs_alta": 4,
+    "complicacoes": "Nao ocorreram",
+    "timestamps": {
+      "ultima_vez_bem": "22h45",
+      "descoberta": "07h30",
+      "admissao_origem": "08h15",
+      "admissao_coimbra": "10h45",
+      "tc_ce": "08h40",
+      "transferencia": "09h10",
+      "puncao_femoral": "11h20",
+      "recanalizacao": "11h50",
+      "tici": "2b"
+    },
+    "metricas_temporais": {
+      "onset_to_door": "12h00",
+      "door_to_imaging": "21h55",
+      "door_to_puncture": "00h35",
+      "onset_to_recan": "13h05",
+      "door_in_door_out": "00h55",
+      "door1_to_door2": "02h30"
+    },
+    "qualidade_eso": {
+      "door_to_imaging": "vermelho",
+      "door_to_puncture": "verde",
+      "onset_to_recan": "vermelho",
+      "door_in_door_out": "verde",
+      "door1_to_door2": "amarelo"
+    },
+    "seguimento": {
+      "vivo_30_dias": true,
+      "dias_obito": null,
+      "causa_obito": null,
+      "mrs_3_meses": 2
+    }
+  },
+  {
+    "caso": 79,
+    "tipo": "tev_isolada_fora_janela",
+    "sexo": "feminino",
+    "idade": 76,
+    "proveniencia": "Castelo Branco",
+    "territorio": "ACI + ACM esquerda",
+    "etiologia_toast": "Cardioembólica",
+    "tratamento": "TEV isolada (sem rt-PA — fora de janela terapeutica, wake-up stroke)",
+    "nihss_admissao": 5,
+    "nihss_alta": 2,
+    "mrs_previo": 0,
+    "mrs_alta": 2,
+    "complicacoes": "Nao ocorreram",
+    "timestamps": {
+      "ultima_vez_bem": "22h45",
+      "descoberta": "07h45",
+      "admissao_origem": "08h30",
+      "admissao_coimbra": "11h00",
+      "tc_ce": "09h00",
+      "transferencia": "09h30",
+      "puncao_femoral": "11h45",
+      "recanalizacao": "12h20",
+      "tici": "2b",
+      "aspects": "8"
+    },
+    "metricas_temporais": {
+      "onset_to_door": "12h15",
+      "door_to_imaging": "22h00",
+      "door_to_puncture": "00h45",
+      "onset_to_recan": "13h35",
+      "door_in_door_out": "01h00",
+      "door1_to_door2": "02h30"
+    },
+    "qualidade_eso": {
+      "door_to_imaging": "vermelho",
+      "door_to_puncture": "verde",
+      "onset_to_recan": "vermelho",
+      "door_in_door_out": "verde",
+      "door1_to_door2": "amarelo"
+    },
+    "seguimento": {
+      "vivo_30_dias": true,
+      "dias_obito": null,
+      "causa_obito": null,
+      "mrs_3_meses": 2
+    }
+  },
+  {
+    "caso": 80,
+    "tipo": "tev_isolada_fora_janela",
+    "sexo": "masculino",
+    "idade": 66,
+    "proveniencia": "Figueira da Foz",
+    "territorio": "ACM direita",
+    "etiologia_toast": "Cardioembólica",
+    "tratamento": "TEV isolada (sem rt-PA — fora de janela terapeutica, wake-up stroke)",
+    "nihss_admissao": 15,
+    "nihss_alta": 12,
+    "mrs_previo": 0,
+    "mrs_alta": 3,
+    "complicacoes": "Nao ocorreram",
+    "timestamps": {
+      "ultima_vez_bem": "22h30",
+      "descoberta": "07h45",
+      "admissao_origem": "08h30",
+      "admissao_coimbra": "11h15",
+      "tc_ce": "09h00",
+      "transferencia": "09h45",
+      "puncao_femoral": "12h15",
+      "recanalizacao": "12h45",
+      "tici": "2b",
+      "aspects": "8"
+    },
+    "metricas_temporais": {
+      "onset_to_door": "12h45",
+      "door_to_imaging": "21h45",
+      "door_to_puncture": "01h00",
+      "onset_to_recan": "14h15",
+      "door_in_door_out": "01h15",
+      "door1_to_door2": "02h45"
+    },
+    "qualidade_eso": {
+      "door_to_imaging": "vermelho",
+      "door_to_puncture": "verde",
+      "onset_to_recan": "vermelho",
+      "door_in_door_out": "amarelo",
+      "door1_to_door2": "amarelo"
+    },
+    "seguimento": {
+      "vivo_30_dias": false,
+      "dias_obito": 14,
+      "causa_obito": "deterioracao neurologica com edema maligno",
+      "mrs_3_meses": null
+    }
+  },
+  {
+    "caso": 81,
+    "tipo": "tev_isolada_fora_janela",
+    "sexo": "feminino",
+    "idade": 82,
+    "proveniencia": "Guarda",
+    "territorio": "ACM esquerda",
+    "etiologia_toast": "Cardioembólica",
+    "tratamento": "TEV isolada (sem rt-PA — fora de janela terapeutica, wake-up stroke)",
+    "nihss_admissao": 5,
+    "nihss_alta": 2,
+    "mrs_previo": 0,
+    "mrs_alta": 2,
+    "complicacoes": "Nao ocorreram",
+    "timestamps": {
+      "ultima_vez_bem": "22h45",
+      "descoberta": "07h30",
+      "admissao_origem": "08h15",
+      "admissao_coimbra": "10h30",
+      "tc_ce": "08h40",
+      "transferencia": "09h10",
+      "puncao_femoral": "11h00",
+      "recanalizacao": "11h30",
+      "tici": "3",
+      "aspects": "8"
+    },
+    "metricas_temporais": {
+      "onset_to_door": "11h45",
+      "door_to_imaging": "22h10",
+      "door_to_puncture": "00h30",
+      "onset_to_recan": "12h45",
+      "door_in_door_out": "00h55",
+      "door1_to_door2": "02h15"
+    },
+    "qualidade_eso": {
+      "door_to_imaging": "vermelho",
+      "door_to_puncture": "verde",
+      "onset_to_recan": "vermelho",
+      "door_in_door_out": "verde",
+      "door1_to_door2": "amarelo"
+    },
+    "seguimento": {
+      "vivo_30_dias": false,
+      "dias_obito": 14,
+      "causa_obito": "deterioracao neurologica com edema maligno",
+      "mrs_3_meses": null
+    }
+  },
+  {
+    "caso": 82,
+    "tipo": "tev_isolada_fora_janela",
+    "sexo": "masculino",
+    "idade": 65,
+    "proveniencia": "Covilha",
+    "territorio": "ACM esquerda",
+    "etiologia_toast": "Cardioembólica",
+    "tratamento": "TEV isolada (sem rt-PA — fora de janela terapeutica, wake-up stroke)",
+    "nihss_admissao": 23,
+    "nihss_alta": 14,
+    "mrs_previo": 0,
+    "mrs_alta": 1,
+    "complicacoes": "Nao ocorreram",
+    "timestamps": {
+      "ultima_vez_bem": "22h45",
+      "descoberta": "07h15",
+      "admissao_origem": "07h55",
+      "admissao_coimbra": "10h30",
+      "tc_ce": "08h20",
+      "transferencia": "09h00",
+      "puncao_femoral": "11h15",
+      "recanalizacao": "11h40",
+      "tici": "2b",
+      "aspects": "8"
+    },
+    "metricas_temporais": {
+      "onset_to_door": "11h45",
+      "door_to_imaging": "21h50",
+      "door_to_puncture": "00h45",
+      "onset_to_recan": "12h55",
+      "door_in_door_out": "01h05",
+      "door1_to_door2": "02h35"
+    },
+    "qualidade_eso": {
+      "door_to_imaging": "vermelho",
+      "door_to_puncture": "verde",
+      "onset_to_recan": "vermelho",
+      "door_in_door_out": "amarelo",
+      "door1_to_door2": "amarelo"
+    },
+    "seguimento": {
+      "vivo_30_dias": true,
+      "dias_obito": null,
+      "causa_obito": null,
+      "mrs_3_meses": 1
+    }
+  },
+  {
+    "caso": 83,
+    "tipo": "tev_isolada_fora_janela",
+    "sexo": "feminino",
+    "idade": 78,
+    "proveniencia": "Tomar",
+    "territorio": "ACM esquerda",
+    "etiologia_toast": "Cardioembólica",
+    "tratamento": "TEV isolada (sem rt-PA — fora de janela terapeutica, wake-up stroke)",
+    "nihss_admissao": 22,
+    "nihss_alta": 16,
+    "mrs_previo": 0,
+    "mrs_alta": 4,
+    "complicacoes": "Nao ocorreram",
+    "timestamps": {
+      "ultima_vez_bem": "22h30",
+      "descoberta": "07h45",
+      "admissao_origem": "08h30",
+      "admissao_coimbra": "10h15",
+      "tc_ce": "09h00",
+      "transferencia": "09h30",
+      "puncao_femoral": "11h00",
+      "recanalizacao": "11h30",
+      "tici": "2b"
+    },
+    "metricas_temporais": {
+      "onset_to_door": "11h45",
+      "door_to_imaging": "22h45",
+      "door_to_puncture": "00h45",
+      "onset_to_recan": "13h00",
+      "door_in_door_out": "01h00",
+      "door1_to_door2": "01h45"
+    },
+    "qualidade_eso": {
+      "door_to_imaging": "vermelho",
+      "door_to_puncture": "verde",
+      "onset_to_recan": "vermelho",
+      "door_in_door_out": "verde",
+      "door1_to_door2": "verde"
+    },
+    "seguimento": {
+      "vivo_30_dias": true,
+      "dias_obito": null,
+      "causa_obito": null,
+      "mrs_3_meses": 2
+    }
+  },
+  {
+    "caso": 84,
+    "tipo": "tev_isolada_fora_janela",
+    "sexo": "masculino",
+    "idade": 76,
+    "proveniencia": "Caldas da Rainha",
+    "territorio": "ACI + ACM esquerda",
+    "etiologia_toast": "Cardioembólica",
+    "tratamento": "TEV isolada (sem rt-PA — fora de janela terapeutica, wake-up stroke)",
+    "nihss_admissao": 5,
+    "nihss_alta": 2,
+    "mrs_previo": 0,
+    "mrs_alta": 2,
+    "complicacoes": "Nao ocorreram",
+    "timestamps": {
+      "ultima_vez_bem": "22h45",
+      "descoberta": "07h30",
+      "admissao_origem": "08h15",
+      "admissao_coimbra": "10h45",
+      "tc_ce": "08h40",
+      "transferencia": "09h10",
+      "puncao_femoral": "11h20",
+      "recanalizacao": "11h50",
+      "tici": "2b",
+      "aspects": "8"
+    },
+    "metricas_temporais": {
+      "onset_to_door": "12h00",
+      "door_to_imaging": "21h55",
+      "door_to_puncture": "00h35",
+      "onset_to_recan": "13h05",
+      "door_in_door_out": "00h55",
+      "door1_to_door2": "02h30"
+    },
+    "qualidade_eso": {
+      "door_to_imaging": "vermelho",
+      "door_to_puncture": "verde",
+      "onset_to_recan": "vermelho",
+      "door_in_door_out": "verde",
+      "door1_to_door2": "amarelo"
+    },
+    "seguimento": {
+      "vivo_30_dias": true,
+      "dias_obito": null,
+      "causa_obito": null,
+      "mrs_3_meses": 2
+    }
+  },
+  {
+    "caso": 85,
+    "tipo": "tev_isolada_fora_janela",
+    "sexo": "feminino",
+    "idade": 66,
+    "proveniencia": "Torres Novas",
+    "territorio": "ACM direita",
+    "etiologia_toast": "Cardioembólica",
+    "tratamento": "TEV isolada (sem rt-PA — fora de janela terapeutica, wake-up stroke)",
+    "nihss_admissao": 15,
+    "nihss_alta": 12,
+    "mrs_previo": 0,
+    "mrs_alta": 3,
+    "complicacoes": "Nao ocorreram",
+    "timestamps": {
+      "ultima_vez_bem": "22h45",
+      "descoberta": "07h15",
+      "admissao_origem": "08h00",
+      "admissao_coimbra": "10h30",
+      "tc_ce": "08h20",
+      "transferencia": "09h00",
+      "puncao_femoral": "11h00",
+      "recanalizacao": "11h30",
+      "tici": "2b",
+      "aspects": "8"
+    },
+    "metricas_temporais": {
+      "onset_to_door": "11h45",
+      "door_to_imaging": "21h50",
+      "door_to_puncture": "00h30",
+      "onset_to_recan": "12h45",
+      "door_in_door_out": "01h00",
+      "door1_to_door2": "02h30"
+    },
+    "qualidade_eso": {
+      "door_to_imaging": "vermelho",
+      "door_to_puncture": "verde",
+      "onset_to_recan": "vermelho",
+      "door_in_door_out": "verde",
+      "door1_to_door2": "amarelo"
+    },
+    "seguimento": {
+      "vivo_30_dias": true,
+      "dias_obito": null,
+      "causa_obito": null,
+      "mrs_3_meses": 2
+    }
+  },
+  {
+    "caso": 86,
+    "tipo": "tev_isolada_fora_janela",
+    "sexo": "masculino",
+    "idade": 82,
+    "proveniencia": "Pombal",
+    "territorio": "ACM esquerda",
+    "etiologia_toast": "Cardioembólica",
+    "tratamento": "TEV isolada (sem rt-PA — fora de janela terapeutica, wake-up stroke)",
+    "nihss_admissao": 5,
+    "nihss_alta": 2,
+    "mrs_previo": 0,
+    "mrs_alta": 2,
+    "complicacoes": "Nao ocorreram",
+    "timestamps": {
+      "ultima_vez_bem": "22h45",
+      "descoberta": "07h30",
+      "tc_ce": "08h40",
+      "transferencia": "09h10",
+      "puncao_femoral": "11h30",
+      "recanalizacao": "12h00",
+      "tici": "3"
+    },
+    "metricas_temporais": {
+      "onset_to_recan": "13h15"
+    },
+    "qualidade_eso": {
+      "onset_to_recan": "vermelho"
+    },
+    "seguimento": {
+      "vivo_30_dias": true,
+      "dias_obito": null,
+      "causa_obito": null,
+      "mrs_3_meses": 2
+    }
+  },
+  {
+    "caso": 87,
+    "tipo": "tev_isolada_fora_janela",
+    "sexo": "feminino",
+    "idade": 65,
+    "proveniencia": "Agueda",
+    "territorio": "ACM esquerda",
+    "etiologia_toast": "Cardioembólica",
+    "tratamento": "TEV isolada (sem rt-PA — fora de janela terapeutica, wake-up stroke)",
+    "nihss_admissao": 23,
+    "nihss_alta": 14,
+    "mrs_previo": 0,
+    "mrs_alta": 1,
+    "complicacoes": "Nao ocorreram",
+    "timestamps": {
+      "ultima_vez_bem": "22h45",
+      "descoberta": "07h45",
+      "admissao_origem": "08h30",
+      "admissao_coimbra": "11h15",
+      "tc_ce": "09h00",
+      "transferencia": "09h30",
+      "puncao_femoral": "12h00",
+      "recanalizacao": "12h40",
+      "tici": "2b",
+      "aspects": "8"
+    },
+    "metricas_temporais": {
+      "onset_to_door": "12h30",
+      "door_to_imaging": "21h45",
+      "door_to_puncture": "00h45",
+      "onset_to_recan": "13h55",
+      "door_in_door_out": "01h00",
+      "door1_to_door2": "02h45"
+    },
+    "qualidade_eso": {
+      "door_to_imaging": "vermelho",
+      "door_to_puncture": "verde",
+      "onset_to_recan": "vermelho",
+      "door_in_door_out": "verde",
+      "door1_to_door2": "amarelo"
+    },
+    "seguimento": {
+      "vivo_30_dias": true,
+      "dias_obito": null,
+      "causa_obito": null,
+      "mrs_3_meses": 1
+    }
+  },
+  {
+    "caso": 88,
+    "tipo": "tev_isolada_fora_janela",
+    "sexo": "masculino",
+    "idade": 78,
+    "proveniencia": "Oliveira do Hospital",
+    "territorio": "ACM esquerda",
+    "etiologia_toast": "Cardioembólica",
+    "tratamento": "TEV isolada (sem rt-PA — fora de janela terapeutica, wake-up stroke)",
+    "nihss_admissao": 22,
+    "nihss_alta": 16,
+    "mrs_previo": 0,
+    "mrs_alta": 4,
+    "complicacoes": "Nao ocorreram",
+    "timestamps": {
+      "ultima_vez_bem": "22h45",
+      "descoberta": "07h50",
+      "admissao_origem": "08h35",
+      "admissao_coimbra": "11h10",
+      "tc_ce": "09h00",
+      "transferencia": "09h30",
+      "puncao_femoral": "12h00",
+      "recanalizacao": "12h40",
+      "tici": "2b",
+      "aspects": "6"
+    },
+    "metricas_temporais": {
+      "onset_to_door": "12h25",
+      "door_to_imaging": "21h50",
+      "door_to_puncture": "00h50",
+      "onset_to_recan": "13h55",
+      "door_in_door_out": "00h55",
+      "door1_to_door2": "02h35"
+    },
+    "qualidade_eso": {
+      "door_to_imaging": "vermelho",
+      "door_to_puncture": "verde",
+      "onset_to_recan": "vermelho",
+      "door_in_door_out": "verde",
+      "door1_to_door2": "amarelo"
+    },
+    "seguimento": {
+      "vivo_30_dias": true,
+      "dias_obito": null,
+      "causa_obito": null,
+      "mrs_3_meses": 2
+    }
+  },
+  {
+    "caso": 89,
+    "tipo": "tev_isolada_fora_janela",
+    "sexo": "feminino",
+    "idade": 82,
+    "proveniencia": "Leiria",
+    "territorio": "ACM esquerda",
+    "etiologia_toast": "Cardioembólica",
+    "tratamento": "TEV isolada (sem rt-PA — fora de janela terapeutica, wake-up stroke)",
+    "nihss_admissao": 5,
+    "nihss_alta": 2,
+    "mrs_previo": 0,
+    "mrs_alta": 2,
+    "complicacoes": "Nao ocorreram",
+    "timestamps": {
+      "ultima_vez_bem": "22h45",
+      "descoberta": "07h45",
+      "admissao_origem": "08h30",
+      "admissao_coimbra": "11h00",
+      "tc_ce": "09h00",
+      "transferencia": "09h30",
+      "puncao_femoral": "11h45",
+      "recanalizacao": "12h15",
+      "tici": "3",
+      "aspects": "8"
+    },
+    "metricas_temporais": {
+      "onset_to_door": "12h15",
+      "door_to_imaging": "22h00",
+      "door_to_puncture": "00h45",
+      "onset_to_recan": "13h30",
+      "door_in_door_out": "01h00",
+      "door1_to_door2": "02h30"
+    },
+    "qualidade_eso": {
+      "door_to_imaging": "vermelho",
+      "door_to_puncture": "verde",
+      "onset_to_recan": "vermelho",
+      "door_in_door_out": "verde",
+      "door1_to_door2": "amarelo"
+    },
+    "seguimento": {
+      "vivo_30_dias": true,
+      "dias_obito": null,
+      "causa_obito": null,
+      "mrs_3_meses": 2
+    }
+  },
+  {
+    "caso": 90,
+    "tipo": "tev_isolada_fora_janela",
+    "sexo": "masculino",
+    "idade": 65,
+    "proveniencia": "Viseu",
+    "territorio": "ACM esquerda",
+    "etiologia_toast": "Cardioembólica",
+    "tratamento": "TEV isolada (sem rt-PA — fora de janela terapeutica, wake-up stroke)",
+    "nihss_admissao": 23,
+    "nihss_alta": 14,
+    "mrs_previo": 0,
+    "mrs_alta": 1,
+    "complicacoes": "Nao ocorreram",
+    "timestamps": {
+      "ultima_vez_bem": "22h30",
+      "descoberta": "07h45",
+      "admissao_origem": "08h30",
+      "admissao_coimbra": "11h15",
+      "tc_ce": "09h00",
+      "transferencia": "09h30",
+      "puncao_femoral": "11h45",
+      "recanalizacao": "12h15",
+      "tici": "2b",
+      "aspects": "8"
+    },
+    "metricas_temporais": {
+      "onset_to_door": "12h45",
+      "door_to_imaging": "21h45",
+      "door_to_puncture": "00h30",
+      "onset_to_recan": "13h45",
+      "door_in_door_out": "01h00",
+      "door1_to_door2": "02h45"
+    },
+    "qualidade_eso": {
+      "door_to_imaging": "vermelho",
+      "door_to_puncture": "verde",
+      "onset_to_recan": "vermelho",
+      "door_in_door_out": "verde",
+      "door1_to_door2": "amarelo"
+    },
+    "seguimento": {
+      "vivo_30_dias": true,
+      "dias_obito": null,
+      "causa_obito": null,
+      "mrs_3_meses": 0
+    }
+  },
+  {
+    "caso": 91,
+    "tipo": "tev_isolada_fora_janela",
+    "sexo": "feminino",
+    "idade": 82,
+    "proveniencia": "Aveiro",
+    "territorio": "ACM esquerda",
+    "etiologia_toast": "Cardioembólica",
+    "tratamento": "TEV isolada (sem rt-PA — fora de janela terapeutica, wake-up stroke)",
+    "nihss_admissao": 5,
+    "nihss_alta": 2,
+    "mrs_previo": 0,
+    "mrs_alta": 2,
+    "complicacoes": "Nao ocorreram",
+    "timestamps": {
+      "ultima_vez_bem": "22h45",
+      "descoberta": "07h45",
+      "admissao_origem": "08h30",
+      "admissao_coimbra": "11h15",
+      "tc_ce": "09h00",
+      "transferencia": "09h30",
+      "puncao_femoral": "11h45",
+      "recanalizacao": "12h15",
+      "tici": "3"
+    },
+    "metricas_temporais": {
+      "onset_to_door": "12h30",
+      "door_to_imaging": "21h45",
+      "door_to_puncture": "00h30",
+      "onset_to_recan": "13h30",
+      "door_in_door_out": "01h00",
+      "door1_to_door2": "02h45"
+    },
+    "qualidade_eso": {
+      "door_to_imaging": "vermelho",
+      "door_to_puncture": "verde",
+      "onset_to_recan": "vermelho",
+      "door_in_door_out": "verde",
+      "door1_to_door2": "amarelo"
+    },
+    "seguimento": {
+      "vivo_30_dias": true,
+      "dias_obito": null,
+      "causa_obito": null,
+      "mrs_3_meses": 2
+    }
+  },
+  {
+    "caso": 92,
+    "tipo": "tev_isolada_fora_janela",
+    "sexo": "masculino",
+    "idade": 65,
+    "proveniencia": "Castelo Branco",
+    "territorio": "ACM esquerda",
+    "etiologia_toast": "Cardioembólica",
+    "tratamento": "TEV isolada (sem rt-PA — fora de janela terapeutica, wake-up stroke)",
+    "nihss_admissao": 23,
+    "nihss_alta": 14,
+    "mrs_previo": 0,
+    "mrs_alta": 1,
+    "complicacoes": "Nao ocorreram",
+    "timestamps": {
+      "ultima_vez_bem": "22h45",
+      "descoberta": "07h30",
+      "admissao_origem": "08h15",
+      "admissao_coimbra": "10h45",
+      "tc_ce": "08h45",
+      "transferencia": "09h30",
+      "puncao_femoral": "11h15",
+      "recanalizacao": "11h40",
+      "tici": "2b",
+      "aspects": "8"
+    },
+    "metricas_temporais": {
+      "onset_to_door": "12h00",
+      "door_to_imaging": "22h00",
+      "door_to_puncture": "00h30",
+      "onset_to_recan": "12h55",
+      "door_in_door_out": "01h15",
+      "door1_to_door2": "02h30"
+    },
+    "qualidade_eso": {
+      "door_to_imaging": "vermelho",
+      "door_to_puncture": "verde",
+      "onset_to_recan": "vermelho",
+      "door_in_door_out": "amarelo",
+      "door1_to_door2": "amarelo"
+    },
+    "seguimento": {
+      "vivo_30_dias": true,
+      "dias_obito": null,
+      "causa_obito": null,
+      "mrs_3_meses": 1
+    }
+  },
+  {
+    "caso": 93,
+    "tipo": "tev_isolada_fora_janela",
+    "sexo": "feminino",
+    "idade": 82,
+    "proveniencia": "Figueira da Foz",
+    "territorio": "ACM esquerda",
+    "etiologia_toast": "Cardioembólica",
+    "tratamento": "TEV isolada (sem rt-PA — fora de janela terapeutica, wake-up stroke)",
+    "nihss_admissao": 5,
+    "nihss_alta": 2,
+    "mrs_previo": 0,
+    "mrs_alta": 2,
+    "complicacoes": "Nao ocorreram",
+    "timestamps": {
+      "ultima_vez_bem": "22h45",
+      "descoberta": "07h30",
+      "admissao_origem": "08h15",
+      "admissao_coimbra": "10h45",
+      "tc_ce": "08h40",
+      "transferencia": "09h10",
+      "puncao_femoral": "11h20",
+      "recanalizacao": "11h50",
+      "tici": "3"
+    },
+    "metricas_temporais": {
+      "onset_to_door": "12h00",
+      "door_to_imaging": "21h55",
+      "door_to_puncture": "00h35",
+      "onset_to_recan": "13h05",
+      "door_in_door_out": "00h55",
+      "door1_to_door2": "02h30"
+    },
+    "qualidade_eso": {
+      "door_to_imaging": "vermelho",
+      "door_to_puncture": "verde",
+      "onset_to_recan": "vermelho",
+      "door_in_door_out": "verde",
+      "door1_to_door2": "amarelo"
+    },
+    "seguimento": {
+      "vivo_30_dias": true,
+      "dias_obito": null,
+      "causa_obito": null,
+      "mrs_3_meses": 2
+    }
+  },
+  {
+    "caso": 94,
+    "tipo": "tev_isolada_fora_janela",
+    "sexo": "masculino",
+    "idade": 65,
+    "proveniencia": "Guarda",
+    "territorio": "ACM esquerda",
+    "etiologia_toast": "Cardioembólica",
+    "tratamento": "TEV isolada (sem rt-PA — fora de janela terapeutica, wake-up stroke)",
+    "nihss_admissao": 23,
+    "nihss_alta": 14,
+    "mrs_previo": 0,
+    "mrs_alta": 1,
+    "complicacoes": "Nao ocorreram",
+    "timestamps": {
+      "ultima_vez_bem": "23h00",
+      "descoberta": "07h30",
+      "admissao_origem": "08h15",
+      "admissao_coimbra": "10h45",
+      "tc_ce": "08h40",
+      "transferencia": "09h10",
+      "puncao_femoral": "11h20",
+      "recanalizacao": "11h50",
+      "tici": "2b",
+      "aspects": "8"
+    },
+    "metricas_temporais": {
+      "onset_to_door": "11h45",
+      "door_to_imaging": "21h55",
+      "door_to_puncture": "00h35",
+      "onset_to_recan": "12h50",
+      "door_in_door_out": "00h55",
+      "door1_to_door2": "02h30"
+    },
+    "qualidade_eso": {
+      "door_to_imaging": "vermelho",
+      "door_to_puncture": "verde",
+      "onset_to_recan": "vermelho",
+      "door_in_door_out": "verde",
+      "door1_to_door2": "amarelo"
+    },
+    "seguimento": {
+      "vivo_30_dias": true,
+      "dias_obito": null,
+      "causa_obito": null,
+      "mrs_3_meses": 1
+    }
+  },
+  {
+    "caso": 95,
+    "tipo": "tev_isolada_fora_janela",
+    "sexo": "feminino",
+    "idade": 82,
+    "proveniencia": "Covilha",
+    "territorio": "ACM esquerda",
+    "etiologia_toast": "Cardioembólica",
+    "tratamento": "TEV isolada (sem rt-PA — fora de janela terapeutica, wake-up stroke)",
+    "nihss_admissao": 5,
+    "nihss_alta": 2,
+    "mrs_previo": 0,
+    "mrs_alta": 2,
+    "complicacoes": "Nao ocorreram",
+    "timestamps": {
+      "ultima_vez_bem": "22h45",
+      "descoberta": "07h45",
+      "admissao_origem": "08h30",
+      "admissao_coimbra": "11h00",
+      "tc_ce": "08h50",
+      "transferencia": "09h20",
+      "puncao_femoral": "11h40",
+      "recanalizacao": "12h10",
+      "tici": "3",
+      "aspects": "8"
+    },
+    "metricas_temporais": {
+      "onset_to_door": "12h15",
+      "door_to_imaging": "21h50",
+      "door_to_puncture": "00h40",
+      "onset_to_recan": "13h25",
+      "door_in_door_out": "00h50",
+      "door1_to_door2": "02h30"
+    },
+    "qualidade_eso": {
+      "door_to_imaging": "vermelho",
+      "door_to_puncture": "verde",
+      "onset_to_recan": "vermelho",
+      "door_in_door_out": "verde",
+      "door1_to_door2": "amarelo"
+    },
+    "seguimento": {
+      "vivo_30_dias": true,
+      "dias_obito": null,
+      "causa_obito": null,
+      "mrs_3_meses": 2
+    }
+  },
+  {
+    "caso": 96,
+    "tipo": "tev_isolada_contraindicacao",
+    "sexo": "masculino",
+    "idade": 68,
+    "proveniencia": "Leiria",
+    "territorio": "ACI + ACM direita",
+    "etiologia_toast": "Aterosclerose grandes vasos",
+    "tratamento": "TEV isolada (sem rt-PA — contraindicacao absoluta: cirurgia abdominal recente (colecistectomia ha 10 dias))",
+    "nihss_admissao": 23,
+    "nihss_alta": 13,
+    "mrs_previo": 0,
+    "mrs_alta": 1,
+    "complicacoes": "Nao ocorreram",
+    "timestamps": {
+      "sintomas": "09h30",
+      "admissao_origem": "10h00",
+      "admissao_coimbra": "12h30",
+      "tc_ce": "10h20",
+      "transferencia": "11h00",
+      "puncao_femoral": "13h00",
+      "recanalizacao": "13h40",
+      "tici": "2c",
+      "aspects": "8"
+    },
+    "metricas_temporais": {
+      "onset_to_door": "03h00",
+      "door_to_imaging": "21h50",
+      "door_to_puncture": "00h30",
+      "onset_to_recan": "04h10",
+      "door_in_door_out": "01h00",
+      "door1_to_door2": "02h30"
+    },
+    "qualidade_eso": {
+      "door_to_imaging": "vermelho",
+      "door_to_puncture": "verde",
+      "onset_to_recan": "verde",
+      "door_in_door_out": "verde",
+      "door1_to_door2": "amarelo"
+    },
+    "seguimento": {
+      "vivo_30_dias": true,
+      "dias_obito": null,
+      "causa_obito": null,
+      "mrs_3_meses": 0
+    }
+  },
+  {
+    "caso": 97,
+    "tipo": "tev_isolada_contraindicacao",
+    "sexo": "feminino",
+    "idade": 71,
+    "proveniencia": "Viseu",
+    "territorio": "ACM esquerda",
+    "etiologia_toast": "Indeterminado",
+    "tratamento": "TEV isolada (sem rt-PA — contraindicacao absoluta: hemorragia digestiva alta ha 13 dias)",
+    "nihss_admissao": 12,
+    "nihss_alta": 7,
+    "mrs_previo": 0,
+    "mrs_alta": 2,
+    "complicacoes": "Nao ocorreram",
+    "timestamps": {
+      "sintomas": "09h30",
+      "admissao_origem": "10h00",
+      "admissao_coimbra": "12h30",
+      "tc_ce": "10h20",
+      "transferencia": "11h00",
+      "puncao_femoral": "13h00",
+      "recanalizacao": "13h30",
+      "tici": "2b"
+    },
+    "metricas_temporais": {
+      "onset_to_door": "03h00",
+      "door_to_imaging": "21h50",
+      "door_to_puncture": "00h30",
+      "onset_to_recan": "04h00",
+      "door_in_door_out": "01h00",
+      "door1_to_door2": "02h30"
+    },
+    "qualidade_eso": {
+      "door_to_imaging": "vermelho",
+      "door_to_puncture": "verde",
+      "onset_to_recan": "verde",
+      "door_in_door_out": "verde",
+      "door1_to_door2": "amarelo"
+    },
+    "seguimento": {
+      "vivo_30_dias": true,
+      "dias_obito": null,
+      "causa_obito": null,
+      "mrs_3_meses": 1
+    }
+  },
+  {
+    "caso": 98,
+    "tipo": "tev_isolada_contraindicacao",
+    "sexo": "masculino",
+    "idade": 69,
+    "proveniencia": "Aveiro",
+    "territorio": "ACI + ACM esquerda",
+    "etiologia_toast": "Aterosclerose grandes vasos",
+    "tratamento": "TEV isolada (sem rt-PA — contraindicacao absoluta: cirurgia cardiaca recente (bypass coronario ha 12 dias))",
+    "nihss_admissao": 15,
+    "nihss_alta": 11,
+    "mrs_previo": 0,
+    "mrs_alta": 3,
+    "complicacoes": "Nao ocorreram",
+    "timestamps": {
+      "sintomas": "15h30",
+      "tc_ce": "16h20",
+      "transferencia": "16h40",
+      "puncao_femoral": "18h40",
+      "recanalizacao": "19h10",
+      "tici": "2b",
+      "aspects": "8"
+    },
+    "metricas_temporais": {
+      "onset_to_recan": "03h40"
+    },
+    "qualidade_eso": {
+      "onset_to_recan": "verde"
+    },
+    "seguimento": {
+      "vivo_30_dias": true,
+      "dias_obito": null,
+      "causa_obito": null,
+      "mrs_3_meses": 3
+    }
+  },
+  {
+    "caso": 99,
+    "tipo": "tev_isolada_contraindicacao",
+    "sexo": "feminino",
+    "idade": 79,
+    "proveniencia": "Castelo Branco",
+    "territorio": "ACI + ACM direita",
+    "etiologia_toast": "Aterosclerose grandes vasos",
+    "tratamento": "TEV isolada (sem rt-PA — contraindicacao absoluta: cirurgia abdominal recente (histerectomia ha 10 dias))",
+    "nihss_admissao": 17,
+    "nihss_alta": 13,
+    "mrs_previo": 0,
+    "mrs_alta": 2,
+    "complicacoes": "Nao ocorreram",
+    "timestamps": {
+      "sintomas": "15h30",
+      "admissao_origem": "16h00",
+      "admissao_coimbra": "18h15",
+      "tc_ce": "16h20",
+      "transferencia": "17h00",
+      "puncao_femoral": "19h00",
+      "recanalizacao": "19h40",
+      "tici": "2b",
+      "aspects": "8"
+    },
+    "metricas_temporais": {
+      "onset_to_door": "02h45",
+      "door_to_imaging": "22h05",
+      "door_to_puncture": "00h45",
+      "onset_to_recan": "04h10",
+      "door_in_door_out": "01h00",
+      "door1_to_door2": "02h15"
+    },
+    "qualidade_eso": {
+      "door_to_imaging": "vermelho",
+      "door_to_puncture": "verde",
+      "onset_to_recan": "verde",
+      "door_in_door_out": "verde",
+      "door1_to_door2": "amarelo"
+    },
+    "seguimento": {
+      "vivo_30_dias": true,
+      "dias_obito": null,
+      "causa_obito": null,
+      "mrs_3_meses": 1
+    }
+  },
+  {
+    "caso": 100,
+    "tipo": "tev_isolada_contraindicacao",
+    "sexo": "masculino",
+    "idade": 68,
+    "proveniencia": "Figueira da Foz",
+    "territorio": "ACI + ACM direita",
+    "etiologia_toast": "Aterosclerose grandes vasos",
+    "tratamento": "TEV isolada (sem rt-PA — contraindicacao absoluta: cirurgia abdominal recente (histerectomia ha 8 dias))",
+    "nihss_admissao": 28,
+    "nihss_alta": 18,
+    "mrs_previo": 0,
+    "mrs_alta": 2,
+    "complicacoes": "Nao ocorreram",
+    "timestamps": {
+      "sintomas": "12h30",
+      "admissao_origem": "13h00",
+      "admissao_coimbra": "15h30",
+      "tc_ce": "13h20",
+      "transferencia": "13h40",
+      "puncao_femoral": "16h10",
+      "recanalizacao": "16h40",
+      "tici": "2c",
+      "aspects": "8"
+    },
+    "metricas_temporais": {
+      "onset_to_door": "03h00",
+      "door_to_imaging": "21h50",
+      "door_to_puncture": "00h40",
+      "onset_to_recan": "04h10",
+      "door_in_door_out": "00h40",
+      "door1_to_door2": "02h30"
+    },
+    "qualidade_eso": {
+      "door_to_imaging": "vermelho",
+      "door_to_puncture": "verde",
+      "onset_to_recan": "verde",
+      "door_in_door_out": "verde",
+      "door1_to_door2": "amarelo"
+    },
+    "seguimento": {
+      "vivo_30_dias": true,
+      "dias_obito": null,
+      "causa_obito": null,
+      "mrs_3_meses": 2
+    }
+  },
+  {
+    "caso": 101,
+    "tipo": "tev_isolada_contraindicacao",
+    "sexo": "feminino",
+    "idade": 78,
+    "proveniencia": "Guarda",
+    "territorio": "ACI + ACM direita",
+    "etiologia_toast": "Aterosclerose grandes vasos",
+    "tratamento": "TEV isolada (sem rt-PA — contraindicacao absoluta: cirurgia ortopedica recente (artroplastia total da anca ha 7 dias))",
+    "nihss_admissao": 5,
+    "nihss_alta": 4,
+    "mrs_previo": 0,
+    "mrs_alta": 2,
+    "complicacoes": "Nao ocorreram",
+    "timestamps": {
+      "sintomas": "12h40",
+      "admissao_origem": "13h10",
+      "admissao_coimbra": "15h20",
+      "tc_ce": "13h30",
+      "transferencia": "14h00",
+      "puncao_femoral": "15h50",
+      "recanalizacao": "16h20",
+      "tici": "3"
+    },
+    "metricas_temporais": {
+      "onset_to_door": "02h40",
+      "door_to_imaging": "22h10",
+      "door_to_puncture": "00h30",
+      "onset_to_recan": "03h40",
+      "door_in_door_out": "00h50",
+      "door1_to_door2": "02h10"
+    },
+    "qualidade_eso": {
+      "door_to_imaging": "vermelho",
+      "door_to_puncture": "verde",
+      "onset_to_recan": "verde",
+      "door_in_door_out": "verde",
+      "door1_to_door2": "amarelo"
+    },
+    "seguimento": {
+      "vivo_30_dias": true,
+      "dias_obito": null,
+      "causa_obito": null,
+      "mrs_3_meses": 2
+    }
+  },
+  {
+    "caso": 102,
+    "tipo": "tev_isolada_contraindicacao",
+    "sexo": "masculino",
+    "idade": 82,
+    "proveniencia": "Covilha",
+    "territorio": "ACM esquerda",
+    "etiologia_toast": "Indeterminado",
+    "tratamento": "TEV isolada (sem rt-PA — contraindicacao absoluta: hemorragia digestiva alta ha 13 dias)",
+    "nihss_admissao": 12,
+    "nihss_alta": 7,
+    "mrs_previo": 0,
+    "mrs_alta": 2,
+    "complicacoes": "Nao ocorreram",
+    "timestamps": {
+      "sintomas": "10h15",
+      "admissao_origem": "10h45",
+      "admissao_coimbra": "13h15",
+      "tc_ce": "11h10",
+      "transferencia": "11h30",
+      "puncao_femoral": "14h00",
+      "recanalizacao": "14h40",
+      "tici": "2b",
+      "aspects": "9"
+    },
+    "metricas_temporais": {
+      "onset_to_door": "03h00",
+      "door_to_imaging": "21h55",
+      "door_to_puncture": "00h45",
+      "onset_to_recan": "04h25",
+      "door_in_door_out": "00h45",
+      "door1_to_door2": "02h30"
+    },
+    "qualidade_eso": {
+      "door_to_imaging": "vermelho",
+      "door_to_puncture": "verde",
+      "onset_to_recan": "verde",
+      "door_in_door_out": "verde",
+      "door1_to_door2": "amarelo"
+    },
+    "seguimento": {
+      "vivo_30_dias": false,
+      "dias_obito": 3,
+      "causa_obito": "pneumonia de aspiracao",
+      "mrs_3_meses": null
+    }
+  },
+  {
+    "caso": 103,
+    "tipo": "tev_isolada_contraindicacao",
+    "sexo": "feminino",
+    "idade": 68,
+    "proveniencia": "Tomar",
+    "territorio": "ACI + ACM direita",
+    "etiologia_toast": "Aterosclerose grandes vasos",
+    "tratamento": "TEV isolada (sem rt-PA — contraindicacao absoluta: cirurgia abdominal recente (histerectomia ha 8 dias))",
+    "nihss_admissao": 28,
+    "nihss_alta": 18,
+    "mrs_previo": 0,
+    "mrs_alta": 2,
+    "complicacoes": "Nao ocorreram",
+    "timestamps": {
+      "sintomas": "12h30",
+      "admissao_origem": "13h00",
+      "admissao_coimbra": "15h30",
+      "tc_ce": "13h20",
+      "transferencia": "14h00",
+      "puncao_femoral": "16h00",
+      "recanalizacao": "16h40",
+      "tici": "2c",
+      "aspects": "8"
+    },
+    "metricas_temporais": {
+      "onset_to_door": "03h00",
+      "door_to_imaging": "21h50",
+      "door_to_puncture": "00h30",
+      "onset_to_recan": "04h10",
+      "door_in_door_out": "01h00",
+      "door1_to_door2": "02h30"
+    },
+    "qualidade_eso": {
+      "door_to_imaging": "vermelho",
+      "door_to_puncture": "verde",
+      "onset_to_recan": "verde",
+      "door_in_door_out": "verde",
+      "door1_to_door2": "amarelo"
+    },
+    "seguimento": {
+      "vivo_30_dias": true,
+      "dias_obito": null,
+      "causa_obito": null,
+      "mrs_3_meses": 1
+    }
+  },
+  {
+    "caso": 104,
+    "tipo": "tev_isolada_contraindicacao",
+    "sexo": "masculino",
+    "idade": 78,
+    "proveniencia": "Caldas da Rainha",
+    "territorio": "ACI + ACM direita",
+    "etiologia_toast": "Aterosclerose grandes vasos",
+    "tratamento": "TEV isolada (sem rt-PA — contraindicacao absoluta: cirurgia ortopedica recente (artroplastia total da anca ha 7 dias))",
+    "nihss_admissao": 5,
+    "nihss_alta": 4,
+    "mrs_previo": 0,
+    "mrs_alta": 2,
+    "complicacoes": "Nao ocorreram",
+    "timestamps": {
+      "sintomas": "12h30",
+      "admissao_origem": "13h00",
+      "admissao_coimbra": "15h30",
+      "tc_ce": "13h20",
+      "transferencia": "13h40",
+      "puncao_femoral": "16h10",
+      "recanalizacao": "16h40",
+      "tici": "3"
+    },
+    "metricas_temporais": {
+      "onset_to_door": "03h00",
+      "door_to_imaging": "21h50",
+      "door_to_puncture": "00h40",
+      "onset_to_recan": "04h10",
+      "door_in_door_out": "00h40",
+      "door1_to_door2": "02h30"
+    },
+    "qualidade_eso": {
+      "door_to_imaging": "vermelho",
+      "door_to_puncture": "verde",
+      "onset_to_recan": "verde",
+      "door_in_door_out": "verde",
+      "door1_to_door2": "amarelo"
+    },
+    "seguimento": {
+      "vivo_30_dias": true,
+      "dias_obito": null,
+      "causa_obito": null,
+      "mrs_3_meses": 2
+    }
+  },
+  {
+    "caso": 105,
+    "tipo": "tev_isolada_contraindicacao",
+    "sexo": "feminino",
+    "idade": 82,
+    "proveniencia": "Torres Novas",
+    "territorio": "ACM esquerda",
+    "etiologia_toast": "Indeterminado",
+    "tratamento": "TEV isolada (sem rt-PA — contraindicacao absoluta: hemorragia digestiva alta ha 13 dias)",
+    "nihss_admissao": 12,
+    "nihss_alta": 7,
+    "mrs_previo": 0,
+    "mrs_alta": 2,
+    "complicacoes": "Nao ocorreram",
+    "timestamps": {
+      "sintomas": "10h15",
+      "admissao_origem": "10h45",
+      "admissao_coimbra": "12h15",
+      "tc_ce": "11h10",
+      "transferencia": "11h30",
+      "puncao_femoral": "13h00",
+      "recanalizacao": "13h40",
+      "tici": "2b"
+    },
+    "metricas_temporais": {
+      "onset_to_door": "02h00",
+      "door_to_imaging": "22h55",
+      "door_to_puncture": "00h45",
+      "onset_to_recan": "03h25",
+      "door_in_door_out": "00h45",
+      "door1_to_door2": "01h30"
+    },
+    "qualidade_eso": {
+      "door_to_imaging": "vermelho",
+      "door_to_puncture": "verde",
+      "onset_to_recan": "verde",
+      "door_in_door_out": "verde",
+      "door1_to_door2": "verde"
+    },
+    "seguimento": {
+      "vivo_30_dias": true,
+      "dias_obito": null,
+      "causa_obito": null,
+      "mrs_3_meses": 1
+    }
+  },
+  {
+    "caso": 106,
+    "tipo": "tev_isolada_contraindicacao",
+    "sexo": "masculino",
+    "idade": 68,
+    "proveniencia": "Pombal",
+    "territorio": "ACI + ACM direita",
+    "etiologia_toast": "Aterosclerose grandes vasos",
+    "tratamento": "TEV isolada (sem rt-PA — contraindicacao absoluta: cirurgia abdominal recente (histerectomia ha 8 dias))",
+    "nihss_admissao": 28,
+    "nihss_alta": 18,
+    "mrs_previo": 0,
+    "mrs_alta": 2,
+    "complicacoes": "Nao ocorreram",
+    "timestamps": {
+      "sintomas": "12h40",
+      "tc_ce": "13h30",
+      "transferencia": "14h00",
+      "puncao_femoral": "16h00",
+      "recanalizacao": "16h30",
+      "tici": "2c"
+    },
+    "metricas_temporais": {
+      "onset_to_recan": "03h50"
+    },
+    "qualidade_eso": {
+      "onset_to_recan": "verde"
+    },
+    "seguimento": {
+      "vivo_30_dias": true,
+      "dias_obito": null,
+      "causa_obito": null,
+      "mrs_3_meses": 2
+    }
+  },
+  {
+    "caso": 107,
+    "tipo": "tev_isolada_contraindicacao",
+    "sexo": "feminino",
+    "idade": 78,
+    "proveniencia": "Agueda",
+    "territorio": "ACI + ACM direita",
+    "etiologia_toast": "Aterosclerose grandes vasos",
+    "tratamento": "TEV isolada (sem rt-PA — contraindicacao absoluta: cirurgia ortopedica recente (artroplastia total da anca ha 7 dias))",
+    "nihss_admissao": 5,
+    "nihss_alta": 4,
+    "mrs_previo": 0,
+    "mrs_alta": 2,
+    "complicacoes": "Nao ocorreram",
+    "timestamps": {
+      "sintomas": "12h45",
+      "admissao_origem": "13h15",
+      "admissao_coimbra": "15h30",
+      "tc_ce": "13h40",
+      "transferencia": "14h10",
+      "puncao_femoral": "16h00",
+      "recanalizacao": "16h40",
+      "tici": "3"
+    },
+    "metricas_temporais": {
+      "onset_to_door": "02h45",
+      "door_to_imaging": "22h10",
+      "door_to_puncture": "00h30",
+      "onset_to_recan": "03h55",
+      "door_in_door_out": "00h55",
+      "door1_to_door2": "02h15"
+    },
+    "qualidade_eso": {
+      "door_to_imaging": "vermelho",
+      "door_to_puncture": "verde",
+      "onset_to_recan": "verde",
+      "door_in_door_out": "verde",
+      "door1_to_door2": "amarelo"
+    },
+    "seguimento": {
+      "vivo_30_dias": true,
+      "dias_obito": null,
+      "causa_obito": null,
+      "mrs_3_meses": 1
+    }
+  },
+  {
+    "caso": 108,
+    "tipo": "tev_isolada_contraindicacao",
+    "sexo": "masculino",
+    "idade": 68,
+    "proveniencia": "Oliveira do Hospital",
+    "territorio": "ACI + ACM direita",
+    "etiologia_toast": "Aterosclerose grandes vasos",
+    "tratamento": "TEV isolada (sem rt-PA — contraindicacao absoluta: cirurgia abdominal recente (histerectomia ha 8 dias))",
+    "nihss_admissao": 28,
+    "nihss_alta": 18,
+    "mrs_previo": 0,
+    "mrs_alta": 2,
+    "complicacoes": "Nao ocorreram",
+    "timestamps": {
+      "sintomas": "12h40",
+      "admissao_origem": "13h10",
+      "admissao_coimbra": "15h40",
+      "tc_ce": "13h30",
+      "transferencia": "14h00",
+      "puncao_femoral": "16h10",
+      "recanalizacao": "16h40",
+      "tici": "2c",
+      "aspects": "8"
+    },
+    "metricas_temporais": {
+      "onset_to_door": "03h00",
+      "door_to_imaging": "21h50",
+      "door_to_puncture": "00h30",
+      "onset_to_recan": "04h00",
+      "door_in_door_out": "00h50",
+      "door1_to_door2": "02h30"
+    },
+    "qualidade_eso": {
+      "door_to_imaging": "vermelho",
+      "door_to_puncture": "verde",
+      "onset_to_recan": "verde",
+      "door_in_door_out": "verde",
+      "door1_to_door2": "amarelo"
+    },
+    "seguimento": {
+      "vivo_30_dias": true,
+      "dias_obito": null,
+      "causa_obito": null,
+      "mrs_3_meses": 1
+    }
+  },
+  {
+    "caso": 109,
+    "tipo": "tev_isolada_contraindicacao",
+    "sexo": "feminino",
+    "idade": 78,
+    "proveniencia": "Leiria",
+    "territorio": "ACI + ACM direita",
+    "etiologia_toast": "Aterosclerose grandes vasos",
+    "tratamento": "TEV isolada (sem rt-PA — contraindicacao absoluta: cirurgia ortopedica recente (artroplastia total da anca ha 7 dias))",
+    "nihss_admissao": 5,
+    "nihss_alta": 4,
+    "mrs_previo": 0,
+    "mrs_alta": 2,
+    "complicacoes": "Nao ocorreram",
+    "timestamps": {
+      "sintomas": "12h45",
+      "admissao_origem": "13h15",
+      "admissao_coimbra": "15h45",
+      "tc_ce": "13h40",
+      "transferencia": "14h10",
+      "puncao_femoral": "16h20",
+      "recanalizacao": "16h50",
+      "tici": "3"
+    },
+    "metricas_temporais": {
+      "onset_to_door": "03h00",
+      "door_to_imaging": "21h55",
+      "door_to_puncture": "00h35",
+      "onset_to_recan": "04h05",
+      "door_in_door_out": "00h55",
+      "door1_to_door2": "02h30"
+    },
+    "qualidade_eso": {
+      "door_to_imaging": "vermelho",
+      "door_to_puncture": "verde",
+      "onset_to_recan": "verde",
+      "door_in_door_out": "verde",
+      "door1_to_door2": "amarelo"
+    },
+    "seguimento": {
+      "vivo_30_dias": true,
+      "dias_obito": null,
+      "causa_obito": null,
+      "mrs_3_meses": 1
+    }
+  },
+  {
+    "caso": 110,
+    "tipo": "tev_isolada_contraindicacao",
+    "sexo": "masculino",
+    "idade": 82,
+    "proveniencia": "Viseu",
+    "territorio": "ACM esquerda",
+    "etiologia_toast": "Indeterminado",
+    "tratamento": "TEV isolada (sem rt-PA — contraindicacao absoluta: hemorragia digestiva alta ha 13 dias)",
+    "nihss_admissao": 12,
+    "nihss_alta": 7,
+    "mrs_previo": 0,
+    "mrs_alta": 2,
+    "complicacoes": "Nao ocorreram",
+    "timestamps": {
+      "sintomas": "10h15",
+      "admissao_origem": "10h45",
+      "admissao_coimbra": "13h15",
+      "tc_ce": "11h10",
+      "transferencia": "11h30",
+      "puncao_femoral": "14h00",
+      "recanalizacao": "14h30",
+      "tici": "2b",
+      "aspects": "8"
+    },
+    "metricas_temporais": {
+      "onset_to_door": "03h00",
+      "door_to_imaging": "21h55",
+      "door_to_puncture": "00h45",
+      "onset_to_recan": "04h15",
+      "door_in_door_out": "00h45",
+      "door1_to_door2": "02h30"
+    },
+    "qualidade_eso": {
+      "door_to_imaging": "vermelho",
+      "door_to_puncture": "verde",
+      "onset_to_recan": "verde",
+      "door_in_door_out": "verde",
+      "door1_to_door2": "amarelo"
+    },
+    "seguimento": {
+      "vivo_30_dias": true,
+      "dias_obito": null,
+      "causa_obito": null,
+      "mrs_3_meses": 2
+    }
+  },
+  {
+    "caso": 111,
+    "tipo": "tev_isolada_contraindicacao",
+    "sexo": "feminino",
+    "idade": 68,
+    "proveniencia": "Aveiro",
+    "territorio": "ACI + ACM direita",
+    "etiologia_toast": "Aterosclerose grandes vasos",
+    "tratamento": "TEV isolada (sem rt-PA — contraindicacao absoluta: cirurgia abdominal recente (histerectomia ha 8 dias))",
+    "nihss_admissao": 28,
+    "nihss_alta": 18,
+    "mrs_previo": 0,
+    "mrs_alta": 2,
+    "complicacoes": "Nao ocorreram",
+    "timestamps": {
+      "sintomas": "12h30",
+      "admissao_origem": "13h00",
+      "admissao_coimbra": "15h30",
+      "tc_ce": "13h20",
+      "transferencia": "14h00",
+      "puncao_femoral": "16h00",
+      "recanalizacao": "16h40",
+      "tici": "2c",
+      "aspects": "8"
+    },
+    "metricas_temporais": {
+      "onset_to_door": "03h00",
+      "door_to_imaging": "21h50",
+      "door_to_puncture": "00h30",
+      "onset_to_recan": "04h10",
+      "door_in_door_out": "01h00",
+      "door1_to_door2": "02h30"
+    },
+    "qualidade_eso": {
+      "door_to_imaging": "vermelho",
+      "door_to_puncture": "verde",
+      "onset_to_recan": "verde",
+      "door_in_door_out": "verde",
+      "door1_to_door2": "amarelo"
+    },
+    "seguimento": {
+      "vivo_30_dias": true,
+      "dias_obito": null,
+      "causa_obito": null,
+      "mrs_3_meses": 1
+    }
+  },
+  {
+    "caso": 112,
+    "tipo": "tev_isolada_contraindicacao",
+    "sexo": "masculino",
+    "idade": 78,
+    "proveniencia": "Castelo Branco",
+    "territorio": "ACI + ACM direita",
+    "etiologia_toast": "Aterosclerose grandes vasos",
+    "tratamento": "TEV isolada (sem rt-PA — contraindicacao absoluta: cirurgia ortopedica recente (artroplastia total da anca ha 7 dias))",
+    "nihss_admissao": 5,
+    "nihss_alta": 4,
+    "mrs_previo": 0,
+    "mrs_alta": 2,
+    "complicacoes": "Nao ocorreram",
+    "timestamps": {
+      "sintomas": "12h40",
+      "admissao_origem": "13h10",
+      "admissao_coimbra": "15h40",
+      "tc_ce": "13h30",
+      "transferencia": "14h00",
+      "puncao_femoral": "16h10",
+      "recanalizacao": "16h40",
+      "tici": "3",
+      "aspects": "8"
+    },
+    "metricas_temporais": {
+      "onset_to_door": "03h00",
+      "door_to_imaging": "21h50",
+      "door_to_puncture": "00h30",
+      "onset_to_recan": "04h00",
+      "door_in_door_out": "00h50",
+      "door1_to_door2": "02h30"
+    },
+    "qualidade_eso": {
+      "door_to_imaging": "vermelho",
+      "door_to_puncture": "verde",
+      "onset_to_recan": "verde",
+      "door_in_door_out": "verde",
+      "door1_to_door2": "amarelo"
+    },
+    "seguimento": {
+      "vivo_30_dias": true,
+      "dias_obito": null,
+      "causa_obito": null,
+      "mrs_3_meses": 1
+    }
+  },
+  {
+    "caso": 113,
+    "tipo": "tev_isolada_contraindicacao",
+    "sexo": "feminino",
+    "idade": 82,
+    "proveniencia": "Figueira da Foz",
+    "territorio": "ACM esquerda",
+    "etiologia_toast": "Indeterminado",
+    "tratamento": "TEV isolada (sem rt-PA — contraindicacao absoluta: hemorragia digestiva alta ha 13 dias)",
+    "nihss_admissao": 12,
+    "nihss_alta": 7,
+    "mrs_previo": 0,
+    "mrs_alta": 2,
+    "complicacoes": "Nao ocorreram",
+    "timestamps": {
+      "sintomas": "10h15",
+      "admissao_origem": "10h45",
+      "admissao_coimbra": "13h15",
+      "tc_ce": "11h10",
+      "transferencia": "11h40",
+      "puncao_femoral": "14h10",
+      "recanalizacao": "14h40",
+      "tici": "2b"
+    },
+    "metricas_temporais": {
+      "onset_to_door": "03h00",
+      "door_to_imaging": "21h55",
+      "door_to_puncture": "00h55",
+      "onset_to_recan": "04h25",
+      "door_in_door_out": "00h55",
+      "door1_to_door2": "02h30"
+    },
+    "qualidade_eso": {
+      "door_to_imaging": "vermelho",
+      "door_to_puncture": "verde",
+      "onset_to_recan": "verde",
+      "door_in_door_out": "verde",
+      "door1_to_door2": "amarelo"
+    },
+    "seguimento": {
+      "vivo_30_dias": false,
+      "dias_obito": 25,
+      "causa_obito": "complicacao cirurgica (hemorragia intra-abdominal)",
+      "mrs_3_meses": null
+    }
+  },
+  {
+    "caso": 114,
+    "tipo": "tev_isolada_contraindicacao",
+    "sexo": "masculino",
+    "idade": 69,
+    "proveniencia": "Guarda",
+    "territorio": "ACI + ACM esquerda",
+    "etiologia_toast": "Aterosclerose grandes vasos",
+    "tratamento": "TEV isolada (sem rt-PA — contraindicacao absoluta: cirurgia cardiaca recente (bypass coronario ha 12 dias))",
+    "nihss_admissao": 15,
+    "nihss_alta": 11,
+    "mrs_previo": 0,
+    "mrs_alta": 3,
+    "complicacoes": "Nao ocorreram",
+    "timestamps": {
+      "sintomas": "15h30",
+      "admissao_origem": "15h50",
+      "admissao_coimbra": "17h20",
+      "tc_ce": "16h10",
+      "transferencia": "16h30",
+      "puncao_femoral": "17h50",
+      "recanalizacao": "18h20",
+      "tici": "2b",
+      "aspects": "8"
+    },
+    "metricas_temporais": {
+      "onset_to_door": "01h50",
+      "door_to_imaging": "22h50",
+      "door_to_puncture": "00h30",
+      "onset_to_recan": "02h50",
+      "door_in_door_out": "00h40",
+      "door1_to_door2": "01h30"
+    },
+    "qualidade_eso": {
+      "door_to_imaging": "vermelho",
+      "door_to_puncture": "verde",
+      "onset_to_recan": "verde",
+      "door_in_door_out": "verde",
+      "door1_to_door2": "verde"
+    },
+    "seguimento": {
+      "vivo_30_dias": true,
+      "dias_obito": null,
+      "causa_obito": null,
+      "mrs_3_meses": 3
+    }
+  },
+  {
+    "caso": 115,
+    "tipo": "tev_isolada_contraindicacao",
+    "sexo": "feminino",
+    "idade": 79,
+    "proveniencia": "Covilha",
+    "territorio": "ACI + ACM direita",
+    "etiologia_toast": "Aterosclerose grandes vasos",
+    "tratamento": "TEV isolada (sem rt-PA — contraindicacao absoluta: cirurgia abdominal recente (histerectomia ha 10 dias))",
+    "nihss_admissao": 17,
+    "nihss_alta": 13,
+    "mrs_previo": 0,
+    "mrs_alta": 2,
+    "complicacoes": "Nao ocorreram",
+    "timestamps": {
+      "sintomas": "15h30",
+      "admissao_origem": "16h00",
+      "admissao_coimbra": "18h30",
+      "tc_ce": "16h20",
+      "transferencia": "16h50",
+      "puncao_femoral": "19h00",
+      "recanalizacao": "19h40",
+      "tici": "2b",
+      "aspects": "8"
+    },
+    "metricas_temporais": {
+      "onset_to_door": "03h00",
+      "door_to_imaging": "21h50",
+      "door_to_puncture": "00h30",
+      "onset_to_recan": "04h10",
+      "door_in_door_out": "00h50",
+      "door1_to_door2": "02h30"
+    },
+    "qualidade_eso": {
+      "door_to_imaging": "vermelho",
+      "door_to_puncture": "verde",
+      "onset_to_recan": "verde",
+      "door_in_door_out": "verde",
+      "door1_to_door2": "amarelo"
+    },
+    "seguimento": {
+      "vivo_30_dias": true,
+      "dias_obito": null,
+      "causa_obito": null,
+      "mrs_3_meses": 1
+    }
+  },
+  {
+    "caso": 116,
+    "tipo": "conservador_lacunar",
+    "sexo": "masculino",
+    "idade": 78,
+    "proveniencia": "Gois",
+    "territorio": "Lacunar (territorio perfurante)",
+    "etiologia_toast": "Oclusão pequenos vasos (lacunar)",
+    "tratamento": "conservador (sem reperfusao)",
+    "nihss_admissao": 1,
+    "nihss_alta": 0,
+    "mrs_previo": 0,
+    "mrs_alta": 0,
+    "complicacoes": "Nao ocorreram",
+    "timestamps": {
+      "sintomas": "14h45",
+      "admissao_coimbra": "15h17",
+      "tc_ce": "15h40"
+    },
+    "metricas_temporais": {
+      "onset_to_door": "00h32",
+      "door_to_imaging": "00h23"
+    },
+    "qualidade_eso": {
+      "door_to_imaging": "verde"
+    },
+    "seguimento": {
+      "vivo_30_dias": true,
+      "dias_obito": null,
+      "causa_obito": null,
+      "mrs_3_meses": 0
+    }
+  },
+  {
+    "caso": 117,
+    "tipo": "conservador_lacunar",
+    "sexo": "feminino",
+    "idade": 75,
+    "proveniencia": "Penela",
+    "territorio": "Lacunar (territorio perfurante)",
+    "etiologia_toast": "Oclusão pequenos vasos (lacunar)",
+    "tratamento": "conservador (sem reperfusao)",
+    "nihss_admissao": 7,
+    "nihss_alta": 4,
+    "mrs_previo": 0,
+    "mrs_alta": 0,
+    "complicacoes": "Nao ocorreram",
+    "timestamps": {
+      "sintomas": "15h30",
+      "admissao_coimbra": "16h00",
+      "tc_ce": "16h20"
+    },
+    "metricas_temporais": {
+      "onset_to_door": "00h30",
+      "door_to_imaging": "00h20"
+    },
+    "qualidade_eso": {
+      "door_to_imaging": "verde"
+    },
+    "seguimento": {
+      "vivo_30_dias": true,
+      "dias_obito": null,
+      "causa_obito": null,
+      "mrs_3_meses": 0
+    }
+  },
+  {
+    "caso": 118,
+    "tipo": "conservador_lacunar",
+    "sexo": "masculino",
+    "idade": 78,
+    "proveniencia": "Gois",
+    "territorio": "Lacunar (territorio perfurante)",
+    "etiologia_toast": "Oclusão pequenos vasos (lacunar)",
+    "tratamento": "conservador (sem reperfusao)",
+    "nihss_admissao": 1,
+    "nihss_alta": 0,
+    "mrs_previo": 0,
+    "mrs_alta": 0,
+    "complicacoes": "Nao ocorreram",
+    "timestamps": {
+      "sintomas": "15h45",
+      "admissao_coimbra": "16h15",
+      "tc_ce": "16h35"
+    },
+    "metricas_temporais": {
+      "onset_to_door": "00h30",
+      "door_to_imaging": "00h20"
+    },
+    "qualidade_eso": {
+      "door_to_imaging": "verde"
+    },
+    "seguimento": {
+      "vivo_30_dias": true,
+      "dias_obito": null,
+      "causa_obito": null,
+      "mrs_3_meses": 0
+    }
+  },
+  {
+    "caso": 119,
+    "tipo": "conservador_lacunar",
+    "sexo": "feminino",
+    "idade": 75,
+    "proveniencia": "Penela",
+    "territorio": "Lacunar (territorio perfurante)",
+    "etiologia_toast": "Oclusão pequenos vasos (lacunar)",
+    "tratamento": "conservador (sem reperfusao)",
+    "nihss_admissao": 7,
+    "nihss_alta": 4,
+    "mrs_previo": 0,
+    "mrs_alta": 0,
+    "complicacoes": "Nao ocorreram",
+    "timestamps": {
+      "sintomas": "15h30",
+      "admissao_coimbra": "16h00",
+      "tc_ce": "16h20"
+    },
+    "metricas_temporais": {
+      "onset_to_door": "00h30",
+      "door_to_imaging": "00h20"
+    },
+    "qualidade_eso": {
+      "door_to_imaging": "verde"
+    },
+    "seguimento": {
+      "vivo_30_dias": true,
+      "dias_obito": null,
+      "causa_obito": null,
+      "mrs_3_meses": 0
+    }
+  },
+  {
+    "caso": 120,
+    "tipo": "conservador_lacunar",
+    "sexo": "masculino",
+    "idade": 75,
+    "proveniencia": "Pampilhosa da Serra",
+    "territorio": "Lacunar (territorio perfurante)",
+    "etiologia_toast": "Oclusão pequenos vasos (lacunar)",
+    "tratamento": "conservador (sem reperfusao)",
+    "nihss_admissao": 7,
+    "nihss_alta": 3,
+    "mrs_previo": 0,
+    "mrs_alta": 2,
+    "complicacoes": "Nao ocorreram",
+    "timestamps": {
+      "sintomas": "14h45",
+      "admissao_coimbra": "15h10",
+      "tc_ce": "15h30"
+    },
+    "metricas_temporais": {
+      "onset_to_door": "00h25",
+      "door_to_imaging": "00h20"
+    },
+    "qualidade_eso": {
+      "door_to_imaging": "verde"
+    },
+    "seguimento": {
+      "vivo_30_dias": true,
+      "dias_obito": null,
+      "causa_obito": null,
+      "mrs_3_meses": 1
+    }
+  },
+  {
+    "caso": 121,
+    "tipo": "conservador_lacunar",
+    "sexo": "feminino",
+    "idade": 78,
+    "proveniencia": "Gois",
+    "territorio": "Lacunar (territorio perfurante)",
+    "etiologia_toast": "Oclusão pequenos vasos (lacunar)",
+    "tratamento": "conservador (sem reperfusao)",
+    "nihss_admissao": 1,
+    "nihss_alta": 0,
+    "mrs_previo": 0,
+    "mrs_alta": 0,
+    "complicacoes": "Nao ocorreram",
+    "timestamps": {
+      "sintomas": "15h20",
+      "admissao_coimbra": "15h50",
+      "tc_ce": "16h10"
+    },
+    "metricas_temporais": {
+      "onset_to_door": "00h30",
+      "door_to_imaging": "00h20"
+    },
+    "qualidade_eso": {
+      "door_to_imaging": "verde"
+    },
+    "seguimento": {
+      "vivo_30_dias": true,
+      "dias_obito": null,
+      "causa_obito": null,
+      "mrs_3_meses": 0
+    }
+  },
+  {
+    "caso": 122,
+    "tipo": "conservador_lacunar",
+    "sexo": "masculino",
+    "idade": 75,
+    "proveniencia": "Penela",
+    "territorio": "Lacunar (territorio perfurante)",
+    "etiologia_toast": "Oclusão pequenos vasos (lacunar)",
+    "tratamento": "conservador (sem reperfusao)",
+    "nihss_admissao": 7,
+    "nihss_alta": 4,
+    "mrs_previo": 0,
+    "mrs_alta": 0,
+    "complicacoes": "Nao ocorreram",
+    "timestamps": {
+      "sintomas": "15h30",
+      "admissao_coimbra": "16h00",
+      "tc_ce": "16h20"
+    },
+    "metricas_temporais": {
+      "onset_to_door": "00h30",
+      "door_to_imaging": "00h20"
+    },
+    "qualidade_eso": {
+      "door_to_imaging": "verde"
+    },
+    "seguimento": {
+      "vivo_30_dias": true,
+      "dias_obito": null,
+      "causa_obito": null,
+      "mrs_3_meses": 0
+    }
+  },
+  {
+    "caso": 123,
+    "tipo": "conservador_lacunar",
+    "sexo": "feminino",
+    "idade": 75,
+    "proveniencia": "Pampilhosa da Serra",
+    "territorio": "Lacunar (territorio perfurante)",
+    "etiologia_toast": "Oclusão pequenos vasos (lacunar)",
+    "tratamento": "conservador (sem reperfusao)",
+    "nihss_admissao": 7,
+    "nihss_alta": 3,
+    "mrs_previo": 0,
+    "mrs_alta": 2,
+    "complicacoes": "Nao ocorreram",
+    "timestamps": {
+      "sintomas": "15h10",
+      "admissao_coimbra": "15h40",
+      "tc_ce": "16h10"
+    },
+    "metricas_temporais": {
+      "onset_to_door": "00h30",
+      "door_to_imaging": "00h30"
+    },
+    "qualidade_eso": {
+      "door_to_imaging": "amarelo"
+    },
+    "seguimento": {
+      "vivo_30_dias": true,
+      "dias_obito": null,
+      "causa_obito": null,
+      "mrs_3_meses": 1
+    }
+  },
+  {
+    "caso": 124,
+    "tipo": "conservador_lacunar",
+    "sexo": "masculino",
+    "idade": 71,
+    "proveniencia": "Montemor-o-Velho",
+    "territorio": "Lacunar (territorio perfurante)",
+    "etiologia_toast": "Oclusão pequenos vasos (lacunar)",
+    "tratamento": "conservador (sem reperfusao)",
+    "nihss_admissao": 5,
+    "nihss_alta": 3,
+    "mrs_previo": 0,
+    "mrs_alta": 1,
+    "complicacoes": "Nao ocorreram",
+    "timestamps": {
+      "sintomas": "15h40",
+      "admissao_coimbra": "16h10",
+      "tc_ce": "16h35"
+    },
+    "metricas_temporais": {
+      "onset_to_door": "00h30",
+      "door_to_imaging": "00h25"
+    },
+    "qualidade_eso": {
+      "door_to_imaging": "verde"
+    },
+    "seguimento": {
+      "vivo_30_dias": true,
+      "dias_obito": null,
+      "causa_obito": null,
+      "mrs_3_meses": 1
+    }
+  },
+  {
+    "caso": 125,
+    "tipo": "conservador_lacunar",
+    "sexo": "feminino",
+    "idade": 69,
+    "proveniencia": "Figueira da Foz",
+    "territorio": "Lacunar (territorio perfurante)",
+    "etiologia_toast": "Oclusão pequenos vasos (lacunar)",
+    "tratamento": "conservador (sem reperfusao)",
+    "nihss_admissao": 1,
+    "nihss_alta": 0,
+    "mrs_previo": 0,
+    "mrs_alta": 2,
+    "complicacoes": "Nao ocorreram",
+    "timestamps": {
+      "sintomas": "21h10",
+      "admissao_coimbra": "21h40",
+      "tc_ce": "22h10"
+    },
+    "metricas_temporais": {
+      "onset_to_door": "00h30",
+      "door_to_imaging": "00h30"
+    },
+    "qualidade_eso": {
+      "door_to_imaging": "amarelo"
+    },
+    "seguimento": {
+      "vivo_30_dias": true,
+      "dias_obito": null,
+      "causa_obito": null,
+      "mrs_3_meses": 2
+    }
+  },
+  {
+    "caso": 126,
+    "tipo": "conservador_lacunar",
+    "sexo": "masculino",
+    "idade": 78,
+    "proveniencia": "Gois",
+    "territorio": "Lacunar (territorio perfurante)",
+    "etiologia_toast": "Oclusão pequenos vasos (lacunar)",
+    "tratamento": "conservador (sem reperfusao)",
+    "nihss_admissao": 1,
+    "nihss_alta": 0,
+    "mrs_previo": 0,
+    "mrs_alta": 0,
+    "complicacoes": "Nao ocorreram",
+    "timestamps": {
+      "sintomas": "15h10",
+      "admissao_coimbra": "15h40",
+      "tc_ce": "16h00"
+    },
+    "metricas_temporais": {
+      "onset_to_door": "00h30",
+      "door_to_imaging": "00h20"
+    },
+    "qualidade_eso": {
+      "door_to_imaging": "verde"
+    },
+    "seguimento": {
+      "vivo_30_dias": true,
+      "dias_obito": null,
+      "causa_obito": null,
+      "mrs_3_meses": 0
+    }
+  },
+  {
+    "caso": 127,
+    "tipo": "conservador_lacunar",
+    "sexo": "feminino",
+    "idade": 78,
+    "proveniencia": "Gois",
+    "territorio": "Lacunar (territorio perfurante)",
+    "etiologia_toast": "Oclusão pequenos vasos (lacunar)",
+    "tratamento": "conservador (sem reperfusao)",
+    "nihss_admissao": 1,
+    "nihss_alta": 0,
+    "mrs_previo": 0,
+    "mrs_alta": 0,
+    "complicacoes": "Nao ocorreram",
+    "timestamps": {
+      "sintomas": "15h30",
+      "admissao_coimbra": "16h00",
+      "tc_ce": "16h20"
+    },
+    "metricas_temporais": {
+      "onset_to_door": "00h30",
+      "door_to_imaging": "00h20"
+    },
+    "qualidade_eso": {
+      "door_to_imaging": "verde"
+    },
+    "seguimento": {
+      "vivo_30_dias": true,
+      "dias_obito": null,
+      "causa_obito": null,
+      "mrs_3_meses": 0
+    }
+  },
+  {
+    "caso": 128,
+    "tipo": "conservador_lacunar",
+    "sexo": "masculino",
+    "idade": 78,
+    "proveniencia": "Gois",
+    "territorio": "Lacunar (territorio perfurante)",
+    "etiologia_toast": "Oclusão pequenos vasos (lacunar)",
+    "tratamento": "conservador (sem reperfusao)",
+    "nihss_admissao": 1,
+    "nihss_alta": 0,
+    "mrs_previo": 0,
+    "mrs_alta": 0,
+    "complicacoes": "Nao ocorreram",
+    "timestamps": {
+      "sintomas": "14h45",
+      "admissao_coimbra": "15h10",
+      "tc_ce": "15h30"
+    },
+    "metricas_temporais": {
+      "onset_to_door": "00h25",
+      "door_to_imaging": "00h20"
+    },
+    "qualidade_eso": {
+      "door_to_imaging": "verde"
+    },
+    "seguimento": {
+      "vivo_30_dias": true,
+      "dias_obito": null,
+      "causa_obito": null,
+      "mrs_3_meses": 0
+    }
+  },
+  {
+    "caso": 129,
+    "tipo": "conservador_lacunar",
+    "sexo": "feminino",
+    "idade": 75,
+    "proveniencia": "Penela",
+    "territorio": "Lacunar (territorio perfurante)",
+    "etiologia_toast": "Oclusão pequenos vasos (lacunar)",
+    "tratamento": "conservador (sem reperfusao)",
+    "nihss_admissao": 7,
+    "nihss_alta": 4,
+    "mrs_previo": 0,
+    "mrs_alta": 0,
+    "complicacoes": "Nao ocorreram",
+    "timestamps": {
+      "sintomas": "15h40",
+      "admissao_coimbra": "16h10",
+      "tc_ce": "16h35"
+    },
+    "metricas_temporais": {
+      "onset_to_door": "00h30",
+      "door_to_imaging": "00h25"
+    },
+    "qualidade_eso": {
+      "door_to_imaging": "verde"
+    },
+    "seguimento": {
+      "vivo_30_dias": true,
+      "dias_obito": null,
+      "causa_obito": null,
+      "mrs_3_meses": 0
+    }
+  },
+  {
+    "caso": 130,
+    "tipo": "conservador_lacunar",
+    "sexo": "masculino",
+    "idade": 78,
+    "proveniencia": "Gois",
+    "territorio": "Lacunar (territorio perfurante)",
+    "etiologia_toast": "Oclusão pequenos vasos (lacunar)",
+    "tratamento": "conservador (sem reperfusao)",
+    "nihss_admissao": 1,
+    "nihss_alta": 0,
+    "mrs_previo": 0,
+    "mrs_alta": 0,
+    "complicacoes": "Nao ocorreram",
+    "timestamps": {
+      "sintomas": "15h40",
+      "admissao_coimbra": "16h10",
+      "tc_ce": "16h30"
+    },
+    "metricas_temporais": {
+      "onset_to_door": "00h30",
+      "door_to_imaging": "00h20"
+    },
+    "qualidade_eso": {
+      "door_to_imaging": "verde"
+    },
+    "seguimento": {
+      "vivo_30_dias": true,
+      "dias_obito": null,
+      "causa_obito": null,
+      "mrs_3_meses": 0
+    }
+  },
+  {
+    "caso": 131,
+    "tipo": "conservador_lacunar",
+    "sexo": "feminino",
+    "idade": 78,
+    "proveniencia": "Gois",
+    "territorio": "Lacunar (territorio perfurante)",
+    "etiologia_toast": "Oclusão pequenos vasos (lacunar)",
+    "tratamento": "conservador (sem reperfusao)",
+    "nihss_admissao": 1,
+    "nihss_alta": 0,
+    "mrs_previo": 0,
+    "mrs_alta": 0,
+    "complicacoes": "Nao ocorreram",
+    "timestamps": {
+      "sintomas": "15h30",
+      "admissao_coimbra": "16h00",
+      "tc_ce": "16h20"
+    },
+    "metricas_temporais": {
+      "onset_to_door": "00h30",
+      "door_to_imaging": "00h20"
+    },
+    "qualidade_eso": {
+      "door_to_imaging": "verde"
+    },
+    "seguimento": {
+      "vivo_30_dias": true,
+      "dias_obito": null,
+      "causa_obito": null,
+      "mrs_3_meses": 0
+    }
+  },
+  {
+    "caso": 132,
+    "tipo": "conservador_lacunar",
+    "sexo": "masculino",
+    "idade": 75,
+    "proveniencia": "Penela",
+    "territorio": "Lacunar (territorio perfurante)",
+    "etiologia_toast": "Oclusão pequenos vasos (lacunar)",
+    "tratamento": "conservador (sem reperfusao)",
+    "nihss_admissao": 7,
+    "nihss_alta": 4,
+    "mrs_previo": 0,
+    "mrs_alta": 0,
+    "complicacoes": "Nao ocorreram",
+    "timestamps": {
+      "sintomas": "15h30",
+      "admissao_coimbra": "16h00",
+      "tc_ce": "16h20"
+    },
+    "metricas_temporais": {
+      "onset_to_door": "00h30",
+      "door_to_imaging": "00h20"
+    },
+    "qualidade_eso": {
+      "door_to_imaging": "verde"
+    },
+    "seguimento": {
+      "vivo_30_dias": true,
+      "dias_obito": null,
+      "causa_obito": null,
+      "mrs_3_meses": 0
+    }
+  },
+  {
+    "caso": 133,
+    "tipo": "conservador_lacunar",
+    "sexo": "feminino",
+    "idade": 75,
+    "proveniencia": "Pampilhosa da Serra",
+    "territorio": "Lacunar (territorio perfurante)",
+    "etiologia_toast": "Oclusão pequenos vasos (lacunar)",
+    "tratamento": "conservador (sem reperfusao)",
+    "nihss_admissao": 7,
+    "nihss_alta": 3,
+    "mrs_previo": 0,
+    "mrs_alta": 2,
+    "complicacoes": "Nao ocorreram",
+    "timestamps": {
+      "sintomas": "15h30",
+      "admissao_coimbra": "16h00",
+      "tc_ce": "16h20"
+    },
+    "metricas_temporais": {
+      "onset_to_door": "00h30",
+      "door_to_imaging": "00h20"
+    },
+    "qualidade_eso": {
+      "door_to_imaging": "verde"
+    },
+    "seguimento": {
+      "vivo_30_dias": true,
+      "dias_obito": null,
+      "causa_obito": null,
+      "mrs_3_meses": 2
+    }
+  },
+  {
+    "caso": 134,
+    "tipo": "conservador_lacunar",
+    "sexo": "masculino",
+    "idade": 71,
+    "proveniencia": "Montemor-o-Velho",
+    "territorio": "Lacunar (territorio perfurante)",
+    "etiologia_toast": "Oclusão pequenos vasos (lacunar)",
+    "tratamento": "conservador (sem reperfusao)",
+    "nihss_admissao": 5,
+    "nihss_alta": 3,
+    "mrs_previo": 0,
+    "mrs_alta": 1,
+    "complicacoes": "Nao ocorreram",
+    "timestamps": {
+      "sintomas": "15h40",
+      "admissao_coimbra": "16h10",
+      "tc_ce": "16h30"
+    },
+    "metricas_temporais": {
+      "onset_to_door": "00h30",
+      "door_to_imaging": "00h20"
+    },
+    "qualidade_eso": {
+      "door_to_imaging": "verde"
+    },
+    "seguimento": {
+      "vivo_30_dias": true,
+      "dias_obito": null,
+      "causa_obito": null,
+      "mrs_3_meses": 1
+    }
+  },
+  {
+    "caso": 135,
+    "tipo": "conservador_lacunar",
+    "sexo": "feminino",
+    "idade": 69,
+    "proveniencia": "Figueira da Foz",
+    "territorio": "Lacunar (territorio perfurante)",
+    "etiologia_toast": "Oclusão pequenos vasos (lacunar)",
+    "tratamento": "conservador (sem reperfusao)",
+    "nihss_admissao": 1,
+    "nihss_alta": 0,
+    "mrs_previo": 0,
+    "mrs_alta": 2,
+    "complicacoes": "Nao ocorreram",
+    "timestamps": {
+      "sintomas": "21h00",
+      "admissao_coimbra": "21h30",
+      "tc_ce": "21h50"
+    },
+    "metricas_temporais": {
+      "onset_to_door": "00h30",
+      "door_to_imaging": "00h20"
+    },
+    "qualidade_eso": {
+      "door_to_imaging": "verde"
+    },
+    "seguimento": {
+      "vivo_30_dias": true,
+      "dias_obito": null,
+      "causa_obito": null,
+      "mrs_3_meses": 2
+    }
+  },
+  {
+    "caso": 136,
+    "tipo": "conservador_wake_up",
+    "sexo": "masculino",
+    "idade": 62,
+    "proveniencia": "Gois",
+    "territorio": "ACM direita (ramo M2)",
+    "etiologia_toast": "Indeterminado",
+    "tratamento": "conservador (sem reperfusao)",
+    "nihss_admissao": 1,
+    "nihss_alta": 0,
+    "mrs_previo": 0,
+    "mrs_alta": 1,
+    "complicacoes": "Nao ocorreram",
+    "timestamps": {
+      "ultima_vez_bem": "23h45",
+      "descoberta": "07h15",
+      "admissao_coimbra": "07h50",
+      "tc_ce": "08h20"
+    },
+    "metricas_temporais": {
+      "onset_to_door": "08h05",
+      "door_to_imaging": "00h30"
+    },
+    "qualidade_eso": {
+      "door_to_imaging": "amarelo"
+    },
+    "seguimento": {
+      "vivo_30_dias": true,
+      "dias_obito": null,
+      "causa_obito": null,
+      "mrs_3_meses": 1
+    }
+  },
+  {
+    "caso": 137,
+    "tipo": "conservador_wake_up",
+    "sexo": "feminino",
+    "idade": 65,
+    "proveniencia": "Mealhada",
+    "territorio": "ACM direita",
+    "etiologia_toast": "Indeterminado",
+    "tratamento": "conservador (sem reperfusao)",
+    "nihss_admissao": 3,
+    "nihss_alta": 1,
+    "mrs_previo": 0,
+    "mrs_alta": 0,
+    "complicacoes": "Nao ocorreram",
+    "timestamps": {
+      "ultima_vez_bem": "23h45",
+      "descoberta": "07h30",
+      "admissao_coimbra": "08h00",
+      "tc_ce": "08h15"
+    },
+    "metricas_temporais": {
+      "onset_to_door": "08h15",
+      "door_to_imaging": "00h15"
+    },
+    "qualidade_eso": {
+      "door_to_imaging": "verde"
+    },
+    "seguimento": {
+      "vivo_30_dias": true,
+      "dias_obito": null,
+      "causa_obito": null,
+      "mrs_3_meses": 0
+    }
+  },
+  {
+    "caso": 138,
+    "tipo": "conservador_wake_up",
+    "sexo": "masculino",
+    "idade": 61,
+    "proveniencia": "Mealhada",
+    "territorio": "ACM direita (ramo M2)",
+    "etiologia_toast": "Indeterminado",
+    "tratamento": "conservador (sem reperfusao)",
+    "nihss_admissao": 18,
+    "nihss_alta": 12,
+    "mrs_previo": 0,
+    "mrs_alta": 3,
+    "complicacoes": "Nao ocorreram",
+    "timestamps": {
+      "ultima_vez_bem": "23h30",
+      "descoberta": "07h45",
+      "admissao_coimbra": "08h15",
+      "tc_ce": "08h45"
+    },
+    "metricas_temporais": {
+      "onset_to_door": "08h45",
+      "door_to_imaging": "00h30"
+    },
+    "qualidade_eso": {
+      "door_to_imaging": "amarelo"
+    },
+    "seguimento": {
+      "vivo_30_dias": true,
+      "dias_obito": null,
+      "causa_obito": null,
+      "mrs_3_meses": 1
+    }
+  },
+  {
+    "caso": 139,
+    "tipo": "conservador_wake_up",
+    "sexo": "feminino",
+    "idade": 50,
+    "proveniencia": "Mealhada",
+    "territorio": "ACM direita (ramo M2)",
+    "etiologia_toast": "Indeterminado",
+    "tratamento": "conservador (sem reperfusao)",
+    "nihss_admissao": 6,
+    "nihss_alta": 2,
+    "mrs_previo": 0,
+    "mrs_alta": 1,
+    "complicacoes": "Nao ocorreram",
+    "timestamps": {
+      "ultima_vez_bem": "23h45",
+      "descoberta": "07h45",
+      "admissao_coimbra": "08h15",
+      "tc_ce": "08h45"
+    },
+    "metricas_temporais": {
+      "onset_to_door": "08h30",
+      "door_to_imaging": "00h30"
+    },
+    "qualidade_eso": {
+      "door_to_imaging": "amarelo"
+    },
+    "seguimento": {
+      "vivo_30_dias": true,
+      "dias_obito": null,
+      "causa_obito": null,
+      "mrs_3_meses": 1
+    }
+  },
+  {
+    "caso": 140,
+    "tipo": "conservador_wake_up",
+    "sexo": "masculino",
+    "idade": 44,
+    "proveniencia": "Pampilhosa da Serra",
+    "territorio": "ACP esquerda",
+    "etiologia_toast": "Indeterminado",
+    "tratamento": "conservador (sem reperfusao)",
+    "nihss_admissao": 4,
+    "nihss_alta": 2,
+    "mrs_previo": 0,
+    "mrs_alta": 1,
+    "complicacoes": "Nao ocorreram",
+    "timestamps": {
+      "ultima_vez_bem": "23h45",
+      "descoberta": "07h30",
+      "admissao_coimbra": "08h15",
+      "tc_ce": "08h50"
+    },
+    "metricas_temporais": {
+      "onset_to_door": "08h30",
+      "door_to_imaging": "00h35"
+    },
+    "qualidade_eso": {
+      "door_to_imaging": "amarelo"
+    },
+    "seguimento": {
+      "vivo_30_dias": true,
+      "dias_obito": null,
+      "causa_obito": null,
+      "mrs_3_meses": 1
+    }
+  },
+  {
+    "caso": 141,
+    "tipo": "conservador_wake_up",
+    "sexo": "feminino",
+    "idade": 62,
+    "proveniencia": "Gois",
+    "territorio": "ACM direita (ramo M2)",
+    "etiologia_toast": "Indeterminado",
+    "tratamento": "conservador (sem reperfusao)",
+    "nihss_admissao": 1,
+    "nihss_alta": 0,
+    "mrs_previo": 0,
+    "mrs_alta": 1,
+    "complicacoes": "Nao ocorreram",
+    "timestamps": {
+      "ultima_vez_bem": "23h45",
+      "descoberta": "07h30",
+      "admissao_coimbra": "08h15",
+      "tc_ce": "08h45"
+    },
+    "metricas_temporais": {
+      "onset_to_door": "08h30",
+      "door_to_imaging": "00h30"
+    },
+    "qualidade_eso": {
+      "door_to_imaging": "amarelo"
+    },
+    "seguimento": {
+      "vivo_30_dias": true,
+      "dias_obito": null,
+      "causa_obito": null,
+      "mrs_3_meses": 0
+    }
+  },
+  {
+    "caso": 142,
+    "tipo": "conservador_wake_up",
+    "sexo": "masculino",
+    "idade": 65,
+    "proveniencia": "Mealhada",
+    "territorio": "ACM direita",
+    "etiologia_toast": "Indeterminado",
+    "tratamento": "conservador (sem reperfusao)",
+    "nihss_admissao": 3,
+    "nihss_alta": 1,
+    "mrs_previo": 0,
+    "mrs_alta": 0,
+    "complicacoes": "Nao ocorreram",
+    "timestamps": {
+      "ultima_vez_bem": "23h45",
+      "descoberta": "07h45",
+      "admissao_coimbra": "08h15",
+      "tc_ce": "08h45"
+    },
+    "metricas_temporais": {
+      "onset_to_door": "08h30",
+      "door_to_imaging": "00h30"
+    },
+    "qualidade_eso": {
+      "door_to_imaging": "amarelo"
+    },
+    "seguimento": {
+      "vivo_30_dias": true,
+      "dias_obito": null,
+      "causa_obito": null,
+      "mrs_3_meses": 0
+    }
+  },
+  {
+    "caso": 143,
+    "tipo": "conservador_wake_up",
+    "sexo": "feminino",
+    "idade": 61,
+    "proveniencia": "Mealhada",
+    "territorio": "ACM direita (ramo M2)",
+    "etiologia_toast": "Indeterminado",
+    "tratamento": "conservador (sem reperfusao)",
+    "nihss_admissao": 18,
+    "nihss_alta": 12,
+    "mrs_previo": 0,
+    "mrs_alta": 3,
+    "complicacoes": "Nao ocorreram",
+    "timestamps": {
+      "ultima_vez_bem": "23h30",
+      "descoberta": "07h45",
+      "admissao_coimbra": "08h15",
+      "tc_ce": "08h45"
+    },
+    "metricas_temporais": {
+      "onset_to_door": "08h45",
+      "door_to_imaging": "00h30"
+    },
+    "qualidade_eso": {
+      "door_to_imaging": "amarelo"
+    },
+    "seguimento": {
+      "vivo_30_dias": true,
+      "dias_obito": null,
+      "causa_obito": null,
+      "mrs_3_meses": 2
+    }
+  },
+  {
+    "caso": 144,
+    "tipo": "conservador_wake_up",
+    "sexo": "masculino",
+    "idade": 50,
+    "proveniencia": "Mealhada",
+    "territorio": "ACM direita (ramo M2)",
+    "etiologia_toast": "Indeterminado",
+    "tratamento": "conservador (sem reperfusao)",
+    "nihss_admissao": 6,
+    "nihss_alta": 2,
+    "mrs_previo": 0,
+    "mrs_alta": 1,
+    "complicacoes": "Nao ocorreram",
+    "timestamps": {
+      "ultima_vez_bem": "23h45",
+      "descoberta": "07h45",
+      "admissao_coimbra": "08h15",
+      "tc_ce": "08h45"
+    },
+    "metricas_temporais": {
+      "onset_to_door": "08h30",
+      "door_to_imaging": "00h30"
+    },
+    "qualidade_eso": {
+      "door_to_imaging": "amarelo"
+    },
+    "seguimento": {
+      "vivo_30_dias": true,
+      "dias_obito": null,
+      "causa_obito": null,
+      "mrs_3_meses": 0
+    }
+  },
+  {
+    "caso": 145,
+    "tipo": "conservador_wake_up",
+    "sexo": "feminino",
+    "idade": 44,
+    "proveniencia": "Pampilhosa da Serra",
+    "territorio": "ACP esquerda",
+    "etiologia_toast": "Indeterminado",
+    "tratamento": "conservador (sem reperfusao)",
+    "nihss_admissao": 4,
+    "nihss_alta": 2,
+    "mrs_previo": 0,
+    "mrs_alta": 1,
+    "complicacoes": "Nao ocorreram",
+    "timestamps": {
+      "ultima_vez_bem": "23h30",
+      "descoberta": "07h45",
+      "admissao_coimbra": "08h15",
+      "tc_ce": "08h45"
+    },
+    "metricas_temporais": {
+      "onset_to_door": "08h45",
+      "door_to_imaging": "00h30"
+    },
+    "qualidade_eso": {
+      "door_to_imaging": "amarelo"
+    },
+    "seguimento": {
+      "vivo_30_dias": false,
+      "dias_obito": 8,
+      "causa_obito": "tromboembolismo pulmonar",
+      "mrs_3_meses": null
+    }
+  },
+  {
+    "caso": 146,
+    "tipo": "conservador_wake_up",
+    "sexo": "masculino",
+    "idade": 62,
+    "proveniencia": "Gois",
+    "territorio": "ACM direita (ramo M2)",
+    "etiologia_toast": "Indeterminado",
+    "tratamento": "conservador (sem reperfusao)",
+    "nihss_admissao": 1,
+    "nihss_alta": 0,
+    "mrs_previo": 0,
+    "mrs_alta": 1,
+    "complicacoes": "Nao ocorreram",
+    "timestamps": {
+      "ultima_vez_bem": "23h45",
+      "descoberta": "07h15",
+      "admissao_coimbra": "07h50",
+      "tc_ce": "08h20"
+    },
+    "metricas_temporais": {
+      "onset_to_door": "08h05",
+      "door_to_imaging": "00h30"
+    },
+    "qualidade_eso": {
+      "door_to_imaging": "amarelo"
+    },
+    "seguimento": {
+      "vivo_30_dias": true,
+      "dias_obito": null,
+      "causa_obito": null,
+      "mrs_3_meses": 0
+    }
+  },
+  {
+    "caso": 147,
+    "tipo": "conservador_wake_up",
+    "sexo": "feminino",
+    "idade": 65,
+    "proveniencia": "Mealhada",
+    "territorio": "ACM direita",
+    "etiologia_toast": "Indeterminado",
+    "tratamento": "conservador (sem reperfusao)",
+    "nihss_admissao": 3,
+    "nihss_alta": 1,
+    "mrs_previo": 0,
+    "mrs_alta": 0,
+    "complicacoes": "Nao ocorreram",
+    "timestamps": {
+      "ultima_vez_bem": "23h45",
+      "descoberta": "07h30",
+      "admissao_coimbra": "08h15",
+      "tc_ce": "08h45"
+    },
+    "metricas_temporais": {
+      "onset_to_door": "08h30",
+      "door_to_imaging": "00h30"
+    },
+    "qualidade_eso": {
+      "door_to_imaging": "amarelo"
+    },
+    "seguimento": {
+      "vivo_30_dias": true,
+      "dias_obito": null,
+      "causa_obito": null,
+      "mrs_3_meses": 0
+    }
+  },
+  {
+    "caso": 148,
+    "tipo": "conservador_wake_up",
+    "sexo": "masculino",
+    "idade": 62,
+    "proveniencia": "Gois",
+    "territorio": "ACM direita (ramo M2)",
+    "etiologia_toast": "Indeterminado",
+    "tratamento": "conservador (sem reperfusao)",
+    "nihss_admissao": 1,
+    "nihss_alta": 0,
+    "mrs_previo": 0,
+    "mrs_alta": 1,
+    "complicacoes": "Nao ocorreram",
+    "timestamps": {
+      "ultima_vez_bem": "23h30",
+      "descoberta": "07h45",
+      "admissao_coimbra": "08h15",
+      "tc_ce": "08h45"
+    },
+    "metricas_temporais": {
+      "onset_to_door": "08h45",
+      "door_to_imaging": "00h30"
+    },
+    "qualidade_eso": {
+      "door_to_imaging": "amarelo"
+    },
+    "seguimento": {
+      "vivo_30_dias": true,
+      "dias_obito": null,
+      "causa_obito": null,
+      "mrs_3_meses": 1
+    }
+  },
+  {
+    "caso": 149,
+    "tipo": "conservador_wake_up",
+    "sexo": "feminino",
+    "idade": 65,
+    "proveniencia": "Mealhada",
+    "territorio": "ACM direita",
+    "etiologia_toast": "Indeterminado",
+    "tratamento": "conservador (sem reperfusao)",
+    "nihss_admissao": 3,
+    "nihss_alta": 1,
+    "mrs_previo": 0,
+    "mrs_alta": 0,
+    "complicacoes": "Nao ocorreram",
+    "timestamps": {
+      "ultima_vez_bem": "23h45",
+      "descoberta": "07h15",
+      "admissao_coimbra": "07h50",
+      "tc_ce": "08h15"
+    },
+    "metricas_temporais": {
+      "onset_to_door": "08h05",
+      "door_to_imaging": "00h25"
+    },
+    "qualidade_eso": {
+      "door_to_imaging": "verde"
+    },
+    "seguimento": {
+      "vivo_30_dias": true,
+      "dias_obito": null,
+      "causa_obito": null,
+      "mrs_3_meses": 0
+    }
+  },
+  {
+    "caso": 150,
+    "tipo": "conservador_wake_up",
+    "sexo": "masculino",
+    "idade": 61,
+    "proveniencia": "Mealhada",
+    "territorio": "ACM direita (ramo M2)",
+    "etiologia_toast": "Indeterminado",
+    "tratamento": "conservador (sem reperfusao)",
+    "nihss_admissao": 18,
+    "nihss_alta": 12,
+    "mrs_previo": 0,
+    "mrs_alta": 3,
+    "complicacoes": "Nao ocorreram",
+    "timestamps": {
+      "ultima_vez_bem": "23h45",
+      "descoberta": "07h15",
+      "admissao_coimbra": "07h50",
+      "tc_ce": "08h20"
+    },
+    "metricas_temporais": {
+      "onset_to_door": "08h05",
+      "door_to_imaging": "00h30"
+    },
+    "qualidade_eso": {
+      "door_to_imaging": "amarelo"
+    },
+    "seguimento": {
+      "vivo_30_dias": true,
+      "dias_obito": null,
+      "causa_obito": null,
+      "mrs_3_meses": 1
+    }
+  }
+]

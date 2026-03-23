@@ -9,10 +9,19 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # ── Configuração ──────────────────────────────────────────────────────────────
-USE_GROQ      = os.getenv("GROQ_API_KEY") is not None
+# USE_GROQ      = os.getenv("GROQ_API_KEY") is not None 
+# respeita o LLM_BACKEND definido externamente em vez de depender só da presença do GROQ_API_KEY, para facilitar testes locais sem chave
+_backend_override = os.getenv("LLM_BACKEND", "").lower()
+if _backend_override == "ollama":
+    USE_GROQ = False
+elif _backend_override == "groq":
+    USE_GROQ = True
+else:
+    USE_GROQ = os.getenv("GROQ_API_KEY") is not None
 GROQ_API_KEY  = os.getenv("GROQ_API_KEY")
 ACTIVE_MODEL  = os.getenv("ACTIVE_MODEL", "llama-3.1-8b-instant")
 OLLAMA_URL    = os.getenv("OLLAMA_BASE_URL", "http://localhost:11434")
+
 
 #PROMPT_FILE = Path("prompts/timestamps_v1.txt")
 PROMPT_FILE = Path("prompts/timestamps_v2.txt")
