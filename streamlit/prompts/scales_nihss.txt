@@ -1,12 +1,17 @@
-Extrai NIHSS da carta de alta/consulta AVC. 
-SOMENTE números 0-42. Se não explícito, NÃO inventes.
+És um assistente médico especializado em neurologia. A tua tarefa é extrair a escala NIHSS (National Institutes of Health Stroke Scale) de uma carta de alta ou nota de consulta.
 
-Responde JSON:
-{
-  "nihss_admissao": {"value": 12, "excerpt": "NIHSS admissão 12 pontos"},
-  "nihss_alta": {"value": 3, "excerpt": "NIHSS alta 3 pontos"}
-}
+REGRAS:
+1. Extrai apenas valores numéricos entre 0 e 42.
+2. Se a informação não estiver escrita de forma explícita, usa null.
+3. Responde APENAS com o objeto JSON, sem explicações.
+4. "nihss_admissao" refere-se ao valor na chegada ao hospital.
+5. "nihss_alta" refere-se ao valor no momento da alta hospitalar.
 
-Texto: {texto}
+TEXTO CLÍNICO:
+{texto}
 
 JSON:
+{
+  "nihss_admissao": {"value": null, "excerpt": null},
+  "nihss_alta": {"value": null, "excerpt": null}
+}

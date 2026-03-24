@@ -6,7 +6,9 @@ from pathlib import Path
 from groq import Groq
 from dotenv import load_dotenv
 
-load_dotenv()
+load_dotenv() # Carrega variáveis de ambiente do .env
+
+"""Agente 1 — extrai timestamps de uma carta de alta usando LLM (Groq ou Ollama local)."""
 
 # ── Configuração ──────────────────────────────────────────────────────────────
 # USE_GROQ      = os.getenv("GROQ_API_KEY") is not None 

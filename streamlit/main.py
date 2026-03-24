@@ -16,6 +16,7 @@ def run_pipeline(letter_path: str | Path, verbose: bool = True) -> dict:
 
     Fase 1:  Extração de timestamps (Agente 1 — LLM)
     Fase 1b: Cálculo de métricas temporais (Agente 2 — Python puro)
+    Fase 2: Extração de escalas NIHSS + mRS (Agente 3 — LLM)
     """
     letter_path = Path(letter_path)
 

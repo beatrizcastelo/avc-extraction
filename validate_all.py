@@ -148,6 +148,12 @@ def flatten_ground_truth(raw: dict) -> dict:
                         ("door1_to_door2","door1_to_door2")]:
         v = mt.get(gt_key)
         result[var] = str(v).strip() if v is not None else None
+    
+    # Escalas da carta de alta
+    result["nihss_admissao_carta"] = raw.get("nihss_admissao")
+    result["nihss_alta_carta"]     = raw.get("nihss_alta")
+    result["mrs_previo_carta"]     = raw.get("mrs_previo")
+    result["mrs_alta_carta"]       = raw.get("mrs_alta")
 
     # Seguimento
     seg = raw.get("seguimento", {})
@@ -305,11 +311,12 @@ def run_agent_on_case(case_dir: Path, backend: str = "groq") -> dict:
         raw = extract_timestamps(carta)
         save_cached_output(case_dir, raw)
         
-        # 🆕 AGENTE 2: Métricas derivadas (Python puro)
+        # AGENTE 2: Métricas derivadas (Python puro)
         sys.path.insert(0, str(STREAMLIT_DIR / "agents"))
         from metrics import calculate_metrics
         raw["metrics"] = calculate_metrics(raw.get("timestamps", {}))
 
+        # AGENTE 3: Escalas (usa o scales.py)
         from agents.scales import extract_scales
         consulta = next((f for f in txt_files if "consulta" in f.name), None)
         raw["scales"] = {}

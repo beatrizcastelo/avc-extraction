@@ -1,6 +1,8 @@
 from datetime import datetime
 from typing import Optional
 
+"""Agente 2 — calcula métricas temporais derivadas a partir dos timestamps extraídos pelo Agente 1.
+Lógica Python pura, sem LLM."""
 
 def _parse_dt(date_str: Optional[str], time_str: Optional[str]) -> Optional[datetime]:
     if not time_str or time_str in ("null", "NA", None):
