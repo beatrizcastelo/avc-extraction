@@ -16,13 +16,13 @@ onset_to_door,metric,1,0,0,0,1.0,1.0,1.0,0.0,1
 onset_to_recan,metric,0,0,0,1,,,,,1
 mrs_3meses_carta,scale,0,0,0,1,,,,,1
 mrs_3meses_consulta,scale,0,1,0,0,0.0,,,,1
-mrs_alta_carta,scale,0,1,0,0,0.0,,,,1
+mrs_alta_carta,scale,1,0,0,0,1.0,1.0,1.0,0.0,1
 mrs_alta_consulta,scale,0,1,0,0,0.0,,,,1
-mrs_previo_carta,scale,0,1,0,0,0.0,,,,1
+mrs_previo_carta,scale,1,0,0,0,1.0,1.0,1.0,0.0,1
 mrs_previo_consulta,scale,0,0,0,1,,,,,1
-nihss_admissao_carta,scale,0,1,0,0,0.0,,,,1
+nihss_admissao_carta,scale,1,0,0,0,1.0,1.0,1.0,0.0,1
 nihss_admissao_consulta,scale,0,0,0,1,,,,,1
-nihss_alta_carta,scale,0,1,0,0,0.0,,,,1
+nihss_alta_carta,scale,1,0,0,0,1.0,1.0,1.0,0.0,1
 nihss_alta_consulta,scale,0,1,0,0,0.0,,,,1
 vivo_30_dias,binary,0,0,1,0,,0.0,,,1
 dias_obito,numeric,0,0,0,1,,,,,1

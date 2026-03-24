@@ -5,6 +5,7 @@ from datetime import datetime
 
 from agents.extractor import extract_timestamps
 from agents.metrics import calculate_metrics
+from agents.scales import extract_scales
 
 OUTPUT_DIR = Path("outputs")
 OUTPUT_DIR.mkdir(exist_ok=True)
@@ -59,6 +60,11 @@ def run_pipeline(letter_path: str | Path, verbose: bool = True) -> dict:
         calculated = [k for k, v in metrics.items() if v.get("value") is not None]
         print(f"    ✓ {len(calculated)}/{len(metrics)} métricas calculadas")
 
+    # ── FASE 2: Extração de escalas (Agente 3) ──────────────────────────
+    if verbose:
+        print("\n[3/3] A extrair escalas clínicas (NIHSS + mRS)...")
+    # Chama a função que corrigimos, passando o caminho do ficheiro
+    scales_result = extract_scales(letter_path)
     # ── Consolidação final ─────────────────────────────────────────────────
     output = {
         "status": "ok",
@@ -68,7 +74,10 @@ def run_pipeline(letter_path: str | Path, verbose: bool = True) -> dict:
         "backend": extraction_result.get("_meta", {}).get("backend", "unknown"),
         "duration_seconds": extraction_result.get("_meta", {}).get("duration_seconds", 0),
         "timestamps": timestamps,
-        "metrics": metrics
+        "metrics": metrics,
+        "scales": scales_result,
+        "categorical": {},        # Reservar para o Agente de Categorias (RF6)
+        "binary": {}              # Reservar para o Agente Binário
     }
 
     # Guarda JSON automaticamente
@@ -106,6 +115,13 @@ def _print_summary(result: dict):
         if val.get("value") is not None:
             icon = ICON.get(val.get("status", "unknown"), "⚪")
             print(f"  {icon} {metrica:25s} → {val['value']} min")
+    
+    print(f"\n{'─'*50}")
+    print("  ESCALAS CLÍNICAS (RF5)")
+    print(f"{'─'*50}")
+    for escala, val in result["scales"].items():
+        if val is not None:
+            print(f"  {escala:25s} → {val}")
 
 
 # ── Quando corrido directamente no terminal ────────────────────────────────

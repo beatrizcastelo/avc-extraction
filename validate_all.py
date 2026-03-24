@@ -63,16 +63,13 @@ ALL_VARS = (TIMESTAMP_VARS + METRIC_VARS + SCALE_VARS +
 def flatten_extractor_output(raw: dict) -> dict:
     """
     Converte o output do extractor (aninhado, chaves inglês) → dict plano.
-    Mapeamento:
-      timestamps.onset_uvb        → sintomas
-      timestamps.door1_admission  → admissaoorigem
-      timestamps.admission        → admissaocoimbra
-      timestamps.door2            → admissaocoimbra (bridging, sobrescreve)
-      timestamps.imaging_ct       → tcce
-      timestamps.thrombolysis     → fibrinolise
-      timestamps.door1_departure  → transferencia
-      timestamps.femoral_puncture → puncaofemoral
-      timestamps.recanalization   → recanalizacao
+
+    Estrutura esperada de raw["scales"]:
+      {
+        "carta":   {"nihss": {"nihss_admissao": {"value": 14}, ...},
+                    "mrs":   {"mrs_previo": {"value": 0}, ...}},
+        "consulta": { ... }
+      }
     """
     result = {}
     ts = raw.get("timestamps", {})
@@ -84,7 +81,7 @@ def flatten_extractor_output(raw: dict) -> dict:
             return None
         return str(v).strip()
 
-    # Timestamps
+    # ── Timestamps ────────────────────────────────────────────────────────────
     result["sintomas"]        = get_val("onset_uvb")
     result["admissaoorigem"]  = get_val("door1_admission")
     result["admissaocoimbra"] = get_val("admission")
@@ -99,30 +96,59 @@ def flatten_extractor_output(raw: dict) -> dict:
     if door2 is not None:
         result["admissaocoimbra"] = door2
 
-    # (Opcional) Métricas antigas, se existirem
+    # ── Métricas (Python puro, sem LLM) ──────────────────────────────────────
     for k, v in raw.get("metricas_temporais", {}).items():
         if k in METRIC_VARS:
             result[k] = v
 
-    # Métricas do metrics.py
-    metrics = raw.get("metrics", {})
-    for k, v in metrics.items():
+    metrics_raw = raw.get("metrics", {})
+    for k, v in metrics_raw.items():
         if isinstance(v, dict) and v.get("value") is not None:
-            result[k] = v["value"]  # ex: door_to_needle, door_to_imaging, ...
+            result[k] = v["value"]
 
-    # Métricas do scales.py
+    # ── Escalas ───────────────────────────────────────────────────────────────
+    # Estrutura de raw["scales"]:
+    #   raw["scales"]["carta"]   = {"nihss": {"nihss_admissao": {"value": N}, ...},
+    #                               "mrs":   {"mrs_previo":    {"value": N}, ...}}
+    #   raw["scales"]["consulta"] = idem
     scales = raw.get("scales", {})
+
     for source in ["carta", "consulta"]:
         s = scales.get(source, {})
+
+        # nihss
         nihss = s.get("nihss", {})
+        result[f"nihss_admissao_{source}"] = _extract_scale_value(nihss, "nihss_admissao")
+        result[f"nihss_alta_{source}"]     = _extract_scale_value(nihss, "nihss_alta")
+
+        # mrs
         mrs = s.get("mrs", {})
-            
-        result[f"nihss_admissao_{source}"] = nihss.get("nihss_admissao", {}).get("value")
-        result[f"nihss_alta_{source}"] = nihss.get("nihss_alta", {}).get("value")
-        result[f"mrs_previo_{source}"] = mrs.get("mrs_previo", {}).get("value")
-        result[f"mrs_alta_{source}"] = mrs.get("mrs_alta", {}).get("value")
-        result[f"mrs_3meses_{source}"] = mrs.get("mrs_3meses", {}).get("value")
+        result[f"mrs_previo_{source}"]  = _extract_scale_value(mrs, "mrs_previo")
+        result[f"mrs_alta_{source}"]    = _extract_scale_value(mrs, "mrs_alta")
+        result[f"mrs_3meses_{source}"]  = _extract_scale_value(mrs, "mrs_3meses")
+
     return result
+
+
+def _extract_scale_value(section: dict, key: str):
+    """
+    Lê o valor de uma escala de forma robusta.
+    Aceita tanto {"nihss_admissao": {"value": 14}} como {"nihss_admissao": 14}.
+    """
+    entry = section.get(key)
+    if entry is None:
+        return None
+    if isinstance(entry, dict):
+        v = entry.get("value")
+    else:
+        v = entry
+    if v is None or str(v).lower() in {"null", "none", "n/a", "na", ""}:
+        return None
+    try:
+        num = float(v)
+        return int(num) if num == int(num) else num
+    except (ValueError, TypeError):
+        return None
 
 
 def flatten_ground_truth(raw: dict) -> dict:
@@ -237,6 +263,7 @@ def compare_metric(pred, gt) -> dict:
 def compare_scale(pred, gt) -> dict:
     pn, gn = is_null(pred), is_null(gt)
     if gn and pn:       return {"tp":0,"fp":0,"fn":0,"tn":1,"mae":None}
+    if gn and pn:       return {"tp":0,"fp":0,"fn":0,"tn":1,"mae":None}
     if gn and not pn:   return {"tp":0,"fp":1,"fn":0,"tn":0,"mae":None}
     if not gn and pn:   return {"tp":0,"fp":0,"fn":1,"tn":0,"mae":None}
     try:
@@ -307,27 +334,33 @@ def run_agent_on_case(case_dir: Path, backend: str = "groq") -> dict:
         if not carta:
             return {}
 
-        # AGENTE 1: Timestamps (já tens)
+        # AGENTE 1: Timestamps
         raw = extract_timestamps(carta)
-        save_cached_output(case_dir, raw)
         
         # AGENTE 2: Métricas derivadas (Python puro)
         sys.path.insert(0, str(STREAMLIT_DIR / "agents"))
         from metrics import calculate_metrics
         raw["metrics"] = calculate_metrics(raw.get("timestamps", {}))
 
-        # AGENTE 3: Escalas (usa o scales.py)
-        from agents.scales import extract_scales
-        consulta = next((f for f in txt_files if "consulta" in f.name), None)
+        # Guarda cache só com timestamps+metrics (antes das escalas, que são mais lentas)
+        save_cached_output(case_dir, raw)
+
+        # AGENTE 3: Escalas — isolado em try/except para não quebrar timestamps+metrics
         raw["scales"] = {}
-        raw["scales"]["carta"] = extract_scales(carta)
-        if consulta:
-            raw["scales"]["consulta"] = extract_scales(consulta)
+        try:
+            from agents.scales import extract_scales
+            consulta = next((f for f in txt_files if "consulta" in f.name), None)
+
+            raw["scales"]["carta"] = extract_scales(carta)
+            if consulta:
+                raw["scales"]["consulta"] = extract_scales(consulta)
+        except Exception as e:
+            print(f"    ⚠️  Escalas falharam em {case_dir.name}: {e}")
+            # Continua sem escalas — timestamps e métricas ficam válidos
 
         return flatten_extractor_output(raw)
     finally:
         os.chdir(original_dir)
-
 
 
 # ══════════════════════════════════════════════════════════════════════════════
