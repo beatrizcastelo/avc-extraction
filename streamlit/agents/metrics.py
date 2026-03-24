@@ -18,7 +18,9 @@ def _parse_dt(date_str: Optional[str], time_str: Optional[str]) -> Optional[date
 def _minutes(t1: Optional[datetime], t2: Optional[datetime]) -> Optional[int]:
     if t1 and t2:
         m = int((t2 - t1).total_seconds() / 60)
-        return m if m >= 0 else None
+        if m < 0 or m > 300:  # >5h = impossível em stroke
+            return None
+        return m
     return None
 
 

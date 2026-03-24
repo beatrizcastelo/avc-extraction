@@ -12,11 +12,17 @@ Uso:
 """
 
 import json, os, re, sys, time, argparse
+from unittest import result
 import pandas as pd
 from pathlib import Path
 from datetime import datetime
 from collections import defaultdict
 from typing import Any
+
+#importar caminho do metrics.py 
+sys.path.insert(0, "streamlit/agents")
+import metrics
+
 
 # ══════════════════════════════════════════════════════════════════════════════
 # CONFIGURAÇÃO
@@ -38,7 +44,10 @@ TIMESTAMP_VARS   = ["sintomas","admissaoorigem","admissaocoimbra","tcce",
                     "fibrinolise","transferencia","puncaofemoral","recanalizacao"]
 METRIC_VARS      = ["onset_to_door","door_to_imaging","door_to_needle",
                     "door_to_puncture","onset_to_recan","door_in_door_out","door1_to_door2"]
-SCALE_VARS       = ["nihss_admissao","nihss_alta","mrs_previo","mrs_alta","mrs_3meses"]
+SCALE_VARS       = ["nihss_admissao_carta", "nihss_alta_carta", "mrs_previo_carta", 
+                    "mrs_alta_carta", "mrs_3meses_carta",
+                    "nihss_admissao_consulta", "nihss_alta_consulta", 
+                    "mrs_previo_consulta", "mrs_alta_consulta", "mrs_3meses_consulta"]
 CATEGORICAL_VARS = ["tipo","etiologia_toast","tratamento","territorio","complicacoes","causa_obito"]
 BINARY_VARS      = ["vivo_30_dias"]
 NUMERIC_VARS     = ["dias_obito"]
@@ -71,10 +80,11 @@ def flatten_extractor_output(raw: dict) -> dict:
     def get_val(key):
         entry = ts.get(key, {})
         v = entry.get("value") if isinstance(entry, dict) else entry
-        if v is None or str(v).strip().upper() in {"NA","N/A","NULL","NONE",""}:
+        if v is None or str(v).strip().upper() in {"NA", "N/A", "NULL", "NONE", ""}:
             return None
         return str(v).strip()
 
+    # Timestamps
     result["sintomas"]        = get_val("onset_uvb")
     result["admissaoorigem"]  = get_val("door1_admission")
     result["admissaocoimbra"] = get_val("admission")
@@ -84,16 +94,34 @@ def flatten_extractor_output(raw: dict) -> dict:
     result["puncaofemoral"]   = get_val("femoral_puncture")
     result["recanalizacao"]   = get_val("recanalization")
 
-    # Em bridging, door2 é a admissão no CHUC
+    # Bridging: door2 sobrescreve admissaocoimbra
     door2 = get_val("door2")
     if door2 is not None:
         result["admissaocoimbra"] = door2
 
-    # Métricas (se o extractor as calcular no futuro)
+    # (Opcional) Métricas antigas, se existirem
     for k, v in raw.get("metricas_temporais", {}).items():
         if k in METRIC_VARS:
             result[k] = v
 
+    # Métricas do metrics.py
+    metrics = raw.get("metrics", {})
+    for k, v in metrics.items():
+        if isinstance(v, dict) and v.get("value") is not None:
+            result[k] = v["value"]  # ex: door_to_needle, door_to_imaging, ...
+
+    # Métricas do scales.py
+    scales = raw.get("scales", {})
+    for source in ["carta", "consulta"]:
+        s = scales.get(source, {})
+        nihss = s.get("nihss", {})
+        mrs = s.get("mrs", {})
+            
+        result[f"nihss_admissao_{source}"] = nihss.get("nihss_admissao", {}).get("value")
+        result[f"nihss_alta_{source}"] = nihss.get("nihss_alta", {}).get("value")
+        result[f"mrs_previo_{source}"] = mrs.get("mrs_previo", {}).get("value")
+        result[f"mrs_alta_{source}"] = mrs.get("mrs_alta", {}).get("value")
+        result[f"mrs_3meses_{source}"] = mrs.get("mrs_3meses", {}).get("value")
     return result
 
 
@@ -265,9 +293,7 @@ def run_agent_on_case(case_dir: Path, backend: str = "groq") -> dict:
     os.chdir(STREAMLIT_DIR)
     try:
         from agents.extractor import extract_timestamps
-        # from agents.scales      import extract_scales       # TODO passo 3
-        # from agents.categorical import extract_categorical  # TODO passo 4
-
+        
         txt_files = list(case_dir.glob("*.txt"))
         carta = next((f for f in txt_files
                       if "consulta" not in f.name
@@ -275,11 +301,26 @@ def run_agent_on_case(case_dir: Path, backend: str = "groq") -> dict:
         if not carta:
             return {}
 
+        # AGENTE 1: Timestamps (já tens)
         raw = extract_timestamps(carta)
         save_cached_output(case_dir, raw)
+        
+        # 🆕 AGENTE 2: Métricas derivadas (Python puro)
+        sys.path.insert(0, str(STREAMLIT_DIR / "agents"))
+        from metrics import calculate_metrics
+        raw["metrics"] = calculate_metrics(raw.get("timestamps", {}))
+
+        from agents.scales import extract_scales
+        consulta = next((f for f in txt_files if "consulta" in f.name), None)
+        raw["scales"] = {}
+        raw["scales"]["carta"] = extract_scales(carta)
+        if consulta:
+            raw["scales"]["consulta"] = extract_scales(consulta)
+
         return flatten_extractor_output(raw)
     finally:
         os.chdir(original_dir)
+
 
 
 # ══════════════════════════════════════════════════════════════════════════════

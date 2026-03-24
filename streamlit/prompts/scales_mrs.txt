@@ -1,0 +1,13 @@
+Extrai mRS da carta de alta/consulta AVC.
+Valores: 0-6. Se não explícito, NÃO inventes.
+
+Responde JSON:
+{{
+  "mrs_previo": {{"value": 0, "excerpt": "mRS prévio 0"}},
+  "mrs_alta": {{"value": 2, "excerpt": "mRS alta 2"}},
+  "mrs_3meses": {{"value": null, "excerpt": ""}}
+}}
+
+Texto: {{texto}}
+
+JSON:

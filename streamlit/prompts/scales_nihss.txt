@@ -1,0 +1,12 @@
+Extrai NIHSS da carta de alta/consulta AVC. 
+SOMENTE números 0-42. Se não explícito, NÃO inventes.
+
+Responde JSON:
+{
+  "nihss_admissao": {"value": 12, "excerpt": "NIHSS admissão 12 pontos"},
+  "nihss_alta": {"value": 3, "excerpt": "NIHSS alta 3 pontos"}
+}
+
+Texto: {texto}
+
+JSON:
