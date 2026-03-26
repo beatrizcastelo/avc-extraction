@@ -8,6 +8,14 @@ REGRAS:
 5. "mrs_alta" é o estado no momento da saída do hospital.
 6. "mrs_3meses" é o estado funcional registado na consulta de seguimento (se disponível).
 
+REGRA CRÍTICA — mRS = 6:
+- mRS = 6 significa ÓBITO.
+- Se a carta indicar que o doente faleceu durante o internamento (palavras como "óbito",
+  "faleceu", "morte", "não sobreviveu", "exitus"), então "mrs_alta" = 6.
+- Nesse caso, "mrs_3meses" deve ser null (não há seguimento após óbito).
+- Se a nota de consulta indicar que o doente faleceu antes da consulta, então
+  "mrs_3meses" = 6 e inclui o excerto correspondente.
+
 TEXTO CLÍNICO:
 {texto}
 

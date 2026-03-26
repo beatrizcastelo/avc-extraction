@@ -12,6 +12,50 @@ OUTPUT_DIR = Path("outputs")
 OUTPUT_DIR.mkdir(exist_ok=True)
 
 
+def _apply_clinical_rules(scales: dict, mortality: dict) -> dict:
+    """
+    Aplica regras de consistência clínica pós-extracção.
+
+    Regra 1 — Óbito intra-hospitalar → mrs_alta = 6, mrs_3meses = null
+      Se o modelo já extraiu mrs_alta = 6 da carta, mantém.
+      Em qualquer caso de óbito intra-hospitalar, mrs_3meses = null.
+
+    Regra 2 — Óbito antes dos 30 dias → mrs_3meses = null
+      Se vivo_30_dias = False, não pode haver mrs_3meses (carta nem consulta).
+    """
+    vivo_30 = mortality.get("vivo_30_dias")  # True / False / None
+
+    carta = scales.get("carta", {})
+    mrs   = carta.get("mrs", {})
+
+    # Lê o valor actual de mrs_alta
+    mrs_alta_entry = mrs.get("mrs_alta", {})
+    mrs_alta_val   = mrs_alta_entry.get("value") if isinstance(mrs_alta_entry, dict) else mrs_alta_entry
+
+    def _null_mrs3(mrs_dict: dict) -> dict:
+        """Força mrs_3meses a null preservando a estrutura do dict."""
+        if isinstance(mrs_dict.get("mrs_3meses"), dict):
+            mrs_dict["mrs_3meses"] = {"value": None, "excerpt": None}
+        else:
+            mrs_dict["mrs_3meses"] = None
+        return mrs_dict
+
+    # Regra 1: óbito intra-hospitalar (mrs_alta = 6)
+    if mrs_alta_val == 6:
+        mrs = _null_mrs3(mrs)
+
+    # Regra 2: morreu antes dos 30 dias
+    if vivo_30 is False:
+        mrs = _null_mrs3(mrs)
+        # Aplica também à consulta
+        consulta_mrs = scales.get("consulta", {}).get("mrs", {})
+        if consulta_mrs:
+            scales["consulta"]["mrs"] = _null_mrs3(consulta_mrs)
+
+    scales["carta"]["mrs"] = mrs
+    return scales
+
+
 def run_pipeline(letter_path: str | Path, verbose: bool = True) -> dict:
     """
     Pipeline completo para uma carta de alta de AVC isquémico.
@@ -20,6 +64,7 @@ def run_pipeline(letter_path: str | Path, verbose: bool = True) -> dict:
     Fase 1b: Cálculo de métricas temporais   (Agente 2 — Python puro)
     Fase 2:  Extração de escalas NIHSS + mRS (Agente 3 — LLM)
     Fase 3:  Extração de variáveis categóricas + mortalidade (Agente 4 — LLM)
+    Fase 4:  Regras de consistência clínica  (Python puro)
     """
     letter_path = Path(letter_path)
 
@@ -69,7 +114,6 @@ def run_pipeline(letter_path: str | Path, verbose: bool = True) -> dict:
     scales_result = {}
     try:
         scales_result["carta"] = extract_scales(letter_path)
-        # Consulta de seguimento (se existir na mesma pasta)
         consulta = _find_consulta(letter_path)
         if consulta:
             scales_result["consulta"] = extract_scales(consulta)
@@ -77,7 +121,7 @@ def run_pipeline(letter_path: str | Path, verbose: bool = True) -> dict:
         if verbose:
             print(f"    ⚠️  Escalas falharam: {e}")
 
-    # ── FASE 3: Variáveis categóricas + mortalidade ───────────────────────────
+    # ── FASE 3: Categóricas + Mortalidade ─────────────────────────────────────
     if verbose:
         print("\n[4/4] A extrair variáveis categóricas (RF6)...")
 
@@ -91,18 +135,20 @@ def run_pipeline(letter_path: str | Path, verbose: bool = True) -> dict:
         if verbose:
             print(f"    ⚠️  Categóricas falharam: {e}")
 
-    mortality_result = {}
+    mortality_result = {"vivo_30_dias": None, "dias_obito": None, "causa_obito": None}
     try:
         mortality_note = _find_mortality(letter_path)
         if mortality_note:
             mortality_result = extract_mortality(mortality_note)
             if verbose:
                 print(f"    ✓ Mortalidade extraída de {mortality_note.name}")
-        else:
-            mortality_result = {"vivo_30_dias": None, "dias_obito": None, "causa_obito": None}
     except Exception as e:
         if verbose:
             print(f"    ⚠️  Mortalidade falhou: {e}")
+
+    # ── FASE 4: Regras de consistência clínica ────────────────────────────────
+    if scales_result:
+        scales_result = _apply_clinical_rules(scales_result, mortality_result)
 
     # ── Consolidação ──────────────────────────────────────────────────────────
     output = {
@@ -117,10 +163,9 @@ def run_pipeline(letter_path: str | Path, verbose: bool = True) -> dict:
         "scales":       scales_result,
         "categorical":  categorical_result,
         "mortality":    mortality_result,
-        "binary":       {}   # Reservado para agente binário futuro
+        "binary":       {}
     }
 
-    # Guarda JSON automaticamente
     out_file = OUTPUT_DIR / letter_path.with_suffix(".json").name
     with open(out_file, "w", encoding="utf-8") as f:
         json.dump(output, f, ensure_ascii=False, indent=2)
@@ -135,7 +180,6 @@ def run_pipeline(letter_path: str | Path, verbose: bool = True) -> dict:
 # ── helpers de descoberta de ficheiros ────────────────────────────────────────
 
 def _find_consulta(letter_path: Path) -> Path | None:
-    """Procura nota de consulta na mesma pasta que a carta."""
     for f in letter_path.parent.glob("*.txt"):
         if "consulta" in f.name.lower():
             return f
@@ -143,7 +187,6 @@ def _find_consulta(letter_path: Path) -> Path | None:
 
 
 def _find_mortality(letter_path: Path) -> Path | None:
-    """Procura nota de mortalidade na mesma pasta que a carta."""
     for f in letter_path.parent.glob("*.txt"):
         if "mortalidade" in f.name.lower():
             return f
@@ -160,8 +203,8 @@ def _print_summary(result: dict):
     print(f"{'─'*50}")
     for campo, val in result["timestamps"].items():
         if isinstance(val, dict) and val.get("value") not in (None, "null", "NA"):
-            data  = val.get("date") or ""
-            hora  = val.get("value", "")
+            data = val.get("date") or ""
+            hora = val.get("value", "")
             print(f"  {campo:25s} → {data} {hora}")
 
     print(f"\n{'─'*50}")

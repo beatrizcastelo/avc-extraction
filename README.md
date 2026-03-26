@@ -17,3 +17,5 @@ executados localmente (privacidade RGPD).
 docker-compose up --build
 # Depois: docker exec ollama ollama pull qwen2.5:7b-instruct-q4_K_M
 # Abrir: http://localhost:8501
+
+#Nota: FALTA COMPLETAR O READ ME !!!! Depois ver se o Adelino quer ver!!! 

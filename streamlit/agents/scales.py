@@ -76,7 +76,6 @@ def _call_llm(prompt: str) -> str:
             temperature=0.1,
             max_tokens=1000
         )
-        # BUG CORRIGIDO: era response.choices.message — faltava [0]
         return response.choices[0].message.content.strip()
 
     raise ValueError(f"Backend '{backend}' não suportado")

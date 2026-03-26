@@ -192,7 +192,71 @@ def is_null(value: Any) -> bool:
 
 def normalize_cat(value: Any) -> str:
     if value is None: return ""
-    return str(value).strip().lower().replace("-"," ").replace("_"," ")
+    s = str(value).strip().lower()
+    # remove acentos comuns para comparação robusta
+    for a, b in [("á","a"),("à","a"),("â","a"),("ã","a"),("é","e"),("ê","e"),
+                 ("í","i"),("ó","o"),("ô","o"),("õ","o"),("ú","u"),("ç","c")]:
+        s = s.replace(a, b)
+    return s.replace("-"," ").replace("_"," ")
+
+# Mapeamento de variantes de etiologia_toast para forma canónica normalizada
+_ETIOLOGIA_ALIASES = {
+    "cardioembólica":                     "cardioembólica",
+    "cardioembólico":                     "cardioembólica",
+    "cardioembolica":                     "cardioembólica",
+    "cardioembólico":                     "cardioembólica",
+    "aterosclerose grandes vasos":        "aterosclerose grandes vasos",
+    "aterotrombótica de grande vaso":     "aterosclerose grandes vasos",
+    "aterotrombotica de grande vaso":     "aterosclerose grandes vasos",
+    "aterotrombótico de grande vaso":     "aterosclerose grandes vasos",
+    "aterosclerose de grandes vasos":     "aterosclerose grandes vasos",
+    "oclusão pequenos vasos (lacunar)":   "oclusao pequenos vasos",
+    "oclusao pequenos vasos (lacunar)":   "oclusao pequenos vasos",
+    "oclusão de pequeno vaso":            "oclusao pequenos vasos",
+    "oclusao de pequeno vaso":            "oclusao pequenos vasos",
+    "pequeno vaso":                       "oclusao pequenos vasos",
+    "lacunar":                            "oclusao pequenos vasos",
+    "indeterminado":                      "indeterminado",
+    "etiologia indeterminada":            "indeterminado",
+    "indeterminada":                      "indeterminado",
+    "outra etiologia determinada":        "outra etiologia determinada",
+    "outras etiologias determinadas":     "outra etiologia determinada",
+}
+
+def normalize_etiologia(value: Any) -> str:
+    if value is None: return ""
+    s = normalize_cat(value)
+    return _ETIOLOGIA_ALIASES.get(s, s)
+
+def _tratamento_key(value: Any) -> str:
+    """
+    Extrai a 'chave semântica' do tratamento para comparação fuzzy.
+    Casos:
+      - fibrinólise pré-hospitalar simples  → "fibrinolise"
+      - bridging (fibrinólise + TEV)        → "bridging:[cidade]"
+      - TEV isolada contraindicação         → "tev_contraindicacao"
+      - TEV isolada fora de janela          → "tev_fora_janela"
+      - conservador                         → "conservador"
+    """
+    if value is None: return ""
+    s = normalize_cat(str(value))
+
+    if "conservador" in s or "sem reperfusao" in s:
+        return "conservador"
+    if "fora de janela" in s or "wake" in s:
+        return "tev_fora_janela"
+    if "contraindicac" in s:
+        return "tev_contraindicacao"
+    if "trombectomia" in s and ("+" in s or "em " in s):
+        # bridging: extrai cidade de origem se possível
+        m = re.search(r"fibrinolise em ([a-z ]+?) \+", s)
+        cidade = m.group(1).strip() if m else "?"
+        return f"bridging:{cidade}"
+    if "fibrinolise" in s or "rt-pa" in s or "tenecteplase" in s or "alteplase" in s:
+        return "fibrinolise"
+    if "tev" in s or "trombectomia" in s:
+        return "tev"
+    return s
 
 def parse_hhhmm(value: Any) -> int | None:
     if is_null(value): return None
@@ -280,12 +344,44 @@ def compare_categorical(pred, gt) -> dict:
     hit = normalize_cat(pred) == normalize_cat(gt)
     return {"tp":int(hit),"fp":int(not hit),"fn":int(not hit),"tn":0}
 
+def compare_etiologia(pred, gt) -> dict:
+    """Comparação com mapeamento de variantes (Cardioembólica vs Cardioembolico, etc.)."""
+    pn, gn = is_null(pred), is_null(gt)
+    if gn and pn:     return {"tp":0,"fp":0,"fn":0,"tn":1}
+    if gn and not pn: return {"tp":0,"fp":1,"fn":0,"tn":0}
+    if not gn and pn: return {"tp":0,"fp":0,"fn":1,"tn":0}
+    hit = normalize_etiologia(pred) == normalize_etiologia(gt)
+    return {"tp":int(hit),"fp":int(not hit),"fn":int(not hit),"tn":0}
+
+def compare_tratamento(pred, gt) -> dict:
+    """
+    Comparação fuzzy para tratamento (texto livre).
+    Extrai chave semântica de ambos e compara.
+    Bridging: compara também cidade de origem.
+    """
+    pn, gn = is_null(pred), is_null(gt)
+    if gn and pn:     return {"tp":0,"fp":0,"fn":0,"tn":1}
+    if gn and not pn: return {"tp":0,"fp":1,"fn":0,"tn":0}
+    if not gn and pn: return {"tp":0,"fp":0,"fn":1,"tn":0}
+    kp, kg = _tratamento_key(pred), _tratamento_key(gt)
+    # Para bridging: aceita se cidade bate; se cidade é "?" aceita parcialmente
+    if kg.startswith("bridging:") and kp.startswith("bridging:"):
+        cidade_gt = kg.split(":")[1]
+        cidade_p  = kp.split(":")[1]
+        hit = cidade_gt == cidade_p or cidade_p == "?"
+    else:
+        hit = kp == kg
+    return {"tp":int(hit),"fp":int(not hit),"fn":int(not hit),"tn":0}
+
 COMPARATORS = {
     **{v: compare_timestamp   for v in TIMESTAMP_VARS},
     **{v: compare_metric      for v in METRIC_VARS},
     **{v: compare_scale       for v in SCALE_VARS + NUMERIC_VARS},
     **{v: compare_binary      for v in BINARY_VARS},
     **{v: compare_categorical for v in CATEGORICAL_VARS},
+    # Comparadores especializados sobrescrevem o genérico
+    "etiologia_toast": compare_etiologia,
+    "tratamento":      compare_tratamento,
 }
 
 
@@ -476,16 +572,27 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--backend",   default="groq", choices=["groq","ollama"])
     parser.add_argument("--use-cache", action="store_true")
-    parser.add_argument("--cases",     type=int, default=0)
+    parser.add_argument("--cases",     type=int, default=0,
+                        help="Corre os primeiros N casos")
+    parser.add_argument("--case",      type=str, default=None,
+                        help="Corre um caso específico pelo nome (ex: caso_051_bridging)")
     args = parser.parse_args()
 
     if not DATA_DIR.exists():
         print(f"❌ Pasta de dados não encontrada:\n   {DATA_DIR}")
         sys.exit(1)
 
-    case_dirs = sorted(d for d in DATA_DIR.iterdir() if d.is_dir())
-    if args.cases:
-        case_dirs = case_dirs[:args.cases]
+    all_dirs = sorted(d for d in DATA_DIR.iterdir() if d.is_dir())
+
+    if args.case:
+        case_dirs = [d for d in all_dirs if args.case in d.name]
+        if not case_dirs:
+            print(f"❌ Caso não encontrado: {args.case}")
+            sys.exit(1)
+    else:
+        case_dirs = all_dirs
+        if args.cases:
+            case_dirs = case_dirs[:args.cases]
 
     print(f"\n🔍 A validar {len(case_dirs)} casos | backend={args.backend}")
     print(f"   Dados: {DATA_DIR}\n")

@@ -19,14 +19,17 @@ if _backend_override == "ollama":
 elif _backend_override == "groq":
     USE_GROQ = True
 else:
-    USE_GROQ = os.getenv("GROQ_API_KEY") is not None
+    #USE_GROQ = os.getenv("GROQ_API_KEY") is not None
+    USE_GROQ = os.getenv("LLM_BACKEND", "ollama") == "groq"
+
 GROQ_API_KEY  = os.getenv("GROQ_API_KEY")
 ACTIVE_MODEL  = os.getenv("ACTIVE_MODEL", "llama-3.1-8b-instant")
 OLLAMA_URL    = os.getenv("OLLAMA_BASE_URL", "http://localhost:11434")
 
 
 #PROMPT_FILE = Path("prompts/timestamps_v1.txt")
-PROMPT_FILE = Path("prompts/timestamps_v2.txt")
+#PROMPT_FILE = Path("prompts/timestamps_v2.txt")
+PROMPT_FILE = Path(__file__).parent.parent / "prompts" / "timestamps_v2.txt"
 
 def _call_groq(system_prompt: str, user_message: str) -> dict:
     """Chama a API Groq."""

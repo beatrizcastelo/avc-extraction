@@ -12,42 +12,61 @@ REGRAS OBRIGATÓRIAS:
 7. Formata horas como "HH:MM" e datas como "DD/MM/AAAA"
 8. NÃO inferes nem calculas — apenas extrais o que está explicitamente escrito
 
-REGRAS PARA CASOS INTER-HOSPITALARES:
-- Os campos door1_admission, door1_departure e door2 SÓ devem ter valor se a carta mencionar
-  explicitamente transferência entre hospitais, hospital de origem, ou hospital referenciador
-- Se a carta for pré-hospitalar ou intra-hospitalar, estes três campos devem ter value "NA"
-ATENÇÃO!! — em casos inter-hospitalares (transferência entre hospitais):
-- "admission" = hora de admissão NO HOSPITAL FINAL (Coimbra/CHUC)
-- "door1_admission" = hora de admissão NO HOSPITAL DE ORIGEM
-- "door2" = hora de chegada ao hospital final (se diferente de "admission")
+════════════════════════════════════════════════════════
+REGRAS PARA CASOS INTER-HOSPITALARES (transferência entre hospitais)
+════════════════════════════════════════════════════════
 
+Quando a carta menciona transferência, hospital de origem, ou hospital referenciador:
 
-REGRAS PARA FIBRINÓLISE E TROMBECTOMIA!!:
-- O campo "thrombolysis" SÓ deve ter valor se a carta mencionar EXPLICITAMENTE
-  a administração de fibrinólise, rt-PA, alteplase ou tenecteplase COM hora documentada
-- O campo "femoral_puncture" SÓ deve ter valor se a carta mencionar EXPLICITAMENTE
-  punção femoral ou início de trombectomia mecânica COM hora documentada
-- O campo "recanalization" SÓ deve ter valor se a carta mencionar EXPLICITAMENTE
-  recanalização ou fim do procedimento COM hora documentada
-- Se o tratamento não está documentado com hora, usa "NA"
+  "door1_admission" = hora de entrada NO HOSPITAL DE ORIGEM (ex: Guarda, Viseu, Aveiro...)
+  "door1_departure" = hora de SAÍDA do hospital de origem (hora da transferência)
+  "door2"           = hora de chegada AO HOSPITAL FINAL (Coimbra/CHUC)
+  "admission"       = igual a "door2" — hora de admissão em Coimbra
 
+ATENÇÃO — exemplo concreto:
+  Carta diz: "Admissão hospitalar: 10h15 (Guarda) | 12h45 (Coimbra)"
+  Carta diz: "Transferência: 11h10"
 
+  CORRECTO:
+    door1_admission = "10:15"   ← entrada na Guarda
+    door1_departure = "11:10"   ← saída da Guarda (transferência)
+    door2           = "12:45"   ← chegada a Coimbra
+    admission       = "12:45"   ← admissão em Coimbra (igual a door2)
+
+  ERRADO (confusão frequente):
+    admission = "10:15"         ← NUNCA: esta é a hora da Guarda, não de Coimbra
+    door1_departure = "12:45"   ← NUNCA: esta é a chegada a Coimbra, não a saída da Guarda
+
+Se a carta for pré-hospitalar ou intra-hospitalar (sem transferência):
+  door1_admission, door1_departure, door2 → value: "NA"
+
+════════════════════════════════════════════════════════
+REGRAS PARA FIBRINÓLISE E TROMBECTOMIA
+════════════════════════════════════════════════════════
+
+- "thrombolysis"    → hora de administração de fibrinólise/rt-PA/alteplase/tenecteplase
+- "femoral_puncture"→ hora de punção femoral ou início de trombectomia mecânica
+- "recanalization"  → hora de recanalização ou fim do procedimento
+- Se não documentado com hora explícita → value: "NA"
+
+════════════════════════════════════════════════════════
 ESTRUTURA JSON A DEVOLVER:
+════════════════════════════════════════════════════════
 {
   "onset_uvb": {
-    "value": "15:30",
+    "value": null,
     "date": null,
-    "excerpt": "excerto exato da carta"
+    "excerpt": null
   },
   "admission": {
-    "value": "15:55",
+    "value": null,
     "date": null,
-    "excerpt": "excerto exato da carta"
+    "excerpt": null
   },
   "imaging_ct": {
-    "value": "16:10",
+    "value": null,
     "date": null,
-    "excerpt": "excerto exato da carta"
+    "excerpt": null
   },
   "thrombolysis": {
     "value": "NA",
@@ -80,6 +99,3 @@ ESTRUTURA JSON A DEVOLVER:
     "excerpt": null
   }
 }
-
-NOTA: Este é um exemplo de carta pré-hospitalar com fibrinólise. Adapta os valores ao conteúdo real da carta que recebes.
-

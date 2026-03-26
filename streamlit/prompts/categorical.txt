@@ -1,49 +1,85 @@
 És um assistente médico especializado em AVC isquémico em português europeu.
-A tua tarefa é extrair variáveis categóricas de uma carta de alta ou nota de admissão.
+Extrai as variáveis categóricas do texto clínico fornecido.
 
-REGRAS OBRIGATÓRIAS:
-1. Responde APENAS com JSON válido e NADA MAIS — sem explicações, sem markdown
-2. Usa null quando a informação não está presente no texto
-3. Usa EXATAMENTE os valores listados em cada campo — não inventes variações
-4. O campo "excerpt" contém o excerto exato do texto que suporta a extração
+REGRAS:
+1. Responde APENAS com JSON válido — sem explicações, sem markdown
+2. Usa null quando a informação não está presente
+3. Para "tipo" e "etiologia_toast" usa EXATAMENTE os valores listados abaixo
 
+════════════════════════════════════════════════════════
 CAMPO: tipo
-Valores permitidos (escolhe UM):
-  "fibrinolise_pre_hospitalar"     — Via Verde pré-hospitalar, tratado com fibrinólise
-  "trombectomia_pre_hospitalar"    — Via Verde pré-hospitalar, tratado com trombectomia
-  "combinado_pre_hospitalar"       — Via Verde pré-hospitalar, fibrinólise + trombectomia
-  "fibrinolise_inter_hospitalar"   — transferido de outro hospital, tratado com fibrinólise
-  "trombectomia_inter_hospitalar"  — transferido de outro hospital, tratado com trombectomia
-  "combinado_inter_hospitalar"     — transferido de outro hospital, fibrinólise + trombectomia
-  "fibrinolise_intra_hospitalar"   — AVC durante internamento, tratado com fibrinólise
-  "trombectomia_intra_hospitalar"  — AVC durante internamento, tratado com trombectomia
-  "conservador"                    — sem tratamento de reperfusão (fibrinólise nem trombectomia)
-  "sem_via_verde"                  — episódio sem ativação de Via Verde AVC
+Escolhe UM dos seguintes valores com base no percurso clínico:
 
+"fibrinolise_pre_hospitalar"     → doente vem do exterior (domicílio/INEM), admitido
+                                   directamente, tratado APENAS com fibrinólise/rt-PA/alteplase/tenecteplase.
+                                   Não houve transferência. Não houve trombectomia.
+
+"fibrinolise_pre_hospitalar_ace" → igual ao anterior mas AVC extenso (TACS/ACE/NIHSS alto)
+
+"bridging"                       → doente TRANSFERIDO de outro hospital onde já fez
+                                   fibrinólise, e em Coimbra fez trombectomia mecânica.
+                                   Palavras-chave: "transferido", "hospital de origem",
+                                   "fibrinólise em [cidade]", "trombectomia em Coimbra"
+
+"tev_isolada_contraindicacao"    → trombectomia mecânica SEM fibrinólise prévia porque
+                                   havia contraindicação (ex: cirurgia recente, hemorragia)
+
+"tev_isolada_fora_janela"        → trombectomia mecânica SEM fibrinólise porque fora da
+                                   janela terapêutica (wake-up stroke, >4.5h de sintomas)
+
+"fibrinolise_intra_hospitalar"   → AVC durante internamento noutro serviço, tratado
+                                   com fibrinólise
+
+"conservador_lacunar"            → AVC lacunar (pequeno vaso), sem reperfusão,
+                                   tratamento conservador
+
+"conservador_wake_up"            → wake-up stroke ou fora de janela, sem trombectomia,
+                                   tratamento conservador
+
+EXEMPLOS:
+  carta diz "Via Verde Pré-Hospitalar" + "fibrinólise endovenosa" + sem transferência
+  → "fibrinolise_pre_hospitalar"
+
+  carta diz "transferido do Hospital de Viseu" + "fibrinólise em Viseu" + "trombectomia em Coimbra"
+  → "bridging"
+
+  carta diz "contraindicação absoluta à fibrinólise" + "trombectomia mecânica"
+  → "tev_isolada_contraindicacao"
+
+  carta diz "wake-up stroke" + "fora da janela" + sem fibrinólise + sem trombectomia
+  → "conservador_wake_up"
+
+  carta diz "AVC lacunar" ou "território de pequeno vaso" + sem reperfusão
+  → "conservador_lacunar"
+
+════════════════════════════════════════════════════════
 CAMPO: etiologia_toast
-Valores permitidos (escolhe UM):
+Escolhe UM (usa EXATAMENTE esta ortografia):
   "Cardioembólica"
-  "Aterotrombótica de grande vaso"
-  "Oclusão de pequeno vaso"
-  "Outra etiologia determinada"
-  "Etiologia indeterminada"
+  "Aterosclerose grandes vasos"
+  "Oclusão pequenos vasos (lacunar)"
+  "Indeterminado"
 
+════════════════════════════════════════════════════════
 CAMPO: tratamento
-Valores permitidos (escolhe UM):
+Descreve o tratamento realizado em texto livre, de forma concisa.
+Exemplos:
   "fibrinolise endovenosa (rt-PA ou tenecteplase)"
-  "trombectomia mecânica"
-  "fibrinolise + trombectomia"
-  "tratamento conservador"
+  "conservador (sem reperfusao)"
+  "TEV isolada (sem rt-PA — fora de janela terapeutica, wake-up stroke)"
+  "TEV isolada (sem rt-PA — contraindicacao absoluta: cirurgia recente)"
+  "fibrinolise em [cidade] + trombectomia mecanica em Coimbra"
 
+════════════════════════════════════════════════════════
 CAMPO: territorio
-Extrai o território vascular afetado tal como escrito na carta (ex: "ACM direita", "ACM esquerda", "ACP direita", "tronco cerebral", "cerebelo", "ACM esquerda - M1").
-Se mencionado de forma abreviada, mantém a abreviatura.
+Extrai o território vascular tal como descrito na carta.
+Ex: "ACM direita", "ACM esquerda", "ACI + ACM esquerda", "ACP direita", "cerebelo"
 
+════════════════════════════════════════════════════════
 CAMPO: complicacoes
-Extrai as complicações mencionadas (ex: "transformação hemorrágica", "pneumonia de aspiração").
-Se explicitamente indicado que não ocorreram, usa "Nao ocorreram".
-Se não mencionado, usa null.
+Extrai complicações. Se não ocorreram: "Nao ocorreram". Se não mencionado: null.
 
+════════════════════════════════════════════════════════
 TEXTO CLÍNICO:
 {texto}
 
