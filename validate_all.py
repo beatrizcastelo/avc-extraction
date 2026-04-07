@@ -439,7 +439,6 @@ def run_agent_on_case(case_dir: Path, backend: str = "groq") -> dict:
         sys.path.insert(0, str(STREAMLIT_DIR / "agents"))
         from metrics import calculate_metrics
         raw["metrics"] = calculate_metrics(raw.get("timestamps", {}))
-        save_cached_output(case_dir, raw)
 
         # Agente 3: Escalas
         raw["scales"] = {}
@@ -461,6 +460,9 @@ def run_agent_on_case(case_dir: Path, backend: str = "groq") -> dict:
                 raw["mortality"] = extract_mortality(mortalidade)
         except Exception as e:
             print(f"    ⚠️  Categóricas falharam ({case_dir.name}): {e}")
+
+        # Guarda cache só depois de todos os agentes
+        save_cached_output(case_dir, raw)
 
         return flatten_extractor_output(raw)
     finally:

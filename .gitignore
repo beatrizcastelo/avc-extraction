@@ -222,6 +222,7 @@ outputs/
 
 # Docker
 ollama_data/
+ollama/models/
 
 # Streamlit
 .streamlit/secrets.toml

@@ -1,6 +1,10 @@
 import streamlit as st
 from pathlib import Path
 from main import run_pipeline
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 st.set_page_config(page_title="AVC — Extração Clínica", layout="wide")
 st.title("🧠 Extração de Dados Clínicos — AVC Isquémico")
@@ -9,196 +13,239 @@ st.caption("Timestamps · Métricas · Escalas Clínicas · Variáveis Categóri
 # ── Sidebar ────────────────────────────────────────────────────────────────
 with st.sidebar:
     st.header("⚙️ Configuração")
-    import os
-    from dotenv import load_dotenv
-    load_dotenv()
     model   = os.getenv("ACTIVE_MODEL", "não definido")
     backend = "Groq (API)" if os.getenv("GROQ_API_KEY") else "Ollama (local)"
     st.write(f"**Modelo:** `{model}`")
     st.write(f"**Backend:** {backend}")
 
-# ── Escolha do método de input ─────────────────────────────────────────────
-st.subheader("Carta de Alta")
-metodo = st.radio("Como quer introduzir a carta?",
+# ── Input principal — Carta de Alta ───────────────────────────────────────
+st.subheader("📋 Carta de Alta")
+metodo = st.radio("Como quer introduzir?",
                   ["📁 Upload de ficheiro", "📋 Copiar e colar texto"],
-                  horizontal=True)
+                  horizontal=True, key="carta_metodo")
 
-letter_text = ""
-
+carta_text = ""
 if metodo == "📁 Upload de ficheiro":
-    uploaded = st.file_uploader("Carregar carta (.txt)", type=["txt"])
+    uploaded = st.file_uploader("Carregar carta (.txt)", type=["txt"], key="carta_upload")
     if uploaded:
-        letter_text = uploaded.read().decode("utf-8")
+        carta_text = uploaded.read().decode("utf-8")
         with st.expander("👁️ Ver carta"):
-            st.text(letter_text)
+            st.text(carta_text)
 else:
-    letter_text = st.text_area(
-        "Cole a carta aqui",
-        height=300,
-        placeholder="Cole aqui o texto completo da carta de alta..."
-    )
-    if letter_text:
-        with st.expander("👁️ Ver carta"):
-            st.text(letter_text)
+    carta_text = st.text_area("Cole o texto aqui", height=200,
+                               placeholder="Cole aqui o texto da carta de alta...",
+                               key="carta_texto")
 
-# ── Execução ───────────────────────────────────────────────────────────────
-if letter_text:
-    if st.button("▶️ Executar Extração"):
-        tmp = Path("outputs") / "_tmp_input.txt"
-        tmp.write_text(letter_text, encoding="utf-8")
+# ── Documentos opcionais ───────────────────────────────────────────────────
+with st.expander("📞 Nota de Mortalidade 30 dias (opcional)"):
+    metodo_mort = st.radio("Como quer introduzir?",
+                           ["📁 Upload de ficheiro", "📋 Copiar e colar texto"],
+                           horizontal=True, key="mort_metodo")
+    mort_text = ""
+    if metodo_mort == "📁 Upload de ficheiro":
+        f = st.file_uploader("Carregar nota (.txt)", type=["txt"], key="mort_upload")
+        if f:
+            mort_text = f.read().decode("utf-8")
+    else:
+        mort_text = st.text_area("Cole o texto aqui", height=150,
+                                  placeholder="Cole aqui a nota de mortalidade/contacto...",
+                                  key="mort_texto")
+
+with st.expander("🏥 Nota de Consulta 3 meses (opcional)"):
+    metodo_cons = st.radio("Como quer introduzir?",
+                           ["📁 Upload de ficheiro", "📋 Copiar e colar texto"],
+                           horizontal=True, key="cons_metodo")
+    consulta_text = ""
+    if metodo_cons == "📁 Upload de ficheiro":
+        f = st.file_uploader("Carregar nota (.txt)", type=["txt"], key="cons_upload")
+        if f:
+            consulta_text = f.read().decode("utf-8")
+    else:
+        consulta_text = st.text_area("Cole o texto aqui", height=150,
+                                      placeholder="Cole aqui a nota de consulta de seguimento...",
+                                      key="cons_texto")
+
+# ── Botão de execução ──────────────────────────────────────────────────────
+st.divider()
+
+if not carta_text:
+    st.info("👆 Introduza a Carta de Alta para começar.")
+else:
+    if st.button("▶️ Executar Extração", type="primary"):
+
+        tmp_dir = Path("outputs") / "_tmp_case"
+        tmp_dir.mkdir(parents=True, exist_ok=True)
+
+        tmp_carta    = tmp_dir / "_tmp_carta.txt"
+        tmp_mort     = tmp_dir / "_tmp_mortalidade.txt"
+        tmp_consulta = tmp_dir / "_tmp_consulta.txt"
+
+        tmp_carta.write_text(carta_text, encoding="utf-8")
+        if mort_text:
+            tmp_mort.write_text(mort_text, encoding="utf-8")
+        elif tmp_mort.exists():
+            tmp_mort.unlink()
+        if consulta_text:
+            tmp_consulta.write_text(consulta_text, encoding="utf-8")
+        elif tmp_consulta.exists():
+            tmp_consulta.unlink()
 
         with st.spinner("A processar... (pode demorar 1-2 min)"):
-            result = run_pipeline(tmp, verbose=False)
+            result = run_pipeline(tmp_carta, verbose=False)
 
-        tmp.unlink()
+        for f in tmp_dir.glob("*.txt"):
+            f.unlink()
 
         if result["status"] == "error":
             st.error(f"Erro: {result['detail']}")
-        else:
-            st.success(f"✅ Concluído em {result['duration_seconds']}s  |  Modelo: `{result['model']}`")
+            st.stop()
 
-            ICON = {"green": "🟢", "yellow": "🟡", "red": "🔴", "unknown": "⚪"}
+        st.success(f"✅ Concluído em {result['duration_seconds']}s  |  Modelo: `{result['model']}`")
 
-            # ── Linha 1: Timestamps + Métricas ────────────────────────────
-            col1, col2 = st.columns(2)
+        ICON = {"green": "🟢", "yellow": "🟡", "red": "🔴", "unknown": "⚪"}
 
-            with col1:
-                st.subheader("📅 Timestamps Extraídos")
-                found = False
-                for campo, val in result["timestamps"].items():
-                    if isinstance(val, dict) and val.get("value") not in (None, "null", "NA"):
-                        found = True
-                        label = f"**{campo}** — {val.get('date') or ''} {val['value']}"
-                        with st.expander(label):
-                            excerpt = val.get("excerpt", "")
-                            if excerpt and excerpt != "null":
-                                st.markdown(f"> *\"{excerpt}\"*")
-                            else:
-                                st.caption("Sem excerto disponível")
-                if not found:
-                    st.info("Nenhum timestamp extraído.")
+        TIMESTAMP_LABELS = {
+            "onset_uvb":        "Início dos Sintomas / UVB",
+            "admission":        "Admissão Hospitalar",
+            "imaging_ct":       "TC-CE",
+            "thrombolysis":     "Fibrinólise",
+            "femoral_puncture": "Punção Femoral",
+            "recanalization":   "Recanalização",
+            "door1_admission":  "Admissão Hospital Origem",
+            "door1_departure":  "Saída Hospital Origem",
+            "door2":            "Chegada Hospital Final",
+        }
 
-            with col2:
-                st.subheader("⏱️ Métricas Calculadas")
-                found = False
-                for metrica, val in result["metrics"].items():
-                    if val.get("value") is not None:
-                        found = True
-                        icon = ICON.get(val.get("status", "unknown"), "⚪")
-                        st.metric(
-                            label=f"{icon} {metrica.replace('_', ' ').title()}",
-                            value=f"{val['value']} min"
-                        )
-                if not found:
-                    st.info("Sem métricas calculáveis.")
+        # ── Coluna 1: Timestamps + Escalas ────────────────────────────────
+        # ── Coluna 2: Métricas + Categóricas ──────────────────────────────
+        col1, col2 = st.columns(2)
+
+        with col1:
+            # Timestamps
+            st.subheader("📅 Timestamps")
+            found = False
+            for campo, val in result["timestamps"].items():
+                if isinstance(val, dict) and val.get("value") not in (None, "null", "NA"):
+                    found = True
+                    lbl = TIMESTAMP_LABELS.get(campo, campo)
+                    with st.expander(f"**{lbl}** — {val.get('date') or ''} {val['value']}"):
+                        exc = val.get("excerpt", "")
+                        if exc and exc != "null":
+                            st.markdown(f"> *\"{exc}\"*")
+                        else:
+                            st.caption("Sem excerto disponível")
+            if not found:
+                st.caption("Nenhum timestamp extraído.")
 
             st.divider()
 
-            # ── Linha 2: Escalas + Categóricas ────────────────────────────
-            col3, col4 = st.columns(2)
+            # Escalas
+            st.subheader("📊 Escalas Clínicas")
+            carta_scales = result.get("scales", {}).get("carta", {})
+            nihss = carta_scales.get("nihss", {})
+            mrs   = carta_scales.get("mrs", {})
 
-            with col3:
-                st.subheader("📊 Escalas Clínicas")
+            escalas = {
+                "NIHSS Admissão": nihss.get("nihss_admissao", {}),
+                "NIHSS Alta":     nihss.get("nihss_alta", {}),
+                "mRS Prévio":     mrs.get("mrs_previo", {}),
+                "mRS Alta":       mrs.get("mrs_alta", {}),
+                "mRS 3 Meses":    mrs.get("mrs_3meses", {}),
+            }
+            found = False
+            for lbl, entry in escalas.items():
+                v = entry.get("value") if isinstance(entry, dict) else entry
+                if v is not None:
+                    found = True
+                    exc = entry.get("excerpt") if isinstance(entry, dict) else None
+                    with st.expander(f"**{lbl}:** {v}"):
+                        if exc and str(exc).lower() not in {"null", "none"}:
+                            st.markdown(f"> *\"{exc}\"*")
+                        else:
+                            st.caption("Sem excerto disponível")
+            if not found:
+                st.caption("Nenhuma escala extraída da carta.")
 
-                # Carta de alta
-                st.markdown("**Carta de Alta**")
-                carta = result.get("scales", {}).get("carta", {})
-                nihss = carta.get("nihss", {})
-                mrs   = carta.get("mrs", {})
-
-                escalas = {
-                    "NIHSS Admissão": nihss.get("nihss_admissao", {}),
-                    "NIHSS Alta":     nihss.get("nihss_alta", {}),
-                    "mRS Prévio":     mrs.get("mrs_previo", {}),
-                    "mRS Alta":       mrs.get("mrs_alta", {}),
-                    "mRS 3 Meses":    mrs.get("mrs_3meses", {}),
+            # Consulta de seguimento
+            consulta_scales = result.get("scales", {}).get("consulta", {})
+            if consulta_scales:
+                st.markdown("**Consulta de Seguimento**")
+                nihss_c = consulta_scales.get("nihss", {})
+                mrs_c   = consulta_scales.get("mrs", {})
+                escalas_c = {
+                    "NIHSS Admissão": nihss_c.get("nihss_admissao", {}),
+                    "NIHSS Alta":     nihss_c.get("nihss_alta", {}),
+                    "mRS Prévio":     mrs_c.get("mrs_previo", {}),
+                    "mRS Alta":       mrs_c.get("mrs_alta", {}),
+                    "mRS 3 Meses":    mrs_c.get("mrs_3meses", {}),
                 }
-                found_carta = False
-                for label, entry in escalas.items():
+                for lbl, entry in escalas_c.items():
                     v = entry.get("value") if isinstance(entry, dict) else entry
                     if v is not None:
-                        found_carta = True
                         exc = entry.get("excerpt") if isinstance(entry, dict) else None
-                        with st.expander(f"**{label}:** {v}"):
+                        with st.expander(f"**{lbl}:** {v}"):
                             if exc and str(exc).lower() not in {"null", "none"}:
                                 st.markdown(f"> *\"{exc}\"*")
                             else:
                                 st.caption("Sem excerto disponível")
-                if not found_carta:
-                    st.caption("Nenhuma escala extraída da carta.")
 
-                # Nota de consulta (se existir)
-                consulta = result.get("scales", {}).get("consulta", {})
-                if consulta:
-                    st.markdown("**Nota de Consulta**")
-                    nihss_c = consulta.get("nihss", {})
-                    mrs_c   = consulta.get("mrs", {})
-                    escalas_c = {
-                        "NIHSS Admissão": nihss_c.get("nihss_admissao", {}),
-                        "NIHSS Alta":     nihss_c.get("nihss_alta", {}),
-                        "mRS Prévio":     mrs_c.get("mrs_previo", {}),
-                        "mRS Alta":       mrs_c.get("mrs_alta", {}),
-                        "mRS 3 Meses":    mrs_c.get("mrs_3meses", {}),
-                    }
-                    found_consulta = False
-                    for label, entry in escalas_c.items():
-                        v = entry.get("value") if isinstance(entry, dict) else entry
-                        if v is not None:
-                            found_consulta = True
-                            exc = entry.get("excerpt") if isinstance(entry, dict) else None
-                            with st.expander(f"**{label}:** {v}"):
-                                if exc and str(exc).lower() not in {"null", "none"}:
-                                    st.markdown(f"> *\"{exc}\"*")
-                                else:
-                                    st.caption("Sem excerto disponível")
-                    if not found_consulta:
-                        st.caption("Nenhuma escala extraída da consulta.")
-
-            with col4:
-                st.subheader("🏷️ Variáveis Categóricas")
-
-                cat  = result.get("categorical", {})
-                mort = result.get("mortality", {})
-
-                # Mapa de labels legíveis
-                CAT_LABELS = {
-                    "tipo":           "Tipo de Episódio",
-                    "etiologia_toast":"Etiologia TOAST",
-                    "tratamento":     "Tratamento",
-                    "territorio":     "Território Vascular",
-                    "complicacoes":   "Complicações",
-                }
-
-                found_cat = False
-                for key, label in CAT_LABELS.items():
-                    v = cat.get(key)
-                    if v is not None:
-                        found_cat = True
-                        st.markdown(f"**{label}:** {v}")
-                if not found_cat:
-                    st.info("Nenhuma variável categórica extraída.")
-
-                st.markdown("---")
-                st.markdown("**Seguimento / Mortalidade**")
-
-                vivo = mort.get("vivo_30_dias")
-                if vivo is True:
-                    st.markdown("**Vivo aos 30 dias:** ✅ Sim")
-                elif vivo is False:
-                    st.markdown("**Vivo aos 30 dias:** ❌ Não")
-                    dias = mort.get("dias_obito")
-                    causa = mort.get("causa_obito")
-                    if dias is not None:
-                        st.markdown(f"**Dias até óbito:** {dias}")
-                    if causa:
-                        st.markdown(f"**Causa de óbito:** {causa}")
-                else:
-                    st.caption("Informação de mortalidade não disponível.")
+        with col2:
+            # Métricas
+            st.subheader("⏱️ Métricas Temporais")
+            found = False
+            for metrica, val in result["metrics"].items():
+                if val.get("value") is not None:
+                    found = True
+                    icon = ICON.get(val.get("status", "unknown"), "⚪")
+                    st.metric(
+                        label=f"{icon} {metrica.replace('_', ' ').title()}",
+                        value=f"{val['value']} min"
+                    )
+            if not found:
+                st.caption("Sem métricas calculáveis.")
 
             st.divider()
 
-            # ── JSON completo ─────────────────────────────────────────────
-            with st.expander("🔍 JSON completo"):
-                st.json(result)
-else:
-    st.info("👆 Introduza uma carta para começar.")
+            # Categóricas
+            st.subheader("🏷️ Variáveis Categóricas")
+            cat  = result.get("categorical", {})
+            mort = result.get("mortality", {})
+
+            CAT_LABELS = {
+                "tipo":            "Tipo de Episódio",
+                "etiologia_toast": "Etiologia TOAST",
+                "tratamento":      "Tratamento",
+                "territorio":      "Território Vascular",
+                "complicacoes":    "Complicações",
+            }
+            found = False
+            for key, lbl in CAT_LABELS.items():
+                v = cat.get(key)
+                if v is not None:
+                    found = True
+                    st.markdown(f"**{lbl}:** {v}")
+            if not found:
+                st.caption("Nenhuma variável categórica extraída.")
+
+            st.divider()
+
+            # Mortalidade
+            st.subheader("📆 Seguimento / Mortalidade")
+            vivo = mort.get("vivo_30_dias")
+            if vivo is True:
+                st.markdown("**Vivo aos 30 dias:** ✅ Sim")
+            elif vivo is False:
+                st.markdown("**Vivo aos 30 dias:** ❌ Não")
+                dias  = mort.get("dias_obito")
+                causa = mort.get("causa_obito")
+                if dias is not None:
+                    st.markdown(f"**Dias até óbito:** {dias}")
+                if causa:
+                    st.markdown(f"**Causa de óbito:** {causa}")
+            else:
+                st.caption("Nota de mortalidade não introduzida." if not mort_text
+                           else "Informação de mortalidade não encontrada na nota.")
+
+        st.divider()
+        with st.expander("🔍 JSON completo"):
+            st.json(result)

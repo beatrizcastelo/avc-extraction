@@ -1,27 +1,67 @@
 version: "3.9"
 
 services:
+
+  # ── PostgreSQL — base de dados ────────────────────────────────────────────
+  postgres:
+    image: postgres:16-alpine
+    container_name: avc_postgres
+    ports:
+      - "5432:5432"
+    env_file:
+      - .env
+    environment:
+      - POSTGRES_DB=${POSTGRES_DB:-avc_extraction}
+      - POSTGRES_USER=${POSTGRES_USER:-avc_user}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-avc_user} -d ${POSTGRES_DB:-avc_extraction}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # ── Ollama — servidor LLM local ──────────────────────────────────────────
   ollama:
-    image: ollama/ollama:latest
-    container_name: ollama
+    build: ./ollama
+    container_name: avc_ollama
     ports:
       - "11434:11434"
     volumes:
-      - ollama_data:/root/.ollama
+      - ./ollama/models:/root/.ollama   # pasta local — modelos não se perdem ao reiniciar
+    env_file:
+      - .env
     restart: unless-stopped
+    # Para usar GPU (descomentar se disponível no servidor):
+    # deploy:
+    #   resources:
+    #     reservations:
+    #       devices:
+    #         - driver: nvidia
+    #           count: 1
+    #           capabilities: [gpu]
 
+  # ── Streamlit — dashboard clínico ────────────────────────────────────────
   streamlit:
     build: ./streamlit
-    container_name: streamlit_demo
+    container_name: avc_streamlit
     ports:
-      - "8501:8501"
+      - "8502:8501"  # 8502 para não conflituar com o Streamlit local (8501)
     env_file:
       - .env
     environment:
       - OLLAMA_BASE_URL=http://ollama:11434
+      - POSTGRES_HOST=postgres
+    volumes:
+      - ./streamlit/outputs:/app/outputs
     depends_on:
-      - ollama
+      postgres:
+        condition: service_healthy
+      ollama:
+        condition: service_started
     restart: unless-stopped
 
 volumes:
-  ollama_data:
+  postgres_data:

@@ -6,30 +6,25 @@ from pathlib import Path
 from groq import Groq
 from dotenv import load_dotenv
 
-load_dotenv() # Carrega variáveis de ambiente do .env
+load_dotenv()
 
 """Agente 1 — extrai timestamps de uma carta de alta usando LLM (Groq ou Ollama local)."""
 
 # ── Configuração ──────────────────────────────────────────────────────────────
-# USE_GROQ      = os.getenv("GROQ_API_KEY") is not None 
-# respeita o LLM_BACKEND definido externamente em vez de depender só da presença do GROQ_API_KEY, para facilitar testes locais sem chave
 _backend_override = os.getenv("LLM_BACKEND", "").lower()
 if _backend_override == "ollama":
     USE_GROQ = False
 elif _backend_override == "groq":
     USE_GROQ = True
 else:
-    #USE_GROQ = os.getenv("GROQ_API_KEY") is not None
     USE_GROQ = os.getenv("LLM_BACKEND", "ollama") == "groq"
 
 GROQ_API_KEY  = os.getenv("GROQ_API_KEY")
 ACTIVE_MODEL  = os.getenv("ACTIVE_MODEL", "llama-3.1-8b-instant")
 OLLAMA_URL    = os.getenv("OLLAMA_BASE_URL", "http://localhost:11434")
 
-
-#PROMPT_FILE = Path("prompts/timestamps_v1.txt")
-#PROMPT_FILE = Path("prompts/timestamps_v2.txt")
 PROMPT_FILE = Path(__file__).parent.parent / "prompts" / "timestamps_v2.txt"
+
 
 def _call_groq(system_prompt: str, user_message: str) -> dict:
     """Chama a API Groq."""
@@ -65,7 +60,7 @@ def _call_ollama(system_prompt: str, user_message: str) -> dict:
             "stream": False,
             "options": {"temperature": 0.0, "num_predict": 1500}
         },
-        timeout=180
+        timeout=600  # aumentado de 180 para 600 — inferência em CPU pode demorar
     )
     response.raise_for_status()
     duration = round(time.time() - t0, 2)
@@ -89,7 +84,7 @@ def _parse_json(raw: str) -> dict:
 def extract_timestamps(letter_path: Path) -> dict:
     """
     Extrai timestamps de uma carta de alta de AVC.
-    Usa Groq se GROQ_API_KEY estiver definida, caso contrário usa Ollama local.
+    Usa Groq se LLM_BACKEND=groq, caso contrário usa Ollama local.
     """
     letter_text   = letter_path.read_text(encoding="utf-8")
     system_prompt = PROMPT_FILE.read_text(encoding="utf-8")
@@ -101,7 +96,6 @@ CARTA:
 
 Devolve APENAS o JSON, sem texto adicional."""
 
-    # Escolhe o backend automaticamente
     if USE_GROQ:
         result = _call_groq(system_prompt, user_message)
         backend = "groq"
