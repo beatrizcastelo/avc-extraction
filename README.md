@@ -69,14 +69,6 @@ avc-extraction/
 │   ├── Dockerfile
 │   └── entrypoint.sh             # Faz pull dos modelos no arranque
 │
-├── k8s/                          # Manifestos Kubernetes (para deploy hospitalar)
-│   ├── namespace.yaml
-│   ├── configmap.yaml
-│   ├── secret.yaml
-│   ├── postgres.yaml
-│   ├── ollama.yaml
-│   └── streamlit.yaml
-│
 ├── process_batch.py              # Processa casos em batch → guarda na BD
 ├── validate_all.py               # Validação científica com ground truth
 ├── fix_ground_truth_bridging.py  # Corrige métricas nos casos bridging
@@ -153,7 +145,7 @@ docker-compose down
 
 No primeiro arranque o Ollama faz pull do modelo automaticamente. Os modelos ficam guardados em `ollama/models/` e não se perdem entre reinicios.
 
-> **Se os modelos desaparecerem**, faz pull manualmente:
+> **Se os modelos desaparecerem**, fazer pull manualmente:
 > ```bash
 > docker exec -it avc_ollama ollama pull llama3.1:8b
 > docker exec -it avc_ollama ollama list
