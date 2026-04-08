@@ -1,21 +1,18 @@
-"""
-dashboard.py — Página de estatísticas agregadas
-Corre como página separada no Streamlit:
-  streamlit run dashboard.py
-Ou integra no app.py como segunda página.
-"""
-
 import streamlit as st
+import pandas as pd
 from database import get_estatisticas, get_episodios_recentes
+from styles import apply_theme
 
-st.set_page_config(page_title="AVC — Dashboard Clínico", layout="wide")
+st.set_page_config(page_title="Dashboard Clínico — AVC", page_icon="📊", layout="wide")
+apply_theme()
+
 st.title("📊 Dashboard Clínico — AVC Isquémico")
 st.caption("Estatísticas agregadas dos episódios processados")
 
 stats = get_estatisticas()
 
 if stats.get("total", 0) == 0:
-    st.info("Ainda não existem episódios na base de dados. Processa cartas de alta no separador de extracção.")
+    st.info("Ainda não existem episódios na base de dados. Processa cartas de alta na página de Extracção ou em Lote.")
     st.stop()
 
 # ── Indicadores de topo ────────────────────────────────────────────────────
@@ -47,7 +44,7 @@ if "mortalidade_30d" in stats:
 
 st.divider()
 
-# ── Linha 1: Tipo de episódio + Etiologia ─────────────────────────────────
+# ── Tipo de episódio + Etiologia ───────────────────────────────────────────
 col1, col2 = st.columns(2)
 
 with col1:
@@ -77,7 +74,7 @@ with col2:
 
 st.divider()
 
-# ── Linha 2: Qualidade ESO + Métricas ─────────────────────────────────────
+# ── Qualidade ESO + Métricas ───────────────────────────────────────────────
 col3, col4 = st.columns(2)
 
 with col3:
@@ -86,10 +83,9 @@ with col3:
         q = stats["qualidade_dtn"]
         total = q["total"]
         st.markdown(f"**Total com fibrinólise:** {total} casos")
-        st.markdown(f"🟢 **≤ 60 min (verde):** {q['verde']} casos ({round(q['verde']/total*100)}%)")
-        st.markdown(f"🟡 **61–90 min (amarelo):** {q['amarelo']} casos ({round(q['amarelo']/total*100)}%)")
-        st.markdown(f"🔴 **> 90 min (vermelho):** {q['vermelho']} casos ({round(q['vermelho']/total*100)}%)")
-        # Barra visual
+        st.markdown(f"🟢 **≤ 60 min:** {q['verde']} casos ({round(q['verde']/total*100)}%)")
+        st.markdown(f"🟡 **61–90 min:** {q['amarelo']} casos ({round(q['amarelo']/total*100)}%)")
+        st.markdown(f"🔴 **> 90 min:** {q['vermelho']} casos ({round(q['vermelho']/total*100)}%)")
         st.progress(q["verde"] / total if total > 0 else 0,
                     text=f"{round(q['verde']/total*100)}% dentro do target ESO")
     else:
@@ -114,13 +110,7 @@ with col4:
             m = stats[key]
             target = TARGETS.get(key)
             if target:
-                media = m["media"]
-                if media <= target[0]:
-                    icon = "🟢"
-                elif media <= target[1]:
-                    icon = "🟡"
-                else:
-                    icon = "🔴"
+                icon = "🟢" if m["media"] <= target[0] else ("🟡" if m["media"] <= target[1] else "🔴")
             else:
                 icon = "⚪"
             st.metric(
@@ -135,20 +125,19 @@ st.divider()
 st.subheader("Episódios Recentes")
 recentes = get_episodios_recentes(10)
 if recentes:
-    import pandas as pd
     df = pd.DataFrame(recentes)
-    df["vivo_30_dias"] = df["vivo_30_dias"].map({1: "✅ Sim", 0: "❌ Não"}).fillna("?")
+    df["vivo_30_dias"] = df["vivo_30_dias"].map({True: "Sim", False: "Não"}).fillna("—")
     df = df.rename(columns={
-        "id":               "ID",
-        "source_file":      "Ficheiro",
-        "processed_at":     "Processado em",
-        "tipo":             "Tipo",
-        "etiologia_toast":  "Etiologia",
-        "door_to_needle":   "DTN (min)",
-        "door_to_imaging":  "DTI (min)",
-        "nihss_admissao":   "NIHSS Adm.",
-        "mrs_alta":         "mRS Alta",
-        "vivo_30_dias":     "Vivo 30d",
+        "id":              "ID",
+        "source_file":     "Ficheiro",
+        "processed_at":    "Processado em",
+        "tipo":            "Tipo",
+        "etiologia_toast": "Etiologia",
+        "door_to_needle":  "DTN (min)",
+        "door_to_imaging": "DTI (min)",
+        "nihss_admissao":  "NIHSS Adm.",
+        "mrs_alta":        "mRS Alta",
+        "vivo_30_dias":    "Vivo 30d",
     })
     st.dataframe(df, use_container_width=True, hide_index=True)
 else:

@@ -1,8 +1,5 @@
 """
 Agente RF6 — Extrai variáveis categóricas + mortalidade 30 dias
-Input:  carta de alta (.txt) + nota de mortalidade (.txt, opcional)
-Output: dict plano com tipo, etiologia_toast, tratamento, territorio,
-        complicacoes, vivo_30_dias, dias_obito, causa_obito
 """
 
 import os
@@ -13,10 +10,7 @@ from typing import Any, Dict, Optional
 import requests
 
 
-# ── helpers ──────────────────────────────────────────────────────────────────
-
 def _call_llm(prompt: str) -> str:
-    """Chama Ollama ou Groq conforme LLM_BACKEND."""
     backend = os.getenv("LLM_BACKEND", "ollama")
     model   = os.getenv("ACTIVE_MODEL", "llama3.1:8b")
 
@@ -26,7 +20,7 @@ def _call_llm(prompt: str) -> str:
             url,
             json={"model": model, "prompt": prompt, "stream": False,
                   "options": {"temperature": 0.0}},
-            timeout=180
+            timeout=600  # aumentado para suportar inferência em CPU
         )
         resp.raise_for_status()
         return resp.json()["response"].strip()
@@ -46,7 +40,6 @@ def _call_llm(prompt: str) -> str:
 
 
 def _load_prompt(name: str) -> str:
-    """Carrega prompt de prompts/"""
     path = Path(__file__).parent.parent / "prompts" / f"{name}.txt"
     if not path.exists():
         raise FileNotFoundError(f"Prompt não encontrado: {path}")
@@ -54,7 +47,6 @@ def _load_prompt(name: str) -> str:
 
 
 def _safe_parse(response: str) -> dict:
-    """Parse JSON robusto — aceita markdown e extrai bloco JSON."""
     cleaned = re.sub(r'```(?:json)?\s*\n?', '', response).strip()
     cleaned = re.sub(r'\n?\s*```$', '', cleaned).strip()
     try:
@@ -70,21 +62,16 @@ def _safe_parse(response: str) -> dict:
 
 
 def _extract_value(data: dict, key: str) -> Any:
-    """Extrai value de {"key": {"value": X}} ou {"key": X}."""
     entry = data.get(key)
     if entry is None:
         return None
-    if isinstance(entry, dict):
-        v = entry.get("value")
-    else:
-        v = entry
+    v = entry.get("value") if isinstance(entry, dict) else entry
     if v is None or str(v).lower() in {"null", "none", "n/a", "na", ""}:
         return None
     return v
 
 
 def _extract_excerpt(data: dict, key: str) -> Optional[str]:
-    """Extrai excerpt de {"key": {"value": X, "excerpt": Y}}."""
     entry = data.get(key)
     if isinstance(entry, dict):
         exc = entry.get("excerpt")
@@ -93,26 +80,17 @@ def _extract_excerpt(data: dict, key: str) -> Optional[str]:
     return None
 
 
-# ── extracção principal ───────────────────────────────────────────────────────
-
 def extract_categorical(carta_path: Path) -> Dict[str, Any]:
-    """
-    Extrai variáveis categóricas da carta de alta.
-    Devolve dict plano:
-      {"tipo": "...", "etiologia_toast": "...", "tratamento": "...",
-       "territorio": "...", "complicacoes": "..."}
-    """
     text   = carta_path.read_text(encoding="utf-8")
     prompt = _load_prompt("categorical").replace("{texto}", text)
     raw    = _safe_parse(_call_llm(prompt))
 
     return {
-        "tipo":           _extract_value(raw, "tipo"),
+        "tipo":            _extract_value(raw, "tipo"),
         "etiologia_toast": _extract_value(raw, "etiologia_toast"),
-        "tratamento":     _extract_value(raw, "tratamento"),
-        "territorio":     _extract_value(raw, "territorio"),
-        "complicacoes":   _extract_value(raw, "complicacoes"),
-        # excertos para auditoria (não usados na validação mas úteis no JSON)
+        "tratamento":      _extract_value(raw, "tratamento"),
+        "territorio":      _extract_value(raw, "territorio"),
+        "complicacoes":    _extract_value(raw, "complicacoes"),
         "_excerpts": {
             k: _extract_excerpt(raw, k)
             for k in ["tipo","etiologia_toast","tratamento","territorio","complicacoes"]
@@ -121,16 +99,10 @@ def extract_categorical(carta_path: Path) -> Dict[str, Any]:
 
 
 def extract_mortality(mortality_path: Path) -> Dict[str, Any]:
-    """
-    Extrai mortalidade/seguimento da nota de 30 dias.
-    Devolve dict plano:
-      {"vivo_30_dias": True/False/None, "dias_obito": int/None, "causa_obito": str/None}
-    """
     text   = mortality_path.read_text(encoding="utf-8")
     prompt = _load_prompt("mortality").replace("{texto}", text)
     raw    = _safe_parse(_call_llm(prompt))
 
-    # vivo_30_dias: converte string para bool se necessário
     vivo_raw = _extract_value(raw, "vivo_30_dias")
     if isinstance(vivo_raw, bool):
         vivo = vivo_raw
@@ -145,7 +117,6 @@ def extract_mortality(mortality_path: Path) -> Dict[str, Any]:
     else:
         vivo = None
 
-    # dias_obito: garante inteiro ou None
     dias_raw = _extract_value(raw, "dias_obito")
     try:
         dias = int(float(dias_raw)) if dias_raw is not None else None
@@ -160,25 +131,9 @@ def extract_mortality(mortality_path: Path) -> Dict[str, Any]:
 
 
 def extract_categorical_all(case_dir: Path) -> Dict[str, Any]:
-    """
-    Ponto de entrada principal para um caso.
-    Descobre automaticamente a carta e a nota de mortalidade.
-    Devolve dict consolidado com todas as variáveis categóricas + mortalidade.
-    """
-    txt_files = list(case_dir.glob("*.txt"))
-
-    # Carta de alta: qualquer .txt que não seja consulta nem mortalidade
-    carta = next(
-        (f for f in txt_files
-         if "consulta" not in f.name and "mortalidade" not in f.name),
-        None
-    )
-    # Nota de mortalidade
-    mortalidade = next(
-        (f for f in txt_files if "mortalidade" in f.name),
-        None
-    )
-
+    txt_files   = list(case_dir.glob("*.txt"))
+    carta       = next((f for f in txt_files if "consulta" not in f.name and "mortalidade" not in f.name), None)
+    mortalidade = next((f for f in txt_files if "mortalidade" in f.name), None)
     result: Dict[str, Any] = {}
 
     if carta:
@@ -190,12 +145,10 @@ def extract_categorical_all(case_dir: Path) -> Dict[str, Any]:
 
     if mortalidade:
         try:
-            mort = extract_mortality(mortalidade)
-            result.update(mort)
+            result.update(extract_mortality(mortalidade))
         except Exception as e:
             print(f"    ⚠️  Mortalidade falhou ({mortalidade.name}): {e}")
     else:
-        # Sem nota de mortalidade — campos ficam None
         result.update({"vivo_30_dias": None, "dias_obito": None, "causa_obito": None})
 
     return result

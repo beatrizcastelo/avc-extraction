@@ -56,6 +56,7 @@ services:
       - POSTGRES_HOST=postgres
     volumes:
       - ./streamlit/outputs:/app/outputs
+      - /Users/beatrizcastelo/Documents/GitHub/groq-teste-processor/outputs_teste:/app/data  # dados para process_batch.py
     depends_on:
       postgres:
         condition: service_healthy
