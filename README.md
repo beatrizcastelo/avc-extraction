@@ -35,9 +35,8 @@ docker exec -it avc_ollama ollama list
 ### Processar casos → BD (dentro do Docker)
 docker exec -it avc_streamlit python process_batch.py \
   --data /app/data --backend ollama --cases 5
-### Com cache (usa JSONs já gerados, instantâneo)
 docker exec -it avc_streamlit python process_batch.py \
-  --data /app/data --backend ollama --use-cache
+  --data /app/data --backend ollama --use-cache # Com cache (usa JSONs já gerados, instantâneo)
 ### Validação científica (local, com Ollama a correr)
 python validate_all.py --backend ollama --cases 30
 python validate_all.py --backend ollama --case caso_051_bridging (carta de alta exemplo)
