@@ -36,7 +36,7 @@ docker exec -it avc_ollama ollama list
 docker exec -it avc_streamlit python process_batch.py \
   --data /app/data --backend ollama --cases 5
 
-# Com cache (usa JSONs já gerados, instantâneo)
+#### Com cache (usa JSONs já gerados, instantâneo)
 docker exec -it avc_streamlit python process_batch.py \
   --data /app/data --backend ollama --use-cache
 ### Validação científica (local, com Ollama a correr)
