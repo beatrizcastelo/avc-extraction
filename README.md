@@ -24,6 +24,31 @@ Todo o processamento corre **localmente**, sem enviar dados para fora da máquin
 ![alt text](image.png)
 
 ---
+## Comandos necessários
+### Arrancar com o sistema
+docker-compose up          # arranca tudo (já construído)
+docker-compose up --build  # reconstrói e arranca (após alterar código)
+docker-compose down        # para tudo
+### Se o modelo Ollama desaparecer 
+docker exec -it avc_ollama ollama pull llama3.1:8b # este é um dos modelos que se pode usar
+docker exec -it avc_ollama ollama list
+### Processar casos → BD (dentro do Docker)
+docker exec -it avc_streamlit python process_batch.py \
+  --data /app/data --backend ollama --cases 5
+
+# Com cache (usa JSONs já gerados, instantâneo)
+docker exec -it avc_streamlit python process_batch.py \
+  --data /app/data --backend ollama --use-cache
+### Validação científica (local, com Ollama a correr)
+python validate_all.py --backend ollama --cases 30
+python validate_all.py --backend ollama --case caso_051_bridging (carta de alta exemplo)
+python validate_all.py --backend ollama --use-cache
+### Verificar BD
+docker exec -it avc_postgres psql -U avc_user -d avc_extraction \
+  -c "SELECT id, source_file, tipo, door_to_needle FROM episodios;"
+### STREAMLIT --> http://localhost:8502 
+
+---
 
 ## Arquitectura do Sistema
 
