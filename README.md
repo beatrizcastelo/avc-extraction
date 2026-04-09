@@ -21,6 +21,8 @@ Lê qualquer nota clínica de AVC isquémico em texto livre — carta de alta, n
 
 Todo o processamento corre **localmente**, sem enviar dados para fora da máquina — compatível com requisitos RGPD em contexto hospitalar.
 
+![alt text](image.png)
+
 ---
 
 ## Arquitectura do Sistema
