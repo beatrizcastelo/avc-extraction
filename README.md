@@ -360,26 +360,7 @@ Os relatórios ficam em `validation_reports/` com timestamp para comparação di
 
 ---
 
-## 9. Deploy em Kubernetes (Hospital)
-
-Os manifestos estão em `k8s/`. Quando tiveres o namespace do hospital:
-
-```bash
-# 1. Editar k8s/secret.yaml com a password real
-# 2. Editar k8s/configmap.yaml com o namespace correcto
-# 3. Editar nomes das imagens nos yamls para o registry do hospital
-
-kubectl apply -f k8s/namespace.yaml
-kubectl apply -f k8s/configmap.yaml
-kubectl apply -f k8s/secret.yaml
-kubectl apply -f k8s/postgres.yaml
-kubectl apply -f k8s/ollama.yaml
-kubectl apply -f k8s/streamlit.yaml
-```
-
----
-
-## 10. Tipos de Episódios Suportados
+## 9. Tipos de Episódios Suportados
 
 | Tipo | Descrição |
 |------|-----------|
