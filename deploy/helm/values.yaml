@@ -1,0 +1,32 @@
+namespace: teses-26
+pullsecretname: regcred
+
+
+replicaCount: 1
+image:
+  repository: git.ulscoimbra.min-saude.pt/teses26/avc-extraction
+  tag: v0.0.1
+  pullPolicy: IfNotPresent
+containerPort: 8501
+service:
+  type: NodePort
+  port: 8501
+  targetPort: 8501
+env:
+  LLM_BACKEND: "ollama"
+  ACTIVE_MODEL: "llama3.1:8b"
+  MODELS_TO_PULL: "llama3.1:8b"
+  POSTGRES_HOST: "postgres"
+  POSTGRES_PORT: "5432"
+  POSTGRES_DB: "avc_extraction"
+  OLLAMA_BASE_URL: "http://localhost:11434"
+secretName: avc-extraction-secret
+resources:
+  requests:
+    cpu: "100m"
+    memory: "256Mi"
+  limits:
+    cpu: "500m"
+    memory: "512Mi"
+  
+
