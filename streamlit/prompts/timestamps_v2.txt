@@ -36,6 +36,16 @@ ATENÇÃO — exemplo concreto:
   ERRADO (confusão frequente):
     admission = "10:15"         ← NUNCA: esta é a hora da Guarda, não de Coimbra
     door1_departure = "12:45"   ← NUNCA: esta é a chegada a Coimbra, não a saída da Guarda
+  
+  Outro exemplo:
+  Carta diz: "Admissão hospitalar: 13h00 (Tomar) | 15h30 (Coimbra)"
+  Carta diz: "Transferência: 14h00"
+
+  CORRECTO:
+    door1_admission = "13:00"   ← entrada em Tomar
+    door1_departure = "14:00"   ← saída de Tomar (transferência)
+    door2           = "15:30"   ← chegada a Coimbra
+    admission       = "15:30"   ← admissão em Coimbra (igual a door2)
 
 Se a carta for pré-hospitalar ou intra-hospitalar (sem transferência):
   door1_admission, door1_departure, door2 → value: "NA"

@@ -43,10 +43,15 @@ TIMESTAMP_VARS   = ["sintomas","admissaoorigem","admissaocoimbra","tcce",
                     "fibrinolise","transferencia","puncaofemoral","recanalizacao"]
 METRIC_VARS      = ["onset_to_door","door_to_imaging","door_to_needle",
                     "door_to_puncture","onset_to_recan","door_in_door_out","door1_to_door2"]
-SCALE_VARS       = ["nihss_admissao_carta","nihss_alta_carta","mrs_previo_carta",
-                    "mrs_alta_carta","mrs_3meses_carta",
-                    "nihss_admissao_consulta","nihss_alta_consulta",
-                    "mrs_previo_consulta","mrs_alta_consulta","mrs_3meses_consulta"]
+
+# FIX: apenas as escalas que existem no ground truth e fazem sentido validar
+# Da carta: nihss_admissao, nihss_alta, mrs_previo, mrs_alta, mrs_3meses
+# Da consulta: só mrs_3meses (o único valor que existe no ground truth)
+SCALE_VARS       = ["nihss_admissao_carta","nihss_alta_carta",
+                    "mrs_previo_carta","mrs_alta_carta",
+                    "mrs_3meses_consulta"]
+# mrs_3meses_carta removido — esse valor está na consulta, não na carta de alta
+
 CATEGORICAL_VARS = ["tipo","etiologia_toast","tratamento","territorio","complicacoes","causa_obito"]
 BINARY_VARS      = ["vivo_30_dias"]
 NUMERIC_VARS     = ["dias_obito"]
@@ -105,19 +110,23 @@ def flatten_extractor_output(raw: dict) -> dict:
         if isinstance(v, dict) and v.get("value") is not None:
             result[k] = v["value"]
 
-    # Escalas
+    # Escalas — da carta
     scales = raw.get("scales", {})
-    for source in ["carta", "consulta"]:
-        s     = scales.get(source, {})
-        nihss = s.get("nihss", {})
-        mrs   = s.get("mrs", {})
-        result[f"nihss_admissao_{source}"] = _extract_scale_value(nihss, "nihss_admissao")
-        result[f"nihss_alta_{source}"]     = _extract_scale_value(nihss, "nihss_alta")
-        result[f"mrs_previo_{source}"]     = _extract_scale_value(mrs,   "mrs_previo")
-        result[f"mrs_alta_{source}"]       = _extract_scale_value(mrs,   "mrs_alta")
-        result[f"mrs_3meses_{source}"]     = _extract_scale_value(mrs,   "mrs_3meses")
+    carta_s = scales.get("carta", {})
+    nihss_c = carta_s.get("nihss", {})
+    mrs_c   = carta_s.get("mrs", {})
+    result["nihss_admissao_carta"] = _extract_scale_value(nihss_c, "nihss_admissao")
+    result["nihss_alta_carta"]     = _extract_scale_value(nihss_c, "nihss_alta")
+    result["mrs_previo_carta"]     = _extract_scale_value(mrs_c,   "mrs_previo")
+    result["mrs_alta_carta"]       = _extract_scale_value(mrs_c,   "mrs_alta")
+    result["mrs_3meses_carta"]     = _extract_scale_value(mrs_c,   "mrs_3meses")
 
-    # Categóricas (RF6)
+    # Escalas — da consulta: só mrs_3meses
+    consulta_s = scales.get("consulta", {})
+    mrs_cons   = consulta_s.get("mrs", {})
+    result["mrs_3meses_consulta"] = _extract_scale_value(mrs_cons, "mrs_3meses")
+
+    # Categóricas
     cat = raw.get("categorical", {})
     for var in ["tipo","etiologia_toast","tratamento","territorio","complicacoes"]:
         v = cat.get(var)
@@ -159,26 +168,26 @@ def flatten_ground_truth(raw: dict) -> dict:
         v = mt.get(gt_key)
         result[var] = str(v).strip() if v is not None else None
 
+    # Escalas da carta
     result["nihss_admissao_carta"] = raw.get("nihss_admissao")
     result["nihss_alta_carta"]     = raw.get("nihss_alta")
     result["mrs_previo_carta"]     = raw.get("mrs_previo")
     result["mrs_alta_carta"]       = raw.get("mrs_alta")
 
+    # Seguimento
     seg = raw.get("seguimento", {})
-    result["vivo_30_dias"]     = seg.get("vivo_30_dias")
-    result["dias_obito"]       = seg.get("dias_obito")
-    result["causa_obito"]      = seg.get("causa_obito")
-    result["mrs_3meses_carta"] = seg.get("mrs_3_meses")
+    result["vivo_30_dias"]        = seg.get("vivo_30_dias")
+    result["dias_obito"]          = seg.get("dias_obito")
+    result["causa_obito"]         = seg.get("causa_obito")
+    result["mrs_3meses_carta"]    = seg.get("mrs_3_meses")
 
+    # FIX: mrs_3meses_consulta vem do seguimento (mesmo valor)
+    # O ground truth não separa por documento — o mRS 3 meses é único
+    result["mrs_3meses_consulta"] = seg.get("mrs_3_meses")
+
+    # Categóricas
     for var in ["tipo","etiologia_toast","tratamento","territorio","complicacoes"]:
         result[var] = raw.get(var)
-
-    consulta_gt = raw.get("consulta", {})
-    result["nihss_admissao_consulta"] = consulta_gt.get("nihss_admissao")
-    result["nihss_alta_consulta"]     = consulta_gt.get("nihss_alta")
-    result["mrs_previo_consulta"]     = consulta_gt.get("mrs_previo")
-    result["mrs_alta_consulta"]       = consulta_gt.get("mrs_alta")
-    result["mrs_3meses_consulta"]     = consulta_gt.get("mrs_3_meses")
 
     return result
 
@@ -193,13 +202,11 @@ def is_null(value: Any) -> bool:
 def normalize_cat(value: Any) -> str:
     if value is None: return ""
     s = str(value).strip().lower()
-    # remove acentos comuns para comparação robusta
     for a, b in [("á","a"),("à","a"),("â","a"),("ã","a"),("é","e"),("ê","e"),
                  ("í","i"),("ó","o"),("ô","o"),("õ","o"),("ú","u"),("ç","c")]:
         s = s.replace(a, b)
     return s.replace("-"," ").replace("_"," ")
 
-# Mapeamento de variantes de etiologia_toast para forma canónica normalizada
 _ETIOLOGIA_ALIASES = {
     "cardioembólica":                     "cardioembólica",
     "cardioembólico":                     "cardioembólica",
@@ -229,18 +236,8 @@ def normalize_etiologia(value: Any) -> str:
     return _ETIOLOGIA_ALIASES.get(s, s)
 
 def _tratamento_key(value: Any) -> str:
-    """
-    Extrai a 'chave semântica' do tratamento para comparação fuzzy.
-    Casos:
-      - fibrinólise pré-hospitalar simples  → "fibrinolise"
-      - bridging (fibrinólise + TEV)        → "bridging:[cidade]"
-      - TEV isolada contraindicação         → "tev_contraindicacao"
-      - TEV isolada fora de janela          → "tev_fora_janela"
-      - conservador                         → "conservador"
-    """
     if value is None: return ""
     s = normalize_cat(str(value))
-
     if "conservador" in s or "sem reperfusao" in s:
         return "conservador"
     if "fora de janela" in s or "wake" in s:
@@ -248,7 +245,6 @@ def _tratamento_key(value: Any) -> str:
     if "contraindicac" in s:
         return "tev_contraindicacao"
     if "trombectomia" in s and ("+" in s or "em " in s):
-        # bridging: extrai cidade de origem se possível
         m = re.search(r"fibrinolise em ([a-z ]+?) \+", s)
         cidade = m.group(1).strip() if m else "?"
         return f"bridging:{cidade}"
@@ -261,8 +257,10 @@ def _tratamento_key(value: Any) -> str:
 def parse_hhhmm(value: Any) -> int | None:
     if is_null(value): return None
     s = str(value).strip()
+    # Formato HHhMM ou HH:MM
     m = re.match(r"^(\d+)[hH:](\d{2})$", s)
     if m: return int(m.group(1)) * 60 + int(m.group(2))
+    # Só número (minutos directos)
     if re.match(r"^\d+$", s): return int(s)
     return None
 
@@ -345,7 +343,6 @@ def compare_categorical(pred, gt) -> dict:
     return {"tp":int(hit),"fp":int(not hit),"fn":int(not hit),"tn":0}
 
 def compare_etiologia(pred, gt) -> dict:
-    """Comparação com mapeamento de variantes (Cardioembólica vs Cardioembolico, etc.)."""
     pn, gn = is_null(pred), is_null(gt)
     if gn and pn:     return {"tp":0,"fp":0,"fn":0,"tn":1}
     if gn and not pn: return {"tp":0,"fp":1,"fn":0,"tn":0}
@@ -354,17 +351,11 @@ def compare_etiologia(pred, gt) -> dict:
     return {"tp":int(hit),"fp":int(not hit),"fn":int(not hit),"tn":0}
 
 def compare_tratamento(pred, gt) -> dict:
-    """
-    Comparação fuzzy para tratamento (texto livre).
-    Extrai chave semântica de ambos e compara.
-    Bridging: compara também cidade de origem.
-    """
     pn, gn = is_null(pred), is_null(gt)
     if gn and pn:     return {"tp":0,"fp":0,"fn":0,"tn":1}
     if gn and not pn: return {"tp":0,"fp":1,"fn":0,"tn":0}
     if not gn and pn: return {"tp":0,"fp":0,"fn":1,"tn":0}
     kp, kg = _tratamento_key(pred), _tratamento_key(gt)
-    # Para bridging: aceita se cidade bate; se cidade é "?" aceita parcialmente
     if kg.startswith("bridging:") and kp.startswith("bridging:"):
         cidade_gt = kg.split(":")[1]
         cidade_p  = kp.split(":")[1]
@@ -379,7 +370,6 @@ COMPARATORS = {
     **{v: compare_scale       for v in SCALE_VARS + NUMERIC_VARS},
     **{v: compare_binary      for v in BINARY_VARS},
     **{v: compare_categorical for v in CATEGORICAL_VARS},
-    # Comparadores especializados sobrescrevem o genérico
     "etiologia_toast": compare_etiologia,
     "tratamento":      compare_tratamento,
 }
@@ -431,16 +421,13 @@ def run_agent_on_case(case_dir: Path, backend: str = "groq") -> dict:
         if not carta:
             return {}
 
-        # Agente 1: Timestamps
         from agents.extractor import extract_timestamps
         raw = extract_timestamps(carta)
 
-        # Agente 2: Métricas
         sys.path.insert(0, str(STREAMLIT_DIR / "agents"))
         from metrics import calculate_metrics
         raw["metrics"] = calculate_metrics(raw.get("timestamps", {}))
 
-        # Agente 3: Escalas
         raw["scales"] = {}
         try:
             from agents.scales import extract_scales
@@ -450,7 +437,6 @@ def run_agent_on_case(case_dir: Path, backend: str = "groq") -> dict:
         except Exception as e:
             print(f"    ⚠️  Escalas falharam ({case_dir.name}): {e}")
 
-        # Agente 4: Categóricas + Mortalidade (RF6)
         raw["categorical"] = {}
         raw["mortality"]   = {"vivo_30_dias": None, "dias_obito": None, "causa_obito": None}
         try:
@@ -461,9 +447,7 @@ def run_agent_on_case(case_dir: Path, backend: str = "groq") -> dict:
         except Exception as e:
             print(f"    ⚠️  Categóricas falharam ({case_dir.name}): {e}")
 
-        # Guarda cache só depois de todos os agentes
         save_cached_output(case_dir, raw)
-
         return flatten_extractor_output(raw)
     finally:
         os.chdir(original_dir)

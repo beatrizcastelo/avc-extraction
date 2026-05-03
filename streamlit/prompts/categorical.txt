@@ -8,49 +8,70 @@ REGRAS:
 
 ════════════════════════════════════════════════════════
 CAMPO: tipo
-Escolhe UM dos seguintes valores com base no percurso clínico:
+Escolhe UM dos seguintes valores seguindo a árvore de decisão abaixo:
 
-"fibrinolise_pre_hospitalar"     → doente vem do exterior (domicílio/INEM), admitido
-                                   directamente, tratado APENAS com fibrinólise/rt-PA/alteplase/tenecteplase.
-                                   Não houve transferência. Não houve trombectomia.
+PASSO 1 — O doente estava INTERNADO num serviço hospitalar quando teve o AVC?
+  → SIM: "fibrinolise_intra_hospitalar"
+  → NÃO: continua para PASSO 2
 
-"fibrinolise_pre_hospitalar_ace" → igual ao anterior mas AVC extenso (TACS/ACE/NIHSS alto)
+PASSO 2 — O doente foi TRANSFERIDO de outro hospital?
+  Sinais: "inter-hospitalar", "transferido de", "Hospital de [cidade]", duas admissões
+  → SIM: continua para PASSO 3
+  → NÃO (veio do domicílio/INEM directamente): continua para PASSO 4
 
-"bridging"                       → doente TRANSFERIDO de outro hospital onde já fez
-                                   fibrinólise, e em Coimbra fez trombectomia mecânica.
-                                   Palavras-chave: "transferido", "hospital de origem",
-                                   "fibrinólise em [cidade]", "trombectomia em Coimbra"
+PASSO 3 — Doente transferido. Fez fibrinólise no hospital de origem?
+  Sinais: "fibrinólise em [cidade]", "rt-PA em", "alteplase em", "tenecteplase em [hospital]"
+  → SIM (fibrinólise na origem + trombectomia em Coimbra): "bridging"
+  → NÃO (só trombectomia, sem fibrinólise): continua para PASSO 3b
+    PASSO 3b — Porquê sem fibrinólise?
+      → Contraindicação explícita (cirurgia recente, hemorragia, etc.): "tev_isolada_contraindicacao"
+      → Fora da janela (>4.5h, wake-up stroke): "tev_isolada_fora_janela"
+      → Motivo não mencionado: "tev_isolada_contraindicacao" (assumir contraindicação)
 
-"tev_isolada_contraindicacao"    → trombectomia mecânica SEM fibrinólise prévia porque
-                                   havia contraindicação (ex: cirurgia recente, hemorragia)
+PASSO 4 — Doente veio directamente (pré-hospitalar). Que tratamento fez?
+  → Só fibrinólise (rt-PA/alteplase/tenecteplase), sem trombectomia:
+      → AVC extenso (TACS/ACE/NIHSS≥20/oclusão proximal): "fibrinolise_pre_hospitalar_ace"
+      → Outros: "fibrinolise_pre_hospitalar"
+  → Só trombectomia, sem fibrinólise:
+      → Contraindicação explícita: "tev_isolada_contraindicacao"
+      → Fora da janela / wake-up: "tev_isolada_fora_janela"
+  → Tratamento conservador (sem reperfusão):
+      → AVC lacunar / pequeno vaso: "conservador_lacunar"
+      → Wake-up stroke ou fora de janela sem trombectomia: "conservador_wake_up"
 
-"tev_isolada_fora_janela"        → trombectomia mecânica SEM fibrinólise porque fora da
-                                   janela terapêutica (wake-up stroke, >4.5h de sintomas)
+⚠️ ATENÇÃO — Erros comuns a evitar:
+  "Inter-Hospitalar" ≠ "Intra-Hospitalar"
+    - INTER = transferido DE outro hospital (dois hospitais envolvidos)
+    - INTRA = AVC durante internamento NO MESMO hospital (já estava internado)
 
-"fibrinolise_intra_hospitalar"   → AVC durante internamento noutro serviço, tratado
-                                   com fibrinólise
-
-"conservador_lacunar"            → AVC lacunar (pequeno vaso), sem reperfusão,
-                                   tratamento conservador
-
-"conservador_wake_up"            → wake-up stroke ou fora de janela, sem trombectomia,
-                                   tratamento conservador
+  Se a carta diz "Via Verde Inter-Hospitalar" ou "transferido de [cidade]"
+  → NÃO é fibrinolise_intra_hospitalar
+  → Vai para PASSO 3
 
 EXEMPLOS:
-  carta diz "Via Verde Pré-Hospitalar" + "fibrinólise endovenosa" + sem transferência
+  "Via Verde Pré-Hospitalar" + "fibrinólise endovenosa" + sem transferência
   → "fibrinolise_pre_hospitalar"
 
-  carta diz "transferido do Hospital de Viseu" + "fibrinólise em Viseu" + "trombectomia em Coimbra"
+  "transferido do Hospital de Viseu" + "fibrinólise em Viseu" + "trombectomia em Coimbra"
   → "bridging"
 
-  carta diz "contraindicação absoluta à fibrinólise" + "trombectomia mecânica"
+  "Via Verde Inter-Hospitalar" + "TEV" + sem menção a fibrinólise na origem
   → "tev_isolada_contraindicacao"
 
-  carta diz "wake-up stroke" + "fora da janela" + sem fibrinólise + sem trombectomia
+  "Inter-Hospitalar (Hospital Tomar → ULS Coimbra)" + "TRATAMENTO REPERFUSOR: TEV" + sem fibrinólise
+  → "tev_isolada_contraindicacao"
+
+  "contraindicação absoluta à fibrinólise" + "trombectomia mecânica"
+  → "tev_isolada_contraindicacao"
+
+  "wake-up stroke" + "fora da janela" + sem fibrinólise + sem trombectomia
   → "conservador_wake_up"
 
-  carta diz "AVC lacunar" ou "território de pequeno vaso" + sem reperfusão
+  "AVC lacunar" ou "território de pequeno vaso" + sem reperfusão
   → "conservador_lacunar"
+
+  "AVC durante internamento" ou "intra-hospitalar" + "fibrinólise"
+  → "fibrinolise_intra_hospitalar"
 
 ════════════════════════════════════════════════════════
 CAMPO: etiologia_toast
