@@ -57,7 +57,11 @@ services:
     volumes:
       - ./streamlit/outputs:/app/outputs
       - /Users/beatrizcastelo/Documents/GitHub/groq-teste-processor/outputs_teste:/app/data  # dados para process_batch.py
+<<<<<<< HEAD
       - ./streamlit:/app  # código local — mudanças refletem imediatamente
+=======
+      - ./streamlit:/app  # código local — mudanças refletem sem rebuild
+>>>>>>> 19e18a4c90d42177dae4987ed34203f351d9cb84
     depends_on:
       postgres:
         condition: service_healthy
