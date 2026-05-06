@@ -562,6 +562,10 @@ def main():
                         help="Corre os primeiros N casos")
     parser.add_argument("--case",      type=str, default=None,
                         help="Corre um caso específico pelo nome (ex: caso_051_bridging)")
+    parser.add_argument("--eval-set",  type=str, default=None,
+                        help="Ficheiro com lista de casos (ex: eval_cases.txt)")
+    parser.add_argument("--model",     type=str, default=None,
+                        help="Nome do modelo para o relatório (ex: llama3.1:8b)")
     args = parser.parse_args()
 
     if not DATA_DIR.exists():
@@ -570,7 +574,20 @@ def main():
 
     all_dirs = sorted(d for d in DATA_DIR.iterdir() if d.is_dir())
 
-    if args.case:
+    if args.eval_set:
+        eval_path = Path(args.eval_set)
+        if not eval_path.exists():
+            print(f"❌ Ficheiro eval-set não encontrado: {eval_path}")
+            sys.exit(1)
+        eval_names = [
+            line.strip() for line in eval_path.read_text(encoding="utf-8").splitlines()
+            if line.strip() and not line.strip().startswith("#")
+        ]
+        case_dirs = [d for d in all_dirs if d.name in eval_names]
+        missing = set(eval_names) - {d.name for d in case_dirs}
+        if missing:
+            print(f"  ⚠️  {len(missing)} casos não encontrados: {list(missing)[:3]}...")
+    elif args.case:
         case_dirs = [d for d in all_dirs if args.case in d.name]
         if not case_dirs:
             print(f"❌ Caso não encontrado: {args.case}")
@@ -580,7 +597,9 @@ def main():
         if args.cases:
             case_dirs = case_dirs[:args.cases]
 
-    print(f"\n🔍 A validar {len(case_dirs)} casos | backend={args.backend}")
+    model_name = args.model or os.getenv("ACTIVE_MODEL", args.backend)
+
+    print(f"\n🔍 A validar {len(case_dirs)} casos | backend={args.backend} | modelo={model_name}")
     print(f"   Dados: {DATA_DIR}\n")
     t0 = time.time()
 
@@ -612,7 +631,7 @@ def main():
 
     df = aggregate_metrics(case_results)
     print_report(df, len(case_results), elapsed)
-    save_report(df, len(case_results), args.backend)
+    save_report(df, len(case_results), model_name)
 
     if errors:
         err_path = REPORT_DIR / "validation_errors.json"

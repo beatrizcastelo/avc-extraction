@@ -82,9 +82,14 @@ def calculate_metrics(timestamps: dict) -> dict:
     # Para door_to_needle: nos inter-hospitalares a fibrinólise é no hospital de origem
     door_for_needle = door1_in if inter_hosp else admitted
 
+    # Para onset_to_door: usa door2 se disponível (chegada a Coimbra confirmada),
+    # caso contrário usa admission. Corrige casos inter-hospitalares onde o extractor
+    # coloca a hora da origem em admission em vez de Coimbra.
+    door_coimbra = door2 if door2 is not None else admitted
+
     return {
         "onset_to_door": {
-            "value":  _minutes(onset, admitted, max_minutes=600),
+            "value":  _minutes(onset, door_coimbra, max_minutes=600),
             "unit":   "min",
             "status": "unknown"
         },
