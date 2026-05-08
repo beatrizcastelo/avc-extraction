@@ -89,6 +89,77 @@
 
 ---
 
+## Trabalho Futuro — Modelo Especializado por Variável (a explorar)
+
+- A arquitectura actual usa o mesmo LLM para todas as variáveis (timestamps, escalas, categóricas)
+- Ideia: usar o melhor modelo para cada tipo de extracção — cada agente usaria um modelo diferente
+  - Agente 1 (timestamps) → modelo X
+  - Agente 3 (escalas) → modelo Y
+  - Agente 4 (categóricas) → modelo Z
+- Tecnicamente simples — só mudar o ACTIVE_MODEL em cada agente
+- Não impacta o tempo de processamento (agentes já são sequenciais)
+- Os resultados da comparação de modelos já sugerem que modelos diferentes têm pontos fortes diferentes
+  (ex: qwen melhor em door_to_imaging, llama melhor em tipo e complicacoes)
+- ⚠️ A explorar depois de terminar os testes de todos os modelos
+
+---
+
+## Estrutura das Experiências para a Tese
+
+Organizar o capítulo de resultados em 4 experiências (inspirado em Pais, 2025):
+
+**Experiência 1 — Impacto do tamanho do modelo**
+- llama3.1:8b vs llama3.2:3b vs llama3.2:1b
+- Mesma família, tamanhos diferentes
+- Mostra a partir de que tamanho a qualidade degrada significativamente
+
+**Experiência 2 — Comparação entre famílias de modelos**
+- llama3.1:8b vs qwen2:7b vs gemma3:4b vs qwen2.5:7b
+- Modelos de tamanho semelhante, famílias diferentes
+- Mostra qual família é mais adequada para extracção clínica em português
+
+**Experiência 3 — Impacto da quantização**
+- qwen2.5:7b vs qwen2.5:7b-q4_K_M (ou equivalente)
+- Mesmo modelo, com e sem quantização 4-bit
+- Relevante para contexto hospitalar com hardware limitado
+
+**Experiência 4 — Análise por tipo de variável**
+- Qual modelo é melhor para cada categoria de extracção
+  (timestamps, métricas temporais, escalas clínicas, variáveis categóricas)
+- Dados já existem nos relatórios CSV — só falta analisar e criar gráficos
+- Pode levar à conclusão de usar modelos diferentes por agente (trabalho futuro)
+
+⚠️ NÃO ESQUECER — estruturar o capítulo de resultados desta forma!
+
+---
+
+## Modelos Quantizados (a mencionar na tese)
+
+- O `.env` tem uma linha comentada: `#ACTIVE_MODEL=qwen2.5:7b-instruct-q4_K_M`
+- `q4_K_M` significa quantização 4-bit — reduz o tamanho do modelo em ~50% com perda mínima de qualidade
+- Não testámos modelos quantizados vs não quantizados — é uma limitação a mencionar na tese
+- Trabalho futuro: comparar o mesmo modelo quantizado vs não quantizado (ex: qwen2.5:7b vs qwen2.5:7b-q4_K_M)
+- A literatura sugere que quantização 4-bit tem impacto mínimo na precisão mas reduz significativamente os requisitos de hardware
+- Relevante para a tese porque o contexto hospitalar tem recursos computacionais limitados
+
+---
+
+## Gráficos para a Tese (a fazer depois de todos os modelos testados)
+
+**Comparação de modelos:**
+- Barra agrupada — F1 por variável, uma barra por modelo
+- Radar chart — F1 médio por categoria (timestamps, métricas, escalas, categóricas)
+- Tabela resumo — F1 médio por categoria e por modelo
+- Scatter — F1 médio vs tempo de processamento (trade-off precisão/eficiência)
+
+**Distribuição do MAE:**
+- Boxplot ou violin plot por métrica temporal e por modelo
+- Mostra variabilidade e outliers (wake-up strokes aparecem como outliers — é esperado)
+- Muito mais informativo do que só a média do MAE
+- Permite ver que o MAE alto do onset_to_door não é uniforme mas concentrado nos wake-up cases
+
+---
+
 ## Artigo Científico
 
 - Pedido pelo orientador Prof. Pedro Furtado

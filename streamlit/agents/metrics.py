@@ -10,7 +10,9 @@ REGRAS CLÍNICAS:
   Em casos pré/intra-hospitalares usa admission (Coimbra).
 - door_to_needle: nos casos inter-hospitalares usa door1_admission (fibrinólise feita
   no hospital de origem); nos casos directos usa admission (Coimbra).
-- door_to_puncture: usa sempre admission (Coimbra), porque a trombectomia é sempre em Coimbra.
+- door_to_puncture: usa door2 se disponível (chegada a Coimbra confirmada),
+  caso contrário usa admission. Corrige casos inter-hospitalares onde o extractor
+  coloca a hora da origem em admission em vez de Coimbra.
 - onset_to_door: usa sempre admission (Coimbra) como referência de chegada ao sistema final.
 - door1_to_door2: admissão no hospital de origem → chegada a Coimbra (door2).
 - door_in_door_out: admissão no hospital de origem → saída do hospital de origem (door1_departure).
@@ -107,10 +109,11 @@ def calculate_metrics(timestamps: dict) -> dict:
             "status": _status(_minutes(door_for_needle, thrombo), 60, 90)
         },
         "door_to_puncture": {
-            # Trombectomia sempre em Coimbra → admission
-            "value":  _minutes(admitted, puncture),
+            # Trombectomia sempre em Coimbra → usa door2 se disponível (inter-hosp),
+            # caso contrário usa admission (pré/intra-hospitalar)
+            "value":  _minutes(door_coimbra, puncture),
             "unit":   "min",
-            "status": _status(_minutes(admitted, puncture), 90, 120)
+            "status": _status(_minutes(door_coimbra, puncture), 90, 120)
         },
         "onset_to_needle": {
             "value":  _minutes(onset, thrombo, max_minutes=600),

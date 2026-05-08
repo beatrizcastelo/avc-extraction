@@ -44,7 +44,7 @@ PLOTLY_BASE = dict(
 TIPO_LABELS = {
     "fibrinolise_pre_hospitalar":     "Fibrinólise Pré-hosp.",
     "fibrinolise_pre_hospitalar_ace": "Fibrinólise Pré-hosp. (ACE)",
-    "bridging":                       "Bridging",
+    "bridging":                       "Inter-hospitalar (Bridging)",
     "tev_isolada_contraindicacao":    "TEV (contraindicação)",
     "tev_isolada_fora_janela":        "TEV (fora janela)",
     "fibrinolise_intra_hospitalar":   "Fibrinólise Intra-hosp.",
@@ -127,7 +127,7 @@ with st.sidebar:
     st.divider()
     st.markdown("### 📊 Qualidade dos Dados")
     total_all = len(df_all)
-    completos = df_all[["nihss_admissao", "door_to_needle", "mrs_alta"]].notna().all(axis=1).sum()
+    completos = df_all[["nihss_admissao", "mrs_alta"]].notna().all(axis=1).sum()
     pct_comp  = round(completos / total_all * 100) if total_all > 0 else 0
     st.progress(pct_comp / 100, text=f"Dados completos: {pct_comp}%")
     st.markdown(f"✅ {completos} episódios com campos completos")

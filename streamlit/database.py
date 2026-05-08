@@ -200,7 +200,7 @@ def save_episodio(result: dict) -> int:
         _get_scale(sc, "carta", "nihss", "nihss_alta"),
         _get_scale(sc, "carta", "mrs",   "mrs_previo"),
         _get_scale(sc, "carta", "mrs",   "mrs_alta"),
-        _get_scale(sc, "carta", "mrs",   "mrs_3meses"),
+        _get_scale(sc, "consulta", "mrs", "mrs_3meses"),  # mRS 3 meses vem da consulta, não da carta
 
         vivo,
         _safe_int(mort.get("dias_obito")),
