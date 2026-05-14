@@ -232,3 +232,4 @@ else:
         st.divider()
         with st.expander("JSON completo"):
             st.json(result)
+

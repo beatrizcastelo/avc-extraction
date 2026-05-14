@@ -1,0 +1,310 @@
+[
+  {
+    "case": "caso_005_fibrinolise_pre_hospitalar",
+    "error": "('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))"
+  },
+  {
+    "case": "caso_006_fibrinolise_pre_hospitalar",
+    "error": "('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))"
+  },
+  {
+    "case": "caso_007_fibrinolise_pre_hospitalar",
+    "error": "('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))"
+  },
+  {
+    "case": "caso_010_fibrinolise_pre_hospitalar",
+    "error": "('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))"
+  },
+  {
+    "case": "caso_011_fibrinolise_pre_hospitalar",
+    "error": "('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))"
+  },
+  {
+    "case": "caso_014_fibrinolise_pre_hospitalar",
+    "error": "('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))"
+  },
+  {
+    "case": "caso_015_fibrinolise_pre_hospitalar",
+    "error": "('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))"
+  },
+  {
+    "case": "caso_016_fibrinolise_pre_hospitalar_ace",
+    "error": "('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))"
+  },
+  {
+    "case": "caso_017_fibrinolise_pre_hospitalar_ace",
+    "error": "('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))"
+  },
+  {
+    "case": "caso_019_fibrinolise_pre_hospitalar_ace",
+    "error": "('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))"
+  },
+  {
+    "case": "caso_020_fibrinolise_pre_hospitalar_ace",
+    "error": "('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))"
+  },
+  {
+    "case": "caso_021_fibrinolise_pre_hospitalar_ace",
+    "error": "('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))"
+  },
+  {
+    "case": "caso_022_fibrinolise_pre_hospitalar_ace",
+    "error": "('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))"
+  },
+  {
+    "case": "caso_024_fibrinolise_pre_hospitalar_ace",
+    "error": "('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))"
+  },
+  {
+    "case": "caso_026_fibrinolise_pre_hospitalar_ace",
+    "error": "('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))"
+  },
+  {
+    "case": "caso_029_fibrinolise_pre_hospitalar_ace",
+    "error": "('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))"
+  },
+  {
+    "case": "caso_030_fibrinolise_pre_hospitalar_ace",
+    "error": "('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))"
+  },
+  {
+    "case": "caso_031_fibrinolise_intra_hospitalar",
+    "error": "('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))"
+  },
+  {
+    "case": "caso_032_fibrinolise_intra_hospitalar",
+    "error": "('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))"
+  },
+  {
+    "case": "caso_033_fibrinolise_intra_hospitalar",
+    "error": "('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))"
+  },
+  {
+    "case": "caso_035_fibrinolise_intra_hospitalar",
+    "error": "('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))"
+  },
+  {
+    "case": "caso_036_fibrinolise_intra_hospitalar",
+    "error": "('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))"
+  },
+  {
+    "case": "caso_037_fibrinolise_intra_hospitalar",
+    "error": "('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))"
+  },
+  {
+    "case": "caso_038_fibrinolise_intra_hospitalar",
+    "error": "('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))"
+  },
+  {
+    "case": "caso_042_fibrinolise_intra_hospitalar",
+    "error": "('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))"
+  },
+  {
+    "case": "caso_043_fibrinolise_intra_hospitalar",
+    "error": "('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))"
+  },
+  {
+    "case": "caso_045_fibrinolise_intra_hospitalar",
+    "error": "('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))"
+  },
+  {
+    "case": "caso_046_bridging",
+    "error": "('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))"
+  },
+  {
+    "case": "caso_049_bridging",
+    "error": "('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))"
+  },
+  {
+    "case": "caso_050_bridging",
+    "error": "('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))"
+  },
+  {
+    "case": "caso_053_bridging",
+    "error": "('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))"
+  },
+  {
+    "case": "caso_054_bridging",
+    "error": "('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))"
+  },
+  {
+    "case": "caso_063_bridging",
+    "error": "('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))"
+  },
+  {
+    "case": "caso_066_bridging",
+    "error": "('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))"
+  },
+  {
+    "case": "caso_069_bridging",
+    "error": "('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))"
+  },
+  {
+    "case": "caso_070_bridging",
+    "error": "('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))"
+  },
+  {
+    "case": "caso_074_bridging",
+    "error": "('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))"
+  },
+  {
+    "case": "caso_080_tev_isolada_fora_janela",
+    "error": "('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))"
+  },
+  {
+    "case": "caso_081_tev_isolada_fora_janela",
+    "error": "('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))"
+  },
+  {
+    "case": "caso_082_tev_isolada_fora_janela",
+    "error": "('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))"
+  },
+  {
+    "case": "caso_086_tev_isolada_fora_janela",
+    "error": "('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))"
+  },
+  {
+    "case": "caso_087_tev_isolada_fora_janela",
+    "error": "('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))"
+  },
+  {
+    "case": "caso_088_tev_isolada_fora_janela",
+    "error": "('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))"
+  },
+  {
+    "case": "caso_090_tev_isolada_fora_janela",
+    "error": "('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))"
+  },
+  {
+    "case": "caso_092_tev_isolada_fora_janela",
+    "error": "('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))"
+  },
+  {
+    "case": "caso_093_tev_isolada_fora_janela",
+    "error": "('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))"
+  },
+  {
+    "case": "caso_095_tev_isolada_fora_janela",
+    "error": "('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))"
+  },
+  {
+    "case": "caso_097_tev_isolada_contraindicacao",
+    "error": "('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))"
+  },
+  {
+    "case": "caso_098_tev_isolada_contraindicacao",
+    "error": "('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))"
+  },
+  {
+    "case": "caso_100_tev_isolada_contraindicacao",
+    "error": "('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))"
+  },
+  {
+    "case": "caso_102_tev_isolada_contraindicacao",
+    "error": "('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))"
+  },
+  {
+    "case": "caso_103_tev_isolada_contraindicacao",
+    "error": "('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))"
+  },
+  {
+    "case": "caso_105_tev_isolada_contraindicacao",
+    "error": "('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))"
+  },
+  {
+    "case": "caso_109_tev_isolada_contraindicacao",
+    "error": "('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))"
+  },
+  {
+    "case": "caso_111_tev_isolada_contraindicacao",
+    "error": "('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))"
+  },
+  {
+    "case": "caso_114_tev_isolada_contraindicacao",
+    "error": "('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))"
+  },
+  {
+    "case": "caso_115_tev_isolada_contraindicacao",
+    "error": "('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))"
+  },
+  {
+    "case": "caso_116_conservador_lacunar",
+    "error": "('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))"
+  },
+  {
+    "case": "caso_117_conservador_lacunar",
+    "error": "('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))"
+  },
+  {
+    "case": "caso_118_conservador_lacunar",
+    "error": "('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))"
+  },
+  {
+    "case": "caso_119_conservador_lacunar",
+    "error": "('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))"
+  },
+  {
+    "case": "caso_124_conservador_lacunar",
+    "error": "('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))"
+  },
+  {
+    "case": "caso_125_conservador_lacunar",
+    "error": "('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))"
+  },
+  {
+    "case": "caso_129_conservador_lacunar",
+    "error": "('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))"
+  },
+  {
+    "case": "caso_132_conservador_lacunar",
+    "error": "('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))"
+  },
+  {
+    "case": "caso_133_conservador_lacunar",
+    "error": "('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))"
+  },
+  {
+    "case": "caso_134_conservador_lacunar",
+    "error": "('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))"
+  },
+  {
+    "case": "caso_136_conservador_wake_up",
+    "error": "('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))"
+  },
+  {
+    "case": "caso_139_conservador_wake_up",
+    "error": "('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))"
+  },
+  {
+    "case": "caso_140_conservador_wake_up",
+    "error": "('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))"
+  },
+  {
+    "case": "caso_142_conservador_wake_up",
+    "error": "('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))"
+  },
+  {
+    "case": "caso_143_conservador_wake_up",
+    "error": "('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))"
+  },
+  {
+    "case": "caso_144_conservador_wake_up",
+    "error": "('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))"
+  },
+  {
+    "case": "caso_146_conservador_wake_up",
+    "error": "('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))"
+  },
+  {
+    "case": "caso_147_conservador_wake_up",
+    "error": "('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))"
+  },
+  {
+    "case": "caso_148_conservador_wake_up",
+    "error": "('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))"
+  },
+  {
+    "case": "caso_149_conservador_wake_up",
+    "error": "('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))"
+  }
+]

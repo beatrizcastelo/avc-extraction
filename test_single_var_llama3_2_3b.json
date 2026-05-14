@@ -1,0 +1,658 @@
+{
+  "caso_001_fibrinolise_pre_hospitalar": {
+    "tipo": {
+      "gt": "fibrinolise_pre_hospitalar",
+      "extraido": "fibrinolise_pre_hospitalar_ace",
+      "correcto": false
+    },
+    "etiologia_toast": {
+      "gt": "Cardioembólica",
+      "extraido": "Cardioembólica",
+      "correcto": true
+    },
+    "territorio": {
+      "gt": "ACM direita",
+      "extraido": "ACM direita",
+      "correcto": true
+    },
+    "tratamento": {
+      "gt": "fibrinolise endovenosa (rt-PA ou tenecteplase)",
+      "extraido": "Fibrinolise endovenosa + TEV isolada.",
+      "correcto": false
+    },
+    "complicacoes": {
+      "gt": "Nao ocorreram",
+      "extraido": "Não ocorreram.",
+      "correcto": true
+    },
+    "sintomas": {
+      "gt": "10h15",
+      "extraido": "10h15.",
+      "correcto": true
+    },
+    "admissaocoimbra": {
+      "gt": "10h40",
+      "extraido": "10h40",
+      "correcto": true
+    },
+    "tcce": {
+      "gt": "10h55",
+      "extraido": "11:00",
+      "correcto": false
+    },
+    "fibrinolise": {
+      "gt": "11h10",
+      "extraido": "11h10",
+      "correcto": true
+    },
+    "puncaofemoral": {
+      "gt": "—",
+      "extraido": "14:00",
+      "correcto": false
+    },
+    "recanalizacao": {
+      "gt": "—",
+      "extraido": "14:45",
+      "correcto": false
+    },
+    "nihss_admissao": {
+      "gt": "1",
+      "extraido": "1",
+      "correcto": true
+    },
+    "nihss_alta": {
+      "gt": "0",
+      "extraido": "0",
+      "correcto": true
+    },
+    "mrs_previo": {
+      "gt": "0",
+      "extraido": "0",
+      "correcto": true
+    },
+    "mrs_alta": {
+      "gt": "1",
+      "extraido": "1",
+      "correcto": true
+    },
+    "mrs_3meses": {
+      "gt": "1",
+      "extraido": "3.",
+      "correcto": false
+    }
+  },
+  "caso_016_fibrinolise_pre_hospitalar_ace": {
+    "tipo": {
+      "gt": "fibrinolise_pre_hospitalar_ace",
+      "extraido": "fibrinolise_pre_hospitalar_ace",
+      "correcto": true
+    },
+    "etiologia_toast": {
+      "gt": "Aterosclerose grandes vasos",
+      "extraido": "Cardioembólica",
+      "correcto": false
+    },
+    "territorio": {
+      "gt": "ACM direita",
+      "extraido": "ACM direita",
+      "correcto": true
+    },
+    "tratamento": {
+      "gt": "fibrinolise endovenosa (rt-PA ou tenecteplase)",
+      "extraido": "Fibrinolise endovenosa com alteplase.",
+      "correcto": false
+    },
+    "complicacoes": {
+      "gt": "Nao ocorreram",
+      "extraido": "Não ocorreram.",
+      "correcto": true
+    },
+    "sintomas": {
+      "gt": "15h40",
+      "extraido": "15h40",
+      "correcto": true
+    },
+    "admissaocoimbra": {
+      "gt": "16h05",
+      "extraido": "16h05",
+      "correcto": true
+    },
+    "tcce": {
+      "gt": "16h20",
+      "extraido": "16h20",
+      "correcto": true
+    },
+    "fibrinolise": {
+      "gt": "16h40",
+      "extraido": "16h40",
+      "correcto": true
+    },
+    "puncaofemoral": {
+      "gt": "—",
+      "extraido": "14:00",
+      "correcto": false
+    },
+    "recanalizacao": {
+      "gt": "—",
+      "extraido": "14:40",
+      "correcto": false
+    },
+    "nihss_admissao": {
+      "gt": "23",
+      "extraido": "23",
+      "correcto": true
+    },
+    "nihss_alta": {
+      "gt": "14",
+      "extraido": "14",
+      "correcto": true
+    },
+    "mrs_previo": {
+      "gt": "0",
+      "extraido": "0",
+      "correcto": true
+    },
+    "mrs_alta": {
+      "gt": "1",
+      "extraido": "1",
+      "correcto": true
+    },
+    "mrs_3meses": {
+      "gt": "0",
+      "extraido": "3.",
+      "correcto": false
+    }
+  },
+  "caso_031_fibrinolise_intra_hospitalar": {
+    "tipo": {
+      "gt": "fibrinolise_intra_hospitalar",
+      "extraido": "fibrinolise_intra_hospitalar",
+      "correcto": true
+    },
+    "etiologia_toast": {
+      "gt": "Indeterminado",
+      "extraido": "Cardioembólica",
+      "correcto": false
+    },
+    "territorio": {
+      "gt": "ACI + ACM direita",
+      "extraido": "ACI + ACM direita",
+      "correcto": true
+    },
+    "tratamento": {
+      "gt": "fibrinolise endovenosa (rt-PA ou tenecteplase)",
+      "extraido": "Fibrinolise endovenosa com alteplase 0,9mg/kg iv.",
+      "correcto": false
+    },
+    "complicacoes": {
+      "gt": "Nao ocorreram",
+      "extraido": "Nao ocorreram",
+      "correcto": true
+    },
+    "sintomas": {
+      "gt": "07h15",
+      "extraido": "07h15.",
+      "correcto": true
+    },
+    "admissaocoimbra": {
+      "gt": "—",
+      "extraido": "07h15",
+      "correcto": false
+    },
+    "tcce": {
+      "gt": "07h30",
+      "extraido": "07h15",
+      "correcto": false
+    },
+    "fibrinolise": {
+      "gt": "07h45",
+      "extraido": "07h45",
+      "correcto": true
+    },
+    "puncaofemoral": {
+      "gt": "—",
+      "extraido": "14:00",
+      "correcto": false
+    },
+    "recanalizacao": {
+      "gt": "—",
+      "extraido": "14:45",
+      "correcto": false
+    },
+    "nihss_admissao": {
+      "gt": "1",
+      "extraido": "1",
+      "correcto": true
+    },
+    "nihss_alta": {
+      "gt": "0",
+      "extraido": "0",
+      "correcto": true
+    },
+    "mrs_previo": {
+      "gt": "0",
+      "extraido": "0",
+      "correcto": true
+    },
+    "mrs_alta": {
+      "gt": "2",
+      "extraido": "2",
+      "correcto": true
+    },
+    "mrs_3meses": {
+      "gt": "2",
+      "extraido": "3.",
+      "correcto": false
+    }
+  },
+  "caso_046_bridging": {
+    "tipo": {
+      "gt": "bridging",
+      "extraido": "fibrinolise_pre_hospitalar_ace",
+      "correcto": false
+    },
+    "etiologia_toast": {
+      "gt": "Aterosclerose grandes vasos",
+      "extraido": "Cardioembólica",
+      "correcto": false
+    },
+    "territorio": {
+      "gt": "ACI + ACM esquerda",
+      "extraido": "ACI + ACM esquerda.",
+      "correcto": true
+    },
+    "tratamento": {
+      "gt": "fibrinolise em Leiria + trombectomia mecanica em Coimbra",
+      "extraido": "Fibrinolise + TEV.",
+      "correcto": false
+    },
+    "complicacoes": {
+      "gt": "Nao ocorreram",
+      "extraido": "Não ocorreram.",
+      "correcto": true
+    },
+    "sintomas": {
+      "gt": "10h15",
+      "extraido": "10h15.",
+      "correcto": true
+    },
+    "admissaocoimbra": {
+      "gt": "13h20",
+      "extraido": "13h20.",
+      "correcto": true
+    },
+    "tcce": {
+      "gt": "11h10",
+      "extraido": "11h10.",
+      "correcto": true
+    },
+    "fibrinolise": {
+      "gt": "11h30",
+      "extraido": "11h30.",
+      "correcto": true
+    },
+    "puncaofemoral": {
+      "gt": "14h20",
+      "extraido": "14h20",
+      "correcto": true
+    },
+    "recanalizacao": {
+      "gt": "14h50",
+      "extraido": "14h50.",
+      "correcto": true
+    },
+    "nihss_admissao": {
+      "gt": "5",
+      "extraido": "5",
+      "correcto": true
+    },
+    "nihss_alta": {
+      "gt": "2",
+      "extraido": "2",
+      "correcto": true
+    },
+    "mrs_previo": {
+      "gt": "0",
+      "extraido": "0",
+      "correcto": true
+    },
+    "mrs_alta": {
+      "gt": "2",
+      "extraido": "2",
+      "correcto": true
+    },
+    "mrs_3meses": {
+      "gt": "—",
+      "extraido": "2.",
+      "correcto": false
+    }
+  },
+  "caso_096_tev_isolada_contraindicacao": {
+    "tipo": {
+      "gt": "tev_isolada_contraindicacao",
+      "extraido": "fibrinolise_pre_hospitalar_ace",
+      "correcto": false
+    },
+    "etiologia_toast": {
+      "gt": "Aterosclerose grandes vasos",
+      "extraido": "Cardioembólica",
+      "correcto": false
+    },
+    "territorio": {
+      "gt": "ACI + ACM direita",
+      "extraido": "ACI + ACM direita",
+      "correcto": true
+    },
+    "tratamento": {
+      "gt": "TEV isolada (sem rt-PA — contraindicacao absoluta: cirurgia abdominal recente (colecistectomia ha 10 dias))",
+      "extraido": "TEV isolada.",
+      "correcto": false
+    },
+    "complicacoes": {
+      "gt": "Nao ocorreram",
+      "extraido": "Não ocorreram.",
+      "correcto": true
+    },
+    "sintomas": {
+      "gt": "09h30",
+      "extraido": "09h30",
+      "correcto": true
+    },
+    "admissaocoimbra": {
+      "gt": "12h30",
+      "extraido": "12h30",
+      "correcto": true
+    },
+    "tcce": {
+      "gt": "10h20",
+      "extraido": "11h00",
+      "correcto": false
+    },
+    "fibrinolise": {
+      "gt": "—",
+      "extraido": "11:30",
+      "correcto": false
+    },
+    "puncaofemoral": {
+      "gt": "13h00",
+      "extraido": "13h00",
+      "correcto": true
+    },
+    "recanalizacao": {
+      "gt": "13h40",
+      "extraido": "13h40",
+      "correcto": true
+    },
+    "nihss_admissao": {
+      "gt": "23",
+      "extraido": "23",
+      "correcto": true
+    },
+    "nihss_alta": {
+      "gt": "13",
+      "extraido": "13",
+      "correcto": true
+    },
+    "mrs_previo": {
+      "gt": "0",
+      "extraido": "0",
+      "correcto": true
+    },
+    "mrs_alta": {
+      "gt": "1",
+      "extraido": "1",
+      "correcto": true
+    },
+    "mrs_3meses": {
+      "gt": "0",
+      "extraido": "3.",
+      "correcto": false
+    }
+  },
+  "caso_076_tev_isolada_fora_janela": {
+    "tipo": {
+      "gt": "tev_isolada_fora_janela",
+      "extraido": "fibrinolise_pre_hospitalar_ace",
+      "correcto": false
+    },
+    "etiologia_toast": {
+      "gt": "Cardioembólica",
+      "extraido": "Cardioembólica",
+      "correcto": true
+    },
+    "territorio": {
+      "gt": "ACM esquerda",
+      "extraido": "ACM esquerda",
+      "correcto": true
+    },
+    "tratamento": {
+      "gt": "TEV isolada (sem rt-PA — fora de janela terapeutica, wake-up stroke)",
+      "extraido": "TEV isolada.",
+      "correcto": true
+    },
+    "complicacoes": {
+      "gt": "Nao ocorreram",
+      "extraido": "Não ocorreram.",
+      "correcto": true
+    },
+    "sintomas": {
+      "gt": "—",
+      "extraido": "22h45",
+      "correcto": false
+    },
+    "admissaocoimbra": {
+      "gt": "11h15",
+      "extraido": "11h15",
+      "correcto": true
+    },
+    "tcce": {
+      "gt": "09h05",
+      "extraido": "09h05",
+      "correcto": true
+    },
+    "fibrinolise": {
+      "gt": "—",
+      "extraido": "11h50",
+      "correcto": false
+    },
+    "puncaofemoral": {
+      "gt": "11h50",
+      "extraido": "11h50",
+      "correcto": true
+    },
+    "recanalizacao": {
+      "gt": "12h20",
+      "extraido": "12h20",
+      "correcto": true
+    },
+    "nihss_admissao": {
+      "gt": "5",
+      "extraido": "5",
+      "correcto": true
+    },
+    "nihss_alta": {
+      "gt": "2",
+      "extraido": "2",
+      "correcto": true
+    },
+    "mrs_previo": {
+      "gt": "0",
+      "extraido": "0",
+      "correcto": true
+    },
+    "mrs_alta": {
+      "gt": "2",
+      "extraido": "2",
+      "correcto": true
+    },
+    "mrs_3meses": {
+      "gt": "2",
+      "extraido": "3.",
+      "correcto": false
+    }
+  },
+  "caso_116_conservador_lacunar": {
+    "tipo": {
+      "gt": "conservador_lacunar",
+      "extraido": "fibrinolise_pre_hospitalar_ace",
+      "correcto": false
+    },
+    "etiologia_toast": {
+      "gt": "Oclusão pequenos vasos (lacunar)",
+      "extraido": "Cardioembólica",
+      "correcto": false
+    },
+    "territorio": {
+      "gt": "Lacunar (territorio perfurante)",
+      "extraido": "ACI + ACM esquerda",
+      "correcto": false
+    },
+    "tratamento": {
+      "gt": "conservador (sem reperfusao)",
+      "extraido": "Fibrinolise endovenosa.",
+      "correcto": false
+    },
+    "complicacoes": {
+      "gt": "Nao ocorreram",
+      "extraido": "Não ocorreram.",
+      "correcto": true
+    },
+    "sintomas": {
+      "gt": "14h45",
+      "extraido": "15h17",
+      "correcto": false
+    },
+    "admissaocoimbra": {
+      "gt": "15h17",
+      "extraido": "15h17",
+      "correcto": true
+    },
+    "tcce": {
+      "gt": "15h40",
+      "extraido": "15h40",
+      "correcto": true
+    },
+    "fibrinolise": {
+      "gt": "—",
+      "extraido": "Não foi feita fibrinólise.",
+      "correcto": false
+    },
+    "puncaofemoral": {
+      "gt": "—",
+      "extraido": "14:40",
+      "correcto": false
+    },
+    "recanalizacao": {
+      "gt": "—",
+      "extraido": "14:45",
+      "correcto": false
+    },
+    "nihss_admissao": {
+      "gt": "1",
+      "extraido": "1",
+      "correcto": true
+    },
+    "nihss_alta": {
+      "gt": "0",
+      "extraido": "0",
+      "correcto": true
+    },
+    "mrs_previo": {
+      "gt": "0",
+      "extraido": "0",
+      "correcto": true
+    },
+    "mrs_alta": {
+      "gt": "0",
+      "extraido": "0",
+      "correcto": true
+    },
+    "mrs_3meses": {
+      "gt": "0",
+      "extraido": "3.",
+      "correcto": false
+    }
+  },
+  "caso_136_conservador_wake_up": {
+    "tipo": {
+      "gt": "conservador_wake_up",
+      "extraido": "fibrinolise_pre_hospitalar_ace",
+      "correcto": false
+    },
+    "etiologia_toast": {
+      "gt": "Indeterminado",
+      "extraido": "Cardioembólica",
+      "correcto": false
+    },
+    "territorio": {
+      "gt": "ACM direita (ramo M2)",
+      "extraido": "ACM direita",
+      "correcto": true
+    },
+    "tratamento": {
+      "gt": "conservador (sem reperfusao)",
+      "extraido": "Fibrinolise endovenosa + TEV isolada.",
+      "correcto": false
+    },
+    "complicacoes": {
+      "gt": "Nao ocorreram",
+      "extraido": "Nao ocorreram",
+      "correcto": true
+    },
+    "sintomas": {
+      "gt": "—",
+      "extraido": "23h45",
+      "correcto": false
+    },
+    "admissaocoimbra": {
+      "gt": "07h50",
+      "extraido": "07:50",
+      "correcto": true
+    },
+    "tcce": {
+      "gt": "08h20",
+      "extraido": "08h20",
+      "correcto": true
+    },
+    "fibrinolise": {
+      "gt": "—",
+      "extraido": "Não há menção à administração da fibrinólise (rt-PA, alteplase, tenecteplase) no texto clínico. Portanto, a resposta é:",
+      "correcto": false
+    },
+    "puncaofemoral": {
+      "gt": "—",
+      "extraido": "14:00",
+      "correcto": false
+    },
+    "recanalizacao": {
+      "gt": "—",
+      "extraido": "14:45",
+      "correcto": false
+    },
+    "nihss_admissao": {
+      "gt": "1",
+      "extraido": "1",
+      "correcto": true
+    },
+    "nihss_alta": {
+      "gt": "0",
+      "extraido": "0",
+      "correcto": true
+    },
+    "mrs_previo": {
+      "gt": "0",
+      "extraido": "0",
+      "correcto": true
+    },
+    "mrs_alta": {
+      "gt": "1",
+      "extraido": "1",
+      "correcto": true
+    },
+    "mrs_3meses": {
+      "gt": "1",
+      "extraido": "3.",
+      "correcto": false
+    }
+  }
+}

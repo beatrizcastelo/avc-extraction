@@ -4,11 +4,17 @@ Compatível com: tema claro, psycopg2 directo, pandas ≥ 2.0
 Requer: plotly (adicionar ao requirements.txt)
 """
 
+import os
+import requests
 import streamlit as st
 import pandas as pd
 import plotly.graph_objects as go
+from pathlib import Path
 from database import get_connection, init_db
 from styles import apply_theme
+from dotenv import load_dotenv
+
+load_dotenv()
 
 st.set_page_config(
     page_title="Dashboard Clínico — AVC",
@@ -546,6 +552,46 @@ if not df_tabela.empty:
     st.dataframe(display, use_container_width=True, hide_index=True)
 else:
     st.caption("Sem episódios para mostrar.")
+
+# ── Envio de Use Cases para Parse ────────────────────────────────────────
+with st.expander("Enviar Use Cases para Parse"):
+    parse_api_url   = os.getenv("PARSE_API_URL", "").rstrip("/")
+    parse_api_key   = os.getenv("PARSE_API_KEY", "")
+    parse_blueprint = os.getenv("PARSE_BLUEPRINT", "")
+    usecases_dir    = os.getenv("PARSE_USECASES_DIR", "")
+
+    if not all([parse_api_url, parse_api_key, parse_blueprint, usecases_dir]):
+        st.warning("Configure PARSE_API_URL, PARSE_API_KEY, PARSE_BLUEPRINT e PARSE_USECASES_DIR no .env.")
+    else:
+        txt_files = sorted(Path(usecases_dir).glob("*.txt"))
+        st.caption(f"{len(txt_files)} casos em `{usecases_dir}` · blueprint: `{parse_blueprint}`")
+
+        if st.button("Enviar todos para Parse", key="btn_parse_batch"):
+            resultados = []
+            barra = st.progress(0, text="A enviar...")
+            headers = {"Authorization": f"Bearer {parse_api_key}"}
+            for i, f in enumerate(txt_files, 1):
+                texto = f.read_text(encoding="utf-8")
+                try:
+                    resp = requests.post(
+                        f"{parse_api_url}/api/analyze",
+                        json={"analysis_type": parse_blueprint,
+                              "clinical_record": texto,
+                              "custom_fields": []},
+                        headers=headers,
+                        timeout=30
+                    )
+                    resultados.append({"caso": f.name, "status": resp.status_code, "ok": resp.ok})
+                except Exception as e:
+                    resultados.append({"caso": f.name, "status": str(e), "ok": False})
+                barra.progress(i / len(txt_files), text=f"{i}/{len(txt_files)} — {f.name}")
+
+            barra.empty()
+            ok  = sum(1 for r in resultados if r["ok"])
+            nok = len(resultados) - ok
+            st.success(f"{ok} enviados com sucesso · {nok} erros")
+            if nok:
+                st.dataframe([r for r in resultados if not r["ok"]], use_container_width=True)
 
 # ── Rodapé ────────────────────────────────────────────────────────────────
 st.divider()

@@ -49,6 +49,7 @@ services:
     container_name: avc_streamlit
     ports:
       - "8502:8501"  # 8502 para não conflituar com o Streamlit local (8501)
+      - "8503:8888"  # proxy Parse (iframe auth)
     env_file:
       - .env
     environment:

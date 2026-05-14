@@ -19,8 +19,8 @@ def _call_llm(prompt: str) -> str:
         resp = requests.post(
             url,
             json={"model": model, "prompt": prompt, "stream": False,
-                  "options": {"temperature": 0.0}},
-            timeout=600  # aumentado para suportar inferência em CPU
+                  "options": {"temperature": 0.0, "num_predict": 1000}},
+            timeout=600
         )
         resp.raise_for_status()
         return resp.json()["response"].strip()
