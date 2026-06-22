@@ -50,7 +50,7 @@ def safe_parse_json(response: str) -> dict:
 
 
 def _call_llm(prompt: str) -> str:
-    backend = os.getenv("LLM_BACKEND", "ollama")
+    backend = os.getenv("LLM_BACKEND", "ollama").lower()
     model   = os.getenv("ACTIVE_MODEL", "llama3.1:8b")
 
     if backend == "ollama":
@@ -58,7 +58,7 @@ def _call_llm(prompt: str) -> str:
         resp = requests.post(
             url,
             json={"model": model, "prompt": prompt, "stream": False,
-                  "options": {"temperature": 0.1, "num_predict": 1000}},
+                  "options": {"temperature": 0.0, "num_predict": 1000}},
             timeout=600
         )
         resp.raise_for_status()
@@ -70,10 +70,25 @@ def _call_llm(prompt: str) -> str:
         response = client.chat.completions.create(
             model=model,
             messages=[{"role": "user", "content": prompt}],
-            temperature=0.1,
+            temperature=0.0,
             max_tokens=1000
         )
         return response.choices[0].message.content.strip()
+
+    elif backend == "litellm":
+        resp = requests.post(
+            os.getenv("LITELLM_URL", "") + "/v1/chat/completions",
+            headers={"Authorization": f"Bearer {os.getenv('LITELLM_API_KEY', '')}"},
+            json={
+                "model": model,
+                "messages": [{"role": "user", "content": prompt}],
+                "temperature": 0.0,
+                "max_tokens": 1000
+            },
+            timeout=600
+        )
+        resp.raise_for_status()
+        return resp.json()["choices"][0]["message"]["content"].strip()
 
     raise ValueError(f"Backend '{backend}' não suportado")
 

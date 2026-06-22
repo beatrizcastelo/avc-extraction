@@ -64,7 +64,9 @@ ALL_VARS = (TIMESTAMP_VARS + METRIC_VARS + SCALE_VARS +
 # FLATTEN
 # ══════════════════════════════════════════════════════════════════════════════
 
-def _extract_scale_value(section: dict, key: str):
+def _extract_scale_value(section, key: str):
+    if not isinstance(section, dict):
+        return None
     entry = section.get(key)
     if entry is None:
         return None
@@ -79,8 +81,12 @@ def _extract_scale_value(section: dict, key: str):
 
 
 def flatten_extractor_output(raw: dict) -> dict:
+    if not isinstance(raw, dict):
+        raw = {}
     result = {}
     ts = raw.get("timestamps", {})
+    if not isinstance(ts, dict):
+        ts = {}
 
     def get_val(key):
         entry = ts.get(key, {})
@@ -103,16 +109,24 @@ def flatten_extractor_output(raw: dict) -> dict:
         result["admissaocoimbra"] = door2
 
     # Métricas
-    for k, v in raw.get("metricas_temporais", {}).items():
-        if k in METRIC_VARS:
-            result[k] = v
-    for k, v in raw.get("metrics", {}).items():
-        if isinstance(v, dict) and v.get("value") is not None:
-            result[k] = v["value"]
+    metricas = raw.get("metricas_temporais", {})
+    if isinstance(metricas, dict):
+        for k, v in metricas.items():
+            if k in METRIC_VARS:
+                result[k] = v
+    metrics = raw.get("metrics", {})
+    if isinstance(metrics, dict):
+        for k, v in metrics.items():
+            if isinstance(v, dict) and v.get("value") is not None:
+                result[k] = v["value"]
 
     # Escalas — da carta
-    scales = raw.get("scales", {})
+    scales  = raw.get("scales", {})
+    if not isinstance(scales, dict):
+        scales = {}
     carta_s = scales.get("carta", {})
+    if not isinstance(carta_s, dict):
+        carta_s = {}
     nihss_c = carta_s.get("nihss", {})
     mrs_c   = carta_s.get("mrs", {})
     result["nihss_admissao_carta"] = _extract_scale_value(nihss_c, "nihss_admissao")
@@ -123,17 +137,23 @@ def flatten_extractor_output(raw: dict) -> dict:
 
     # Escalas — da consulta: só mrs_3meses
     consulta_s = scales.get("consulta", {})
+    if not isinstance(consulta_s, dict):
+        consulta_s = {}
     mrs_cons   = consulta_s.get("mrs", {})
     result["mrs_3meses_consulta"] = _extract_scale_value(mrs_cons, "mrs_3meses")
 
     # Categóricas
     cat = raw.get("categorical", {})
+    if not isinstance(cat, dict):
+        cat = {}
     for var in ["tipo","etiologia_toast","tratamento","territorio","complicacoes"]:
         v = cat.get(var)
         result[var] = v if v not in (None, "", "null", "none") else None
 
     # Mortalidade
     mort = raw.get("mortality", {})
+    if not isinstance(mort, dict):
+        mort = {}
     vivo_raw = mort.get("vivo_30_dias")
     if isinstance(vivo_raw, bool):
         result["vivo_30_dias"] = vivo_raw
@@ -527,9 +547,12 @@ def print_report(df: pd.DataFrame, n_cases: int, elapsed: float):
             print(f"  {var:<25} {p_s} {r_s} {f1_s} {mae_s} {row.TP:>5} {row.FP:>5} {row.FN:>5}")
     print(f"\n{sep}\n")
 
-def save_report(df: pd.DataFrame, n_cases: int, backend: str):
-    ts   = datetime.now().strftime("%Y%m%d_%H%M%S")
-    stem = REPORT_DIR / f"validation_{backend}_{n_cases}casos_{ts}"
+def save_report(df: pd.DataFrame, n_cases: int, backend: str, output_dir: Path = None):
+    ts         = datetime.now().strftime("%Y%m%d_%H%M%S")
+    safe_name  = backend.replace("/", "_").replace(":", "_")
+    out        = output_dir or REPORT_DIR
+    out.mkdir(parents=True, exist_ok=True)
+    stem       = out / f"validation_{safe_name}_{n_cases}casos_{ts}"
     df.to_csv(f"{stem}.csv")
     try:
         with pd.ExcelWriter(f"{stem}.xlsx", engine="openpyxl") as writer:
@@ -556,7 +579,7 @@ def save_report(df: pd.DataFrame, n_cases: int, backend: str):
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--backend",   default="groq", choices=["groq","ollama"])
+    parser.add_argument("--backend",   default="ollama", choices=["groq","ollama","litellm"])
     parser.add_argument("--use-cache", action="store_true")
     parser.add_argument("--cases",     type=int, default=0,
                         help="Corre os primeiros N casos")
@@ -565,7 +588,9 @@ def main():
     parser.add_argument("--eval-set",  type=str, default=None,
                         help="Ficheiro com lista de casos (ex: eval_cases.txt)")
     parser.add_argument("--model",     type=str, default=None,
-                        help="Nome do modelo para o relatório (ex: llama3.1:8b)")
+                        help="Sobrepõe ACTIVE_MODEL (aceita lista: llama3.1:8b,qwen2.5:7b)")
+    parser.add_argument("--output",    type=str, default=None,
+                        help="Pasta para guardar os relatórios (default: validation_reports/)")
     args = parser.parse_args()
 
     if not DATA_DIR.exists():
@@ -597,46 +622,53 @@ def main():
         if args.cases:
             case_dirs = case_dirs[:args.cases]
 
-    model_name = args.model or os.getenv("ACTIVE_MODEL", args.backend)
+    raw_models = args.model or os.getenv("ACTIVE_MODEL", "llama3.1:8b")
+    models = [m.strip() for m in raw_models.split(",") if m.strip()]
 
-    print(f"\n🔍 A validar {len(case_dirs)} casos | backend={args.backend} | modelo={model_name}")
-    print(f"   Dados: {DATA_DIR}\n")
-    t0 = time.time()
+    for model in models:
+        os.environ["ACTIVE_MODEL"] = model
 
-    case_results, errors = [], []
+        print(f"\n🔍 A validar {len(case_dirs)} casos | backend={args.backend} | modelo={model}")
+        print(f"   Dados: {DATA_DIR}\n")
+        t0 = time.time()
 
-    for i, case_dir in enumerate(case_dirs, 1):
-        gt = load_ground_truth(case_dir)
-        if gt is None:
-            errors.append({"case": case_dir.name, "error": "missing_gt"})
-            continue
+        case_results, errors = [], []
 
-        pred = load_cached_output(case_dir) if args.use_cache else None
-        if pred is None:
-            try:
-                pred = run_agent_on_case(case_dir, backend=args.backend)
-            except Exception as e:
-                print(f"  ❌ [{i:3d}] {case_dir.name}: {e}")
-                errors.append({"case": case_dir.name, "error": str(e)})
+        for i, case_dir in enumerate(case_dirs, 1):
+            gt = load_ground_truth(case_dir)
+            if gt is None:
+                errors.append({"case": case_dir.name, "error": "missing_gt"})
                 continue
 
-        case_results.append(evaluate_case(pred, gt))
-        print(f"  ✅ [{i:3d}/{len(case_dirs)}] {case_dir.name}")
+            pred = load_cached_output(case_dir) if args.use_cache else None
+            if pred is None:
+                try:
+                    pred = run_agent_on_case(case_dir, backend=args.backend)
+                except Exception as e:
+                    print(f"  ❌ [{i:3d}] {case_dir.name}: {e}")
+                    errors.append({"case": case_dir.name, "error": str(e)})
+                    continue
 
-    elapsed = time.time() - t0
+            case_results.append(evaluate_case(pred, gt))
+            print(f"  ✅ [{i:3d}/{len(case_dirs)}] {case_dir.name}")
 
-    if not case_results:
-        print("❌ Nenhum resultado para agregar.")
-        sys.exit(1)
+        elapsed = time.time() - t0
 
-    df = aggregate_metrics(case_results)
-    print_report(df, len(case_results), elapsed)
-    save_report(df, len(case_results), model_name)
+        if not case_results:
+            print(f"❌ Nenhum resultado para {model}.")
+            continue
 
-    if errors:
-        err_path = REPORT_DIR / "validation_errors.json"
-        err_path.write_text(json.dumps(errors, indent=2, ensure_ascii=False), encoding="utf-8")
-        print(f"⚠️  {len(errors)} erros em:\n   {err_path}")
+        df = aggregate_metrics(case_results)
+        print_report(df, len(case_results), elapsed)
+        output_dir = Path(args.output) if args.output else None
+        save_report(df, len(case_results), model, output_dir=output_dir)
+
+        if errors:
+            safe_name  = model.replace("/", "_").replace(":", "_")
+            err_dir    = Path(args.output) if args.output else REPORT_DIR
+            err_path   = err_dir / f"validation_errors_{safe_name}.json"
+            err_path.write_text(json.dumps(errors, indent=2, ensure_ascii=False), encoding="utf-8")
+            print(f"⚠️  {len(errors)} erros em:\n   {err_path}")
 
 if __name__ == "__main__":
     main()

@@ -62,6 +62,10 @@ def calculate_metrics(timestamps: dict) -> dict:
     """
     def dt(key):
         t = timestamps.get(key, {})
+        if isinstance(t, str):
+            return _parse_dt(None, t)
+        if not isinstance(t, dict):
+            return None
         return _parse_dt(t.get("date"), t.get("value"))
 
     onset     = dt("onset_uvb")
